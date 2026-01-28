@@ -1,4 +1,4 @@
-const CACHE_NAME = 'niilus-v2';
+const CACHE_NAME = 'niilus-v3';
 const ASSETS = [
     './index.html',
     './manifest.json',
@@ -7,6 +7,7 @@ const ASSETS = [
     './images/nile.png',
     './images/delta.png',
     './images/giza.png',
+    './images/step_pyramid.png',
     './images/sphinx.png',
     './images/tutankhamun.png',
     './images/anubis.png',
