@@ -1898,7 +1898,7 @@
       };
 
       const submitAnswer = () => {
-        if (!userAnswer && selectedOption === null && userSortOrder.length === 0) return;
+        if (showResult || lives <= 0) return;
 
         let correct = false;
         if (currentQuestion.type === 'choice' || currentQuestion.type === 'identify' || currentQuestion.type === 'truefalse') {
@@ -2276,7 +2276,7 @@
       }
 
       if (screen === 'question' && currentQuestion) {
-        const typeLabel = { written: '✍️ Kirjuta', fillin: '📝 Lünk', choice: '🔘 Vali', identify: '🔍 Tuvasta', truefalse: '⚖️ Tõene/väär', sorting: '🔢 Järjesta' };
+        const typeLabel = { written: '✍️ Kirjuta', fillin: '📝 Lünk', choice: '🔘 Vali', identify: '🔍 Tuvasta', truefalse: '⚖️ Tõene/väär', sorting: '🔢 Järjesta', matching: '🔗 Ühenda' };
 
         const handleSortClick = (idx) => {
           if (showResult) return;
