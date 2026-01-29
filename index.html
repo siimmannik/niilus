@@ -223,7 +223,7 @@
     const images = {
       nile: { url: "images/nile.png", emoji: "🌊" },
       delta: { url: "images/delta.png", emoji: "🔺" },
-      egypt_map: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Egypt_Topography.png/200px-Egypt_Topography.png", emoji: "🗺️" },
+      egypt_map: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Egypt_Topography.png/1024px-Egypt_Topography.png", emoji: "🗺️" },
       giza: { url: "images/giza.png", emoji: "🔺" },
       sphinx: { url: "images/sphinx.png", emoji: "🦁" },
       step_pyramid: { url: "images/step_pyramid.png", emoji: "📐" },
@@ -2344,10 +2344,15 @@
 
                 <div className="bg-amber-50 p-6 flex justify-center items-center min-h-[200px] relative">
                   <div className="absolute inset-0 bg-cream-paper opacity-20"></div>
-                  {(currentQuestion.displayImage || currentQuestion.image) && (
+                  {currentQuestion.type !== 'hotspot' && (currentQuestion.displayImage || currentQuestion.image) && (
                     <div className="relative group transition-transform duration-500 hover:scale-105 max-h-[180px]">
                       <div className="absolute inset-0 bg-amber-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
                       <QuestionImage imageData={currentQuestion.displayImage || currentQuestion.image} large={true} />
+                    </div>
+                  )}
+                  {currentQuestion.type === 'hotspot' && (
+                    <div className="text-4xl text-amber-900/20 font-black uppercase tracking-widest animate-pulse">
+                      Vaata kaarti allpool ⬇️
                     </div>
                   )}
                 </div>
@@ -2489,7 +2494,7 @@
                       )}
 
                       {currentQuestion.type === 'hotspot' && (
-                        <div className="relative cursor-crosshair group overflow-hidden rounded-3xl border-4 border-amber-100"
+                        <div className="relative cursor-crosshair group overflow-hidden rounded-[32px] border-4 border-amber-200 bg-amber-100 min-h-[300px] flex items-center justify-center shadow-inner"
                           onClick={(e) => {
                             const rect = e.currentTarget.getBoundingClientRect();
                             const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -2497,15 +2502,23 @@
                             playSound('click');
                             setHotspotClick({ x, y });
                           }}>
-                          <img src={(currentQuestion.displayImage || currentQuestion.image).url} className="w-full h-auto block" />
+                          <img
+                            src={(currentQuestion.displayImage || currentQuestion.image).url}
+                            className="w-full h-auto block"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.parentElement.innerHTML += '<div class="text-9xl animate-bounce">🗺️</div><div class="absolute bottom-4 text-amber-900/40 font-bold uppercase tracking-widest text-xs">Pilti ei leitud, aga kliki siin!</div>';
+                            }}
+                          />
                           {hotspotClick && (
-                            <div className="absolute w-8 h-8 -ml-4 -mt-4 flex items-center justify-center animate-ping"
+                            <div className="absolute w-12 h-12 -ml-6 -mt-6 flex items-center justify-center z-20"
                               style={{ left: `${hotspotClick.x}%`, top: `${hotspotClick.y}%` }}>
-                              <span className="text-3xl filter drop-shadow-lg">𓂀</span>
+                              <div className="absolute inset-0 bg-amber-500 rounded-full animate-ping opacity-50"></div>
+                              <span className="text-4xl filter drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]">𓂀</span>
                             </div>
                           )}
-                          <div className="absolute bottom-2 left-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            Kliki õigel kohal pildil!
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white text-xs font-bold text-center opacity-100 transition-opacity">
+                            Kliki õigel kohal kaardil!
                           </div>
                         </div>
                       )}
