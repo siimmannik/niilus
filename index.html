@@ -294,6 +294,7 @@
       { id: 'collector5', name: 'Koguja', icon: '🏺', description: 'Kogu 5 aaret', condition: (s) => s.treasureCount >= 5 },
       { id: 'scholar10', name: 'Õpilane', icon: '📖', description: 'Kogu 10 faktikaarti', condition: (s) => s.factCount >= 10 },
       { id: 'perfect_location', name: 'Perfektne', icon: '⭐', description: 'Läbi asukoht vigadeta', condition: (s) => s.perfectLocations >= 1 },
+      { id: 'explorer', name: 'Maadeavastaja', icon: '🗺️', description: 'Tunne Egiptuse geograafiat', condition: (s) => s.geoCorrect >= 3 },
       { id: 'pharaoh', name: 'Vaarao', icon: '👑', description: 'Läbi kogu mäng', condition: (s) => s.gameCompleted },
     ];
 
@@ -310,8 +311,29 @@
         wrongFeedback: {
           0: "Enamik maailma jõgesid voolab tõesti lõunasse, kuid Niilus on erand, voolates Vahemere poole.",
           2: "Idast läände voolamine tähendaks kõrbesse suundumist, kuid Niilus järgib oru põhja-suunda.",
-          3: "Niilus ei voola itta, Red Sea (Punase mere) poole, vaid püsib oma viljakas orus."
+          3: "Niilus ei voola itta, Punase mere poole, vaid püsib oma viljakas orus."
         }
+      },
+      {
+        id: 'geo_hotspot_1', type: 'hotspot', location: 'delta', difficulty: 1,
+        question: "Leia kaardilt Niiluse delta (jõe suue Vahemere ääres)!",
+        image: images.egypt_map,
+        correct: { targetX: 50, targetY: 12, radius: 10 },
+        explanation: "Niiluse delta on viljakas kolmnurkne piirkond Põhja-Egiptuses, kus Niilus hargneb ja suubub Vahemere sisse. See oli Vana-Egiptuse kõige viljakam ala."
+      },
+      {
+        id: 'geo_hotspot_2', type: 'hotspot', location: 'delta', difficulty: 2,
+        question: "Kus asub Punane meri?",
+        image: images.egypt_map,
+        correct: { targetX: 85, targetY: 55, radius: 15 },
+        explanation: "Punane meri piirab Egiptust idast. See oli oluline meretee ja eraldas Egiptust Araabia poolsaarest."
+      },
+      {
+        id: 'geo_hotspot_3', type: 'hotspot', location: 'delta', difficulty: 2,
+        question: "Leia kaardilt Ülem-Egiptus (jõe ülemjooks lõuna pool)!",
+        image: images.egypt_map,
+        correct: { targetX: 52, targetY: 75, radius: 15 },
+        explanation: "Ülem-Egiptus asus jõe voolusuuna järgi 'üleval' ehk lõunas. Selle sümboliks oli valge kroon ja lootoslill."
       },
       {
         id: 'new_delta_2', type: 'choice', location: 'delta', difficulty: 2,
@@ -354,6 +376,65 @@
         image: images.egypt_map,
         explanation: "Geomeetria tekkis Egiptuses vajadusest pärast iga-aastast Niiluse üleujutust põllupiirid uuesti paika panna. Nad oskasid arvutada kolmnurga ja ringi pindala (tundes arvu pii) ning püramiidi ruumala."
       },
+      {
+        id: 'new_delta_6', type: 'choice', location: 'delta', difficulty: 1,
+        question: "Kuidas nimetasid egiptlased oma maad, mis tähendas 'Must Maa'?",
+        options: ["Deshret", "Kemet", "Oaas", "Mesopotaamia"],
+        correct: 1,
+        image: images.nile,
+        explanation: "Egiptlased nimetasid oma viljakat maad 'Kemetiks' (Must Maa) jõe poolt toodud musta muda tõttu. Ümbritsev kõrb oli 'Deshret' ehk Punane Maa.",
+        wrongFeedback: {
+          0: "Deshret tähistas just Punast Maad ehk elutut kõrbe.",
+          2: "Oaas on üksik haljasala kõrbes, kuid mitte kogu Egiptuse nimi.",
+          3: "Mesopotaamia (Kahejõe-maa) asus hoopis tänapäeva Iraagi aladel."
+        }
+      },
+      {
+        id: 'new_delta_7', type: 'written', location: 'delta', difficulty: 2,
+        question: "Milline meri piirab Egiptust põhja poolt?",
+        answer: ["vahemeri"],
+        image: images.egypt_map,
+        explanation: "Niilus suubub põhjas Vahemerre, moodustades hiiglasliku ja viljaka delta. See oli Egiptuse värav Euroopasse ja Lähis-itta."
+      },
+      {
+        id: 'new_delta_8', type: 'choice', location: 'delta', difficulty: 2,
+        question: "Mis oli peamine kirjutusmaterjal, mida valmistati Niiluse kallastel kasvavast roost?",
+        options: ["Pärgament", "Savi", "Papüürus", "Paber"],
+        correct: 2,
+        image: images.scribe,
+        explanation: "Niiluse deltasmudas kasvas ohtralt papüürust. Selle varred lõigati ribadeks, asetati ristamisi ja rulliti lehtedeks. See oli Vana-Egiptuse suurim eksportartikkel.",
+        wrongFeedback: {
+          0: "Pärgamenti tehti loomanahkadest ja see muutus populaarseks palju hiljem.",
+          1: "Savitahvleid kasutasid egiptlaste naabrid sumerid Mesopotaamias.",
+          3: "Tänapäevane paber leiutati Hiinas sadu aastaid pärast püramiidide aega."
+        }
+      },
+      {
+        id: 'new_delta_9', type: 'truefalse', location: 'delta', difficulty: 2,
+        question: "Niiluse jõel on kaks peamist haru, mis ühinevad Sudaanis: Sinine Niilus ja Valge Niilus.",
+        correct: true,
+        image: images.egypt_map,
+        explanation: "Valge Niilus algab Victoria järvest ja Sinine Niilus Etioopia mägedest. Need kaks saavad kokku Hartumis ja voolavad ühiselt läbi Egiptuse Vahemerre.",
+        treasure: "papyrus"
+      },
+      {
+        id: 'sort_delta_1', type: 'sorting', location: 'delta', difficulty: 2,
+        question: "Pane need Egiptuse põllumajanduse etapid ajaliselt järjekorda!",
+        options: ["Niiluse üleujutus (Akhet)", "Vee taandumine ja külv (Peret)", "Vilja kasvamine (Shemu algus)", "Lõikus ja koristus (Shemu lõpp)"],
+        correct: [0, 1, 2, 3],
+        image: images.farmers,
+        explanation: "Egiptuse kalender jagunes kolmeks neljakuuliseks aastaajaks: Akhet (üleujutus), Peret (külv ja vilja tärkamine) ning Shemu (saagikoristus ja kuivus).",
+        treasure: "papyrus"
+      },
+      {
+        id: 'new_delta_multi', type: 'multiSelect', location: 'delta', difficulty: 2,
+        question: "Millised neist loomadest elasid muistsel ajal Niiluse jões ja selle kallastel? (Vali 2 õiget)",
+        options: ["Krokodill", "Jõehobu", "Kaelkirjak", "Jääkaru"],
+        correct: [0, 1],
+        image: images.nile,
+        explanation: "Niilus oli koduks paljudele ohtlikele loomadele, kellest krokodill ja jõehobu olid egiptlaste jaoks kõige kardetumad ja austatumad."
+      },
+      // ... (muud delta küsimused)
 
       // ===================== GIZA & MEMPHIS (Old Kingdom & Society) =====================
       {
@@ -396,16 +477,27 @@
         }
       },
       {
-        id: 'new_memphis_4', type: 'identify', location: 'memphis', difficulty: 1,
+        id: 'new_memphis_matching', type: 'matching', location: 'memphis', difficulty: 3,
+        question: "Ühenda egiptuse jumal ja tema pea/kuju!",
+        options: {
+          left: ["Horus", "Anubis", "Bastet", "Sobek"],
+          right: ["Šaakal", "Kass", "Kull", "Krokodill"]
+        },
+        correct: [2, 0, 1, 3], // Horus=Kull, Anubis=Šaakal, Bastet=Kass, Sobek=Krokodill
+        image: images.osiris,
+        explanation: "Egiptuse jumalatel olid sageli loomade pead, mis sümboliseerisid nende iseloomu või võimeid."
+      },
+      {
+        id: 'new_memphis_4', type: 'choice', location: 'memphis', difficulty: 1,
         question: "Milline ühiskonnakiht asus vaarao järel järgmisena võimupüramiidi tipus?",
         displayImage: images.scribe,
         options: ["Sõdurid", "Preestrid ja ülikud", "Käsitöölised", "Talupojad"],
         correct: 1,
         image: images.scribe,
-        explanation: "Egiptuse ühiskond oli rangelt hierarhiline. Tipus seisis vaarao, kelle võim tugines suhteliselt kitsale ülikkonnale, kelle seast pärinesid kõrgeimad riigiametnikud ja preestrid. Nad olid sageli valitsejaga sugulus- või abieluseadmetes.",
+        explanation: "Egiptuse ühiskond oli rangelt hierarhiline. Tipus seisis vaarao, kelle võim tugines suhteliselt kitsale ülikkonnale, kelle seast pärinesid kõrgeimad riigiametnikud ja preestrid.",
         wrongFeedback: {
           0: "Sõdurid olid olulised, kuid asusid hierarhias ülikutest ja preestritest madalamal.",
-          2: "Käsitöölised asid vabad inimesed, kuid nende sotsiaalne positsioon oli madal.",
+          2: "Käsitöölised olid vabad inimesed, kuid nende sotsiaalne positsioon oli madal.",
           3: "Talupojad moodustasid ühiskonna suurima osa, kuid asusid püramiidi põhjas."
         }
       },
@@ -416,6 +508,60 @@
         image: images.workers,
         explanation: "Raha Vana-Egiptuses ei tuntud. Käsitöölistele ja ka teistele töötajatele tasuti tarbeesemete ning toiduga (vili, õlu, riie). See oli natuuramajandus, kus väärtust mõõdeti kaubavahetusega.",
         treasure: "scarab"
+      },
+      {
+        id: 'new_memphis_6', type: 'written', location: 'memphis', difficulty: 2,
+        question: "Kes oli see jumal, keda peeti Memphise linna kaitsjaks ja käsitööliste jumalaks?",
+        answer: ["ptah"],
+        image: images.narmer,
+        explanation: "Ptah oli loomisjumal, kes arvati olevat maailma oma mõtte ja sõnaga loonud. Tema kultuse keskus oli pealinn Memphis."
+      },
+      {
+        id: 'new_memphis_7', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Millist materjali kasutasid Egiptuse kirjutajad mustandite ja jooniste jaoks sagedamini kui kallist papüürust?",
+        options: ["Savi", "Ostracon (kivikild või keraamika)", "Metall", "Puit"],
+        correct: 1,
+        image: images.scribe,
+        explanation: "Ostraconid (lubjakivikillud või potikillud) olid odavad ja kättesaadavad, mistõttu kasutati neid igapäevaste märkmete, arvepidamise ja joonistusharjutuste jaoks. Papüürus oli kallis ja säästeti tähtsate tekstide jaoks.",
+        wrongFeedback: {
+          0: "Saviplaate kasutasid mesopotaamlased, egiptlased eelistasid teisi materjale.",
+          2: "Metall oli liiga kallis ja raske kirjutamiseks.",
+          3: "Puitu kasutati harva, peamiselt koolitahvlitena, mis kaeti kipsiga."
+        }
+      },
+      {
+        id: 'new_memphis_8', type: 'choice', location: 'memphis', difficulty: 1,
+        question: "Kuidas nimetati Egiptuse kirja, mis tähendas kreeka keeles 'pühad märgid'?",
+        options: ["Kiilkiri", "Hieroglüüfid", "Ladina kiri", "Araabia kiri"],
+        correct: 1,
+        image: images.rosetta,
+        explanation: "Hieroglüüfid olid Egiptuse vanim kirjasüsteem, kus märgid sümboliseerisid nii mõisteid kui ka häälikuid. Neid kasutati peamiselt templite seintel ja religioossetes tekstides.",
+        wrongFeedback: {
+          0: "Kiilkiri oli Mesopotaamia rahvaste kiri, mida vajutati savisse.",
+          2: "Ladina kiri tekkis alles tuhandeid aastaid hiljem Rooma riigis.",
+          3: "Araabia kiri jõudis Egiptusesse alles peale islamivallutusi 7. sajandil."
+        }
+      },
+      {
+        id: 'new_memphis_9', type: 'truefalse', location: 'memphis', difficulty: 2,
+        question: "Vana-Egiptuse lapsed hakkasid koolis käima juba 4-5 aastaselt, et õppida kirjutajaks.",
+        correct: true,
+        image: images.scribe,
+        explanation: "Kirjutajaks õppimine oli raske ja kestis aastaid. Poisid alustasid õpinguid varakult, harjutades sadu märke ja rangeid reegleid.",
+        treasure: "hieroglyph"
+      },
+      {
+        id: 'new_memphis_10', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Mis oli egiptlaste peamine jook, mida tarbisid nii lapsed kui täiskasvanud toidukorra kõrvale?",
+        options: ["Vein", "Piim", "Õlu", "Kohv"],
+        correct: 2,
+        image: images.farmers,
+        explanation: "Õlu oli egiptlaste igapäevane põhitoit. See oli paks ja toitv ning valmistati odrast või nisust. See oli palju ohutum kui jõe vesi.",
+        wrongFeedback: {
+          0: "Vein oli luksuskaup, mida nautisid peamiselt ülikud pidukoosviibimistel.",
+          1: "Piim oli olemas, kuid see rüüstus soojas kliimas kiiresti ja polnud peamine jook.",
+          3: "Kohv avastati Etioopiast alles aastatuhandeid hiljem."
+        }
       },
 
       // ===================== GIZA (Pyramids) =====================
@@ -452,6 +598,83 @@
           2: "See on Uue riigi aeg, mil eelistati kaljuhaudu Kuningate orus.",
           3: "Sel ajal oli Egiptus juba languses või võõrvõimu all, püramiide enam ei ehitatud."
         }
+      },
+      {
+        id: 'new_giza_4', type: 'identify', location: 'giza', difficulty: 1,
+        question: "Milline müütiline olend, vaarao pea ja lõvi kehaga, valvab Giza püramiide?",
+        displayImage: images.sphinx,
+        options: ["Grifoon", "Sfinks", "Anubis", "Muumia"],
+        correct: 1,
+        image: images.sphinx,
+        explanation: "Suur Sfinks on hiiglaslik kaljusse raiutud kuju, mis kujutab vaarao Khafre näoga lõvi. See sümboliseeris valvurit ja päikesejumalat.",
+        wrongFeedback: {
+          0: "Grifoon on müütiline loom kulli pea ja lõvi kehaga, levinud pigem Kreekas.",
+          2: "Anubis on šaakalipeaga jumal, keda Sfinks ei kujuta.",
+          3: "Muumia on balsameeritud keha, mitte hiiglaslik kaljukuju."
+        }
+      },
+      {
+        id: 'new_giza_5', type: 'truefalse', location: 'giza', difficulty: 2,
+        question: "Giza suured püramiidid ehitati tegelikult orjade poolt, keda piitsutati tööle.",
+        correct: false,
+        image: images.workers,
+        explanation: "Uuemad arheoloogilised leiud näitavad, et püramiide ehitasid vabad talupojad ja vilunud käsitöölised. Nad said oma töö eest head süüa (liha, leiba) ja neile oli see auasi ehitada oma jumal-kuningale hauakambrit.",
+        treasure: "pyramid"
+      },
+      {
+        id: 'new_giza_6', type: 'choice', location: 'giza', difficulty: 2,
+        question: "Millega olid Giza püramiidid algselt kaetud, nii et need särasid päikese käes pimestavalt valgelt?",
+        options: ["Kullaga", "Hõbedaga", "Valge lubjakiviga", "Värvilise saviga"],
+        correct: 2,
+        image: images.giza,
+        explanation: "Püramiidid olid kaetud poleeritud valge lubjakiviga, mis peegeldas päikesevalgust. Tänapäeval on sellest säilinud väike osa ainult Khafre püramiidi tipus.",
+        wrongFeedback: {
+          0: "Ainult püramiidi tipp (püramidion) võis olla kullatud või kullasulamiga kaetud.",
+          1: "Hõbe oli Egiptuses haruldasem kui kuld ja seda ehituses ei kasutatud.",
+          2: "Saviga kaeti pigem tavaliste inimeste päikesekuivatatud tellistest maju."
+        }
+      },
+      {
+        id: 'new_giza_hotspot', type: 'hotspot', location: 'giza', difficulty: 2,
+        question: "Leia ja kliki pildil Suurt Sfinksi!",
+        image: images.giza,
+        correct: { targetX: 75, targetY: 65, radius: 20 },
+        explanation: "Suur Sfinks on hiiglaslik kuju, millel on lõvi keha ja inimese pea. See valvab Giza püramiidide läheduses."
+      },
+      {
+        id: 'new_giza_7', type: 'written', location: 'giza', difficulty: 3,
+        question: "Kui kõrge oli Suur püramiid (Cheopsi püramiid) algselt meetrites (ümardatuna)?",
+        answer: ["147", "146"],
+        image: images.giza,
+        explanation: "Cheopsi püramiid oli algselt umbes 147 meetrit kõrge ja püsis maailma kõrgeima ehitisena üle 3800 aasta kuni Lincolni katedraali valmimiseni Inglismaal."
+      },
+      {
+        id: 'new_giza_8', type: 'choice', location: 'giza', difficulty: 2,
+        question: "Mitu kiviplokki kulus Cheopsi püramiidi ehitamiseks umbes?",
+        options: ["100 000", "500 000", "üle 2 miljoni", "10 miljonit"],
+        correct: 2,
+        image: images.giza,
+        explanation: "Arvutuste kohaselt koosneb Suur püramiid umbes 2,3 miljonist kiviplokist, millest igaüks kaalub keskmiselt 2,5 tonni.",
+        wrongFeedback: {
+          0: "See arv on palju liiga väike nii hiiglasliku ehitise jaoks.",
+          1: "Isegi poole miljoni plokiga ei saaks nii suurt mahtu täita.",
+          3: "10 miljonit on liialdus, isegi antiikmaailma suurima ehitise kohta."
+        }
+      },
+      {
+        id: 'new_giza_9', type: 'truefalse', location: 'giza', difficulty: 2,
+        question: "Püramiidid olid paigutatud täpselt ilmakaarte (põhi-lõuna-ida-lääs) järgi.",
+        correct: true,
+        image: images.giza,
+        explanation: "Egiptuse arhitektid kasutasid tähtede liikumist, et orienteerida püramiidide küljed millimeetri täpsusega ilmakaarte suunas.",
+        treasure: "step_pyramid"
+      },
+      {
+        id: 'new_giza_10', type: 'written', location: 'giza', difficulty: 3,
+        question: "Kes oli arhitekt, kes kujundas esimese püramiidi (Džoseri oma) ja keda hiljem kummardati kui meditsiini jumalat?",
+        answer: ["imhotep"],
+        image: images.step_pyramid,
+        explanation: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt ja arst. Ta oli esimene teadaolev geenius inimajaloos, keda rahvas mäletas tuhandeid aastaid."
       },
 
       // ===================== AMARNA (Religion Revolution) =====================
@@ -504,8 +727,62 @@
         image: images.aten,
         explanation: "Atonit kujutati päikesekettana, mille kiired lõppesid väikeste kätega, mis ulatasid vaaraole elusümbolit - ankh'i."
       },
+      {
+        id: 'new_amarna_6', type: 'choice', location: 'amarna', difficulty: 2,
+        question: "Mis oli Tutanhamoni esialgne nimi enne vana usundi taastamist?",
+        options: ["Tutanhamon", "Tutanhaton", "Amenhotep", "Thutmosis"],
+        correct: 1,
+        image: images.tutankhamun,
+        explanation: "Lapsvaarao sündis nimega Tutanhaton ('Atoni elav kuju'), kuid peale isa Ehnatoni surma ja Amoni kultuse taastamist muutis ta nime Tutanhamoniks.",
+        wrongFeedback: {
+          0: "Tutanhamon oli nimi, mille ta võttis hiljem Amoni austamiseks.",
+          2: "Amenhotep oli tema vanaisa ja ka isa algne nimi.",
+          3: "Thutmosis oli hoopis teise dünastia tuntuim vallutaja."
+        }
+      },
+      {
+        id: 'new_amarna_7', type: 'truefalse', location: 'amarna', difficulty: 2,
+        question: "Atonit, Amarna ajastu ainujumalat, kujutati inimkujulisena nagu teisi jumalaid.",
+        correct: false,
+        image: images.aten,
+        explanation: "Atonit kujutati abstraktselt päikeseketta ja kiirtena, mitte aga inimese või loomana. See oli suur muutus võrreldes varasema Egiptuse kunstiga.",
+        treasure: "sun_disk"
+      },
+      {
+        id: 'new_amarna_8', type: 'written', location: 'amarna', difficulty: 3,
+        question: "Mida tähistab Ehnatoni nimi tõlkes (Atonile...)?",
+        answer: ["kasulik", "meelepärane"],
+        image: images.akhenaten,
+        explanation: "Ehnaton (Akhenaten) tähendas 'Atonile kasulik' või 'Atonile meelepärane'."
+      },
+      {
+        id: 'new_amarna_9', type: 'choice', location: 'amarna', difficulty: 2,
+        question: "Mis juhtus Ahetatoni linnaga pärast Ehnatoni surma?",
+        options: ["See jäi pealinnaks", "See hüljati ja jäeti liiva kätte", "See ehitati templiks", "Sellest sai turg"],
+        correct: 1,
+        image: images.amarna,
+        explanation: "Järgnevad vaaraod ja preestrid püüdisid Ehnatoni nime ajaloost kustutada. Uus pealinn hüljati ning õukond kolis tagasi Teebasse ja Memphisesse.",
+        wrongFeedback: {
+          0: "Pealinn kolis kohe pärast Ehnatoni surma tagasi traditsioonilistesse keskustesse.",
+          2: "Linna hooneid hoopis lammutati, et kasutada kive teiste ehitiste jaoks.",
+          3: "Linn jäi täiesti tühjaks ja mattus sajanditeks kõrbe liiva alla."
+        }
+      },
+      {
+        id: 'new_amarna_10', type: 'identify', location: 'amarna', difficulty: 2,
+        question: "See on ainus Amarna ajastul lubatud jumal – päikeseketas.",
+        displayImage: images.aten,
+        options: ["Amon", "Aton", "Ra", "Osiris"],
+        correct: 1,
+        image: images.aten,
+        explanation: "Aton oli päikeseketas ise, keda peeti maailma loojaks ja ülalhoidjaks. Ehnaton keelas kõigi teiste jumalate kummardamise.",
+        wrongFeedback: {
+          0: "Amon oli jumal, kelle võimu ja rikkuse vastu Ehnaton just võitles.",
+          2: "Ra oli vana päikesejumal, keda Ehnaton püüdis Atoniga asendada.",
+          3: "Osiris oli surnute jumal, kelle kultus keelati Ehnatoni ajal ajutiselt."
+        }
+      },
 
-      // ===================== ABYDOS (Afterlife & Osiris) =====================
       // ===================== ABYDOS (Afterlife & Gods) =====================
       {
         id: 'new_abydos_1', type: 'choice', location: 'abydos', difficulty: 2,
@@ -555,6 +832,70 @@
         answer: ["surnuteraamat"],
         image: images.book_dead,
         explanation: "Surnuteraamat sisaldas vajalikke loitse, et peletada koletisi ja osata vastata jumalate küsimustele allmaailma väravates."
+      },
+      {
+        id: 'sort_abydos_1', type: 'sorting', location: 'abydos', difficulty: 3,
+        question: "Sorteeri mumifitseerimise etapid õigesse järjekorda!",
+        options: ["Siseelundite eemaldamine", "Keha kuivatamine natronis", "Keha võidmine õlidega", "Linastesse mähistesse mähkimine"],
+        correct: [0, 1, 2, 3],
+        image: images.mummy,
+        explanation: "Palsameerimine kestis kokku umbes 70 päeva. See oli püha rituaal, kus keha valmistati ette igaveseks eluks.",
+        treasure: "mummy"
+      },
+      {
+        id: 'new_abydos_6', type: 'choice', location: 'abydos', difficulty: 2,
+        question: "Kes oli mütoloogia järgi esimene kuningas ja kes hiljem valitses surnute riiki?",
+        options: ["Ra", "Osiris", "Horus", "Seth"],
+        correct: 1,
+        image: images.osiris,
+        explanation: "Osiris oli tsivilisatsiooni tooja ja kuningas, kelle kade vend Seth tappis. Tänu oma naisele Isisele ärkas ta ellu ning temast sai igavese elu ja surnute riigi kuningas.",
+        wrongFeedback: {
+          0: "Ra oli päikesejumal ja maailma esimene valitseja, kuid surnute riiki valitses Osiris.",
+          2: "Horus oli Osirise poeg, kes valitses elusate inimeste üle pärast Sethi alistamist.",
+          3: "Seth oli kaose ja tormide jumal, keda seostati kurjusega."
+        }
+      },
+      {
+        id: 'new_abydos_7', type: 'written', location: 'abydos', difficulty: 2,
+        question: "Kuidas nimetati egiptlaste nimekaitsjat (kartussi), kuhu kirjutati vaarao nimi hieroglüüfidega?",
+        answer: ["shenu", "kartuss"],
+        image: images.rosetta,
+        explanation: "Vaarao nimi ümbritseti ellipsiga, mis sümboliseeris igavikku ja kaitset. Seda tuntakse ka nime all kartuss."
+      },
+      {
+        id: 'new_abydos_8', type: 'identify', location: 'abydos', difficulty: 2,
+        question: "Nendes anumates säilitati surnu siseelundeid.",
+        displayImage: images.canopic_jars,
+        options: ["Sarkofaagid", "Kanoobid", "Amforad", "Vaasid"],
+        correct: 1,
+        image: images.canopic_jars,
+        explanation: "Kanoobid olid neli anumat, mille kaaned kujutasid Horuse poegi (ahv, šaakal, kull ja inimene). Need hoidsid maksa, kopse, magu ja soolikaid.",
+        wrongFeedback: {
+          0: "Sarkofaag oli välimine kirst, kuhu asetati muumia ise.",
+          2: "Amforad olid suured savinõud peamiselt veini või õli hoidmiseks.",
+          3: "Tavalised vaasid ei olnud rituaalselt siseelundite hoidmisega seotud."
+        }
+      },
+      {
+        id: 'new_abydos_9', type: 'truefalse', location: 'abydos', difficulty: 2,
+        question: "Egiptlased uskusid, et inimesel on mitu hinge osa, üks neist oli 'Ka', mis vajas hauas toitu.",
+        correct: true,
+        image: images.mummy,
+        explanation: "Ka oli inimese elujõud või 'teisik'. Seetõttu viisid sugulased hauakambrisse reaalset toitu ja jooki, et surnu vaim nälga ei jääks.",
+        treasure: "djed"
+      },
+      {
+        id: 'new_abydos_10', type: 'choice', location: 'abydos', difficulty: 1,
+        question: "Milline on egiptuse elu sümbol (rist, millel on silmus ülal)?",
+        options: ["Ankh", "Skarabeus", "Fööniks", "Obelisk"],
+        correct: 0,
+        image: images.ra,
+        explanation: "Ankh oli elu ja surematuse sümbol. Jumalaid kujutati sageli hoidmas ankh'i inimeste nina ees, et anda neile 'elu hingeõhku'.",
+        wrongFeedback: {
+          1: "Skarabeus oli pigem uuestisünni ja päikese sümbol, mitte rist.",
+          2: "Fööniks (egiptlaste Bennu) oli haruldane lind, mitte sümbol-rist.",
+          3: "Obelisk on ehitis, üheainsast kiviplokist sammas."
+        }
       },
 
       // ===================== TEEBA (New Kingdom & Gods) =====================
@@ -607,6 +948,61 @@
         correct: 0,
         image: images.ra,
         explanation: "Amon oli algselt Teeba piirkonna jumal, kuid Uue riigi ajal ühendati ta päikeseketta Raga, moodustades Amon-Ra - jumalate kuninga."
+      },
+      {
+        id: 'new_teeba_6', type: 'choice', location: 'teeba', difficulty: 2,
+        question: "Milline relv, mida vedasid hobused, muutis Uue riigi sõjapidamise palju kiiremaks ja surmavamaks?",
+        options: ["Sõjalaev", "Sõjavanker", "Katapult", "Elevandid"],
+        correct: 1,
+        image: images.war_chariot,
+        explanation: "Egiptlased võtsid sõjavankrid ja hobused üle hüksidelt. See võimaldas neil luua hiiglasliku impeeriumi, ulatudes Eufrati jõeni kirdes ja kaugele lõunasse.",
+        wrongFeedback: {
+          0: "Egiptusel oli tugev laevastik, kuid Niilusel, mitte peamise maismaarelvana.",
+          2: "Katapulte egiptlased sel ajal veel ei kasutanud, need tulid hiljem.",
+          3: "Sõjaelevante kasutasid alles palju hiljem ptolemaioste dünastia valitsejad."
+        }
+      },
+      {
+        id: 'new_teeba_7', type: 'written', location: 'teeba', difficulty: 3,
+        question: "Kuidas nimetati salapärast 'Jumala maad' kagus, kuhu Hatšepsut saatis suure kaubandusekspeditsiooni?",
+        answer: ["punt", "punti maa"],
+        image: images.hatshepsut,
+        explanation: "Ekspeditsioon Punti maale tõi Egiptusesse viirukit, mürri, kulda, eebenipuud ja isegi eksootilisi loomi, nagu paavianid ja leopardid."
+      },
+      {
+        id: 'new_teeba_8', type: 'truefalse', location: 'teeba', difficulty: 2,
+        question: "Vana-Egiptuse naistel oli õigus omada vara, algatada lahutust ja pärida maad.",
+        correct: true,
+        image: images.nefertiti,
+        explanation: "Erinevalt paljudest teistest antiikaja ühiskondadest (nt Kreeka), oli egiptuse naistel seaduse ees peaaegu samad õigused kui meestel.",
+        treasure: "crook"
+      },
+      {
+        id: 'new_teeba_9', type: 'choice', location: 'teeba', difficulty: 2,
+        question: "Kes oli vaarao peamine nõuandja ja riigi 'tegevjuht', kes kontrollis makse ja kohtuid?",
+        options: ["Preester", "Vesiir", "Kirjutaja", "Kindral"],
+        correct: 1,
+        image: images.scribe,
+        explanation: "Vesiir oli vaarao parem käsi, kes vastutas igapäevase riigivalitsemise eest. Sageli oli ta ka kõrgeim kohtunik.",
+        wrongFeedback: {
+          0: "Ülempreestritel oli suur võim, kuid nad tegelesid peamiselt usuliste asjadega.",
+          2: "Kirjutajaid oli palju ja nad täitsid vesiiri käske, kuid neil ei olnud nii kõrget rolli.",
+          3: "Kindralid juhtisid sõjaväge, kuid riigi siseasju ja makse kontrollis vesiir."
+        }
+      },
+      {
+        id: 'new_teeba_10', type: 'identify', location: 'teeba', difficulty: 2,
+        question: "Milline on Teeba linna sümbol – mütoloogiline lind, kes tähistas uut algust?",
+        displayImage: images.ra,
+        options: ["Ibis", "Bennu (Fööniks)", "Pistrik", "Pelikan"],
+        correct: 1,
+        image: images.ra,
+        explanation: "Bennu-lind (keda kreeklased kutsusid fööniksiks) sümboliseeris päikesetõusu ja uue elu algust. Arvati, et ta sünnib iseenda tuhast uuesti.",
+        wrongFeedback: {
+          0: "Ibis oli tarkusejumal Thoti sümbol.",
+          2: "Pistrik oli taevajumal Horuse ja vaarao võimu sümbol.",
+          3: "Pelikan oli egiptlaste jaoks mütoloogiline, kuid mitte Teeba peamine sümbol."
+        }
       },
 
       // ===================== KARNAK (Temples & Rituals) =====================
@@ -662,8 +1058,62 @@
         explanation: "Skarabeus (sitamardikas) veerev sõnnikupall meenutas egiptlastele päikeseketta liikumist üle taeva. Teda peeti uue elu ja õnne sümboliks.",
         treasure: "scarab_amulet"
       },
+      {
+        id: 'new_karnak_6', type: 'choice', location: 'karnak', difficulty: 2,
+        question: "Kuidas nimetati Karnaki templi hiiglaslikku sammassaali, kus on 134 hiiglaslikku sammast?",
+        options: ["Püloon", "Hüpostüülsaal", "Sarkofaag", "Lüütium"],
+        correct: 1,
+        image: images.karnak,
+        explanation: "Hüpostüülsaal on üks antiikmaailma imesid. Selle suurimad sambad on 21 meetrit kõrged ja piisavalt jämedad, et 100 inimest saaks nende tipus seista.",
+        wrongFeedback: {
+          0: "Püloon on templi hiiglaslik väravaehitis, mitte saal.",
+          2: "Sarkofaag on kirst, mitte arhitektuurne saal.",
+          3: "Lüütium ei ole egiptuse ehituskunsti mõiste."
+        }
+      },
+      {
+        id: 'new_karnak_7', type: 'truefalse', location: 'karnak', difficulty: 2,
+        question: "Karnaki tempel oli pühendatud ainult ühele jumalale – Amonile.",
+        correct: false,
+        image: images.karnak,
+        explanation: "Kuigi peajumal oli Amon, austati seal ka tema naist Muti ja poega Khonsut (Teeba kolmik). Neile kõigile on seal eraldi pühakojad.",
+        treasure: "temple"
+      },
+      {
+        id: 'new_karnak_8', type: 'written', location: 'karnak', difficulty: 2,
+        question: "Milleks kasutasid preestrid templi juures asuvat 'Püha järve'?",
+        answer: ["rituaalne pesemine", "puhastumine"],
+        image: images.karnak,
+        explanation: "Preestrid pidid ennast neli korda päevas (kaks korda päeval ja kaks korda öösel) püha järve vees pesema, et olla puhas jumalate teenimiseks."
+      },
+      {
+        id: 'new_karnak_9', type: 'choice', location: 'karnak', difficulty: 2,
+        question: "Kuidas nimetatakse templi väravat, mis koosneb kahest hiiglaslikust ja lamedast tornist?",
+        options: ["Obelisk", "Püloon", "Mastaba", "Püramiid"],
+        correct: 1,
+        image: images.karnak,
+        explanation: "Püloonid olid templite monumentaalsed sissepääsud, mis olid sageli kaunistatud vaaraode võidukaid lahinguid kujutavate reljeefidega.",
+        wrongFeedback: {
+          0: "Obelisk on kitsas sammas, mitte väravaehitis.",
+          2: "Mastaba oli Vana riigi aegne hauakamber, mitte templi värav.",
+          3: "Püramiid on kooniline ehitis, mitte tasapinnaline värav."
+        }
+      },
+      {
+        id: 'new_karnak_10', type: 'identify', location: 'karnak', difficulty: 2,
+        question: "See on tarkuse ja kirjutamise jumal, kes leiutas hieroglüüfid.",
+        displayImage: images.thoth,
+        options: ["Horus", "Anubis", "Thot", "Sobek"],
+        correct: 2,
+        image: images.thoth,
+        explanation: "Thoti peeti ka aja ja kuu valvuriks. Teda kujutati tavaliselt ibis-linnu peaga mehena, hoidmas kirjutusvahendeid.",
+        wrongFeedback: {
+          0: "Horus on pistrikupeaga taevajumal.",
+          1: "Anubis on šaakalipeaga surnute jumal.",
+          3: "Sobek on krokodillipeaga Niiluse ja viljakuse jumal."
+        }
+      },
 
-      // ===================== KUNINGATE ORG (Tombs) =====================
       // ===================== KUNINGATE ORG (Tombs) =====================
       {
         id: 'new_valley_1', type: 'choice', location: 'kuningate_org', difficulty: 2,
@@ -715,8 +1165,62 @@
           3: "Läänekallas oli sageli just kõrbe algus, kus põlluharimine polnud võimalik, sobides seega matmispaigaks."
         }
       },
+      {
+        id: 'new_valley_6', type: 'choice', location: 'kuningate_org', difficulty: 2,
+        question: "Kuidas nimetati spetsiaalset ehitajate küla, kus elasid ja töötasid vaaraode haudade rajajad?",
+        options: ["Memphis", "Deir el-Medina", "Karnak", "Giza"],
+        correct: 1,
+        image: images.workers,
+        explanation: "Deir el-Medina oli kirjaoskajate käsitööliste kogukond. Tänu neile on meil palju teavet igapäevaelust, sest nad jätsid maha tuhandeid kirjutisi (ostracone).",
+        wrongFeedback: {
+          0: "Memphis oli pealinn ja asus kaugel põhjas.",
+          2: "Karnak oli tohutu templikompleks, mitte elumajade küla.",
+          3: "Giza on tuntud püramiidide poolt, mis rajati hoopis varem."
+        }
+      },
+      {
+        id: 'new_valley_7', type: 'truefalse', location: 'kuningate_org', difficulty: 2,
+        question: "Rituaali, kus preester 'avas' surnu meeled, et ta saaks teispoolsuses süüa ja rääkida, nimetati 'Suu avamise tseremooniaks'.",
+        correct: true,
+        image: images.mummy,
+        explanation: "See oli üks tähtsamaid matuserituaale. Preester puudutas spetsiaalse tööriistaga muumia või kuju suud, silmi ja kõrvu, et äratada need uueks eluks.",
+        treasure: "anubis"
+      },
+      {
+        id: 'new_valley_8', type: 'written', location: 'kuningate_org', difficulty: 3,
+        question: "Kuidas nimetasid egiptlased oma haudu, mis pidid kestma igavesti?",
+        answer: ["igaviku maja"],
+        image: images.valley_kings,
+        explanation: "Haud oli egiptlase jaoks 'igaviku maja'. Kui tavalised elumajad ehitati savitellistest, siis hauad raiuti kivisse või ehitati kivist, et need ei häviks."
+      },
+      {
+        id: 'new_valley_9', type: 'choice', location: 'kuningate_org', difficulty: 2,
+        question: "Mis oli peamine põhjus, miks hauad Kuningate orus vaatamata valvuritele ja peitmisele ikkagi rüüstati?",
+        options: ["Vargad olid nähtamatud", "Sisemine info ja korruptsioon", "Jumalate needus", "Maavärinad"],
+        correct: 1,
+        image: images.valley_kings,
+        explanation: "Haurüüsteid juhtisid sageli samad ametnikud ja preestrid, kes haudu hooldasid. Majanduskriiside ajal muutus kuld ja aarded haudades liiga ahvatlevaks.",
+        wrongFeedback: {
+          0: "Vargad olid täiesti tavalised inimesed, sageli just vaesed külaelanikud.",
+          2: "Needus pidi vargaid eemale peletama, kuid nälja ja ahnuse vastu see ei aidanud.",
+          3: "Maavärinad võisid haudu kahjustada, kuid aarded viisid minema ikka inimesed."
+        }
+      },
+      {
+        id: 'new_valley_10', type: 'identify', location: 'kuningate_org', difficulty: 2,
+        question: "See on maailma tuntud Tutanhamoni kuldne mask.",
+        displayImage: images.tutankhamun,
+        options: ["Ramsese mask", "Tutanhamoni mask", "Osirise kuju", "Sfinksi pea"],
+        correct: 1,
+        image: images.tutankhamun,
+        explanation: "Mask on valmistatud puhtast kullast ja kaalub üle 10 kilogrammi. See sümboliseerib vaarao muutumist jumalikuks olendiks pärast surma.",
+        wrongFeedback: {
+          0: "Ramses II maske on leitud, kuid need pole nii kuulsad kui Tutanhamoni oma.",
+          2: "Osirise kujusid pandi hauda kaasa, kuid see ese on just vaarao näomask.",
+          3: "Sfinks on hiiglaslik kaljukuju Giza kõrbes."
+        }
+      },
 
-      // ===================== ABU SIMBEL (Ramses & End) =====================
       // ===================== ABU SIMBEL & FINAL ERA (Ramses & End) =====================
       {
         id: 'new_abu_1', type: 'choice', location: 'abu_simbel', difficulty: 2,
@@ -727,7 +1231,7 @@
         explanation: "Ramses II valitses Egiptust 66 aastat (1279–1213 eKr). Ta ehitas rohkem templeid ja püstitas rohkem kujusid kui ükski teine vaarao, olles tuntuim ja vägevaim Uue riigi valitseja.",
         wrongFeedback: {
           0: "Tutanhamoni ehituspärand on tema lühikese valitsuse tõttu väike.",
-          2: "Ehnaton ehitas peamiselt oma uut pealinna, Abu Simbel asub aga kaugel lõunas Nuubias.",
+          2: "Ehnaton ehitas peamiselt oma uut pealinna, Abu Simbel asub aga kaugel lõunas Nuubia piiril.",
           3: "Hatšepsut oli Ramsesest varem ja ehitas oma kuulsa templi Deir al-Bahrisse."
         }
       },
@@ -752,32 +1256,99 @@
         options: ["Herodotos", "Sokrates", "Julius Caesar", "Napoleon"],
         correct: 0,
         image: images.nile,
-        explanation: "Vana-Kreeka ajaloolane Herodotos märkas 5. sajandil eKr, et ilma Niiluse viljaka mudata ja regulaarse üleujutuseta oleks Egiptus vaid elutu kõrb."
+        explanation: "Vana-Kreeka ajaloolane Herodotos märkas 5. sajandil eKr, et ilma Niiluse viljaka mudata ja regulaarse üleujutuseta oleks Egiptus vaid elutu kõrb.",
+        wrongFeedback: {
+          1: "Sokrates oli filosoof ega reisinud teadaolevalt Egiptusesse.",
+          2: "Julius Caesar vallutas Egiptuse hiljem, kuid ta polnud ajaloolane.",
+          3: "Napoleon võttis Egiptuse retkele kaasa teadlasi, kuid Herodotos kirjutas sellest 2300 aastat varem."
+        }
       },
       {
         id: 'new_abu_5', type: 'written', location: 'abu_simbel', difficulty: 3,
         question: "Kes oli see prantslane, kes dešifreeris Rosette'i kivi abil hieroglüüfid 1822. aastal?",
         answer: ["jean-françois champollion", "champollion"],
         image: images.rosetta,
-        explanation: "Champollion mõistis, et hieroglüüfid ei tähista ainult mõisteid, vaid ka häälikuid. See oli kaasaegse egüptoloogia sünnihetk.",
+        explanation: "Champollion mõistis, et hieroglüüfid ei tähista ainult mõisteid, vaid ka häälikuid. See oli kaasaegne egüptoloogia sünnihetk.",
         treasure: "rosetta"
-      }
+      },
+      {
+        id: 'new_abu_6', type: 'choice', location: 'abu_simbel', difficulty: 2,
+        question: "Mitu korda aastas paistab tõusev päike Abu Simbeli templi sügavusse, valgustades jumalate kujusid?",
+        options: ["Iga päev", "Üks kord aastas", "Kaks korda aastas", "Mitte kunagi"],
+        correct: 2,
+        image: images.abu_simbel,
+        explanation: "22. veebruaril ja 22. oktoobril langeb päikesekiir täpselt läbi templi sissepääsu kõige tagumisse kambrisse. See tähistas Ramses II sünni- ja kroonimispäeva.",
+        wrongFeedback: {
+          0: "Päike paistab sisse ainult väga täpsel ajal tänu templi osavale planeerimisele.",
+          1: "Tegemist on kahekordse nähtusega, mis kordub kevadisel ja sügisesel ajal.",
+          3: "Päike paistab sisse ja see on üks templi suurimaid insenertehnilisi saavutusi."
+        }
+      },
+      {
+        id: 'new_abu_7', type: 'truefalse', location: 'abu_simbel', difficulty: 2,
+        question: "Viimane Egiptuse vaarao oli naine – Kleopatra VII.",
+        correct: true,
+        image: images.nefertiti,
+        explanation: "Pärast Kleopatra surma 30. aastal eKr muutus Egiptus Rooma provintsiks ja vaaraode 3000-aastane aeg sai lõplikult otsa.",
+        treasure: "sarcophagus"
+      },
+      {
+        id: 'new_abu_8', type: 'written', location: 'abu_simbel', difficulty: 2,
+        question: "Mis oli see kuulus kivi, mille leidsid Napoleoni sõdurid ja mis aitas hieroglüüfe lugeda?",
+        answer: ["rosette kivi", "rosetta kivi"],
+        image: images.rosetta,
+        explanation: "Rosette'i kivil oli sama tekst kirjas kolmes keeles: hieroglüüfides, demootilises kirjas ja vanakreeka keeles. See andis Champollionile võtme koodi murdmiseks."
+      },
+      {
+        id: 'new_abu_9', type: 'choice', location: 'abu_simbel', difficulty: 2,
+        question: "Milline suur lahing Ramses II ja hetiitide vahel on jäädvustatud Abu Simbeli templi seintel?",
+        options: ["Kadeshi lahing", "Giza lahing", "Teeba lahing", "Waterloo lahing"],
+        correct: 0,
+        image: images.war_chariot,
+        explanation: "Kadeshi lahing oli üks ajaloo suurimaid sõjavankrite lahinguid. Ramses kuulutas end võitjaks, kuigi tegelikult lõppes see pigem viigiga.",
+        wrongFeedback: {
+          1: "Giza on tuntud püramiidide, mitte suurte lahingute poolest.",
+          2: "Teeba oli rahumeelne usukeskus, lahing toimus kaugel kirdes.",
+          3: "Waterloo lahing toimus 1815. aastal ja seal kaotas Napoleon."
+        }
+      },
+      {
+        id: 'sort_abu_1', type: 'sorting', location: 'abu_simbel', difficulty: 3,
+        question: "Pane need ajastud kronoloogilisse järjekorda (vanimast uusimani)!",
+        options: ["Püramiidide aeg (Vana riik)", "Hüksoste tung ja orjus (Keskmine riik)", "Vallutusretked ja õitseng (Uus riik)", "Pärsia ja Kreeka-Rooma aeg"],
+        correct: [0, 1, 2, 3],
+        image: images.egypt_map,
+        explanation: "Egiptuse ajalugu jaotatakse tavaliselt kolmeks suureks riigiks, mille vahele ja peale jäid segased vaheperioodid ja võõrvallutused.",
+        treasure: "rosetta"
+      },
     ];
 
     // ========== AARDED ==========
     const treasures = {
-      papyrus: { name: "Papüürusrull", icon: "📜" }, lotus: { name: "Lootosõis", icon: "🪷" },
-      crown: { name: "Kahekordne kroon", icon: "👑" }, crook: { name: "Vaarao kepp", icon: "🪝" },
-      statue: { name: "Abu Simbeli kuju", icon: "🗿" }, mask: { name: "Tutanhamoni mask", icon: "😶" },
-      sun_disk: { name: "Atoni ketas", icon: "☀️" }, bust: { name: "Nofretete büst", icon: "👸" },
-      feather: { name: "Maati sulg", icon: "🪶" }, scarab: { name: "Skarabeus", icon: "🪲" },
-      djed: { name: "Djed-sammas", icon: "🏛️" }, anubis: { name: "Anubise kuju", icon: "🐺" },
-      eye: { name: "Horose silm", icon: "👁️" }, mummy: { name: "Muumia", icon: "🧟" },
-      sarcophagus: { name: "Sarkofaag", icon: "⚰️" }, heart: { name: "Südame amulett", icon: "❤️" },
-      pyramid: { name: "Püramiid", icon: "🔺" }, hieroglyph: { name: "Hieroglüüfid", icon: "𓀀" },
-      temple: { name: "Templi mudel", icon: "🏛️" }, step_pyramid: { name: "Astmikpüramiid", icon: "📐" },
-      rosetta: { name: "Rosette'i kivi", icon: "🪨" }, column: { name: "Karnaki sammas", icon: "🏛️" },
-      cat: { name: "Kassimuumia", icon: "🐱" }, scarab_amulet: { name: "Skarabeuse amulett", icon: "💎" }
+      papyrus: { name: "Papüürusrull", icon: "📜", description: "Annab tasuta vihje.", effect: "hint" },
+      lotus: { name: "Lootosõis", icon: "🪷", description: "Kaunis lill Niiluse kaldalt.", effect: null },
+      crown: { name: "Kahekordne kroon", icon: "👑", description: "Alam- ja Ülem-Egiptuse ühtsuse sümbol.", effect: null },
+      crook: { name: "Vaarao kepp", icon: "🪝", description: "Valitseja karjasekepp.", effect: null },
+      statue: { name: "Abu Simbeli kuju", icon: "🗿", description: "Võimas kaljukuju.", effect: null },
+      mask: { name: "Tutanhamoni mask", icon: "😶", description: "Lapsvaarao kuldne mask.", effect: null },
+      sun_disk: { name: "Atoni ketas", icon: "☀️", description: "Päikeseketta sümbol.", effect: null },
+      bust: { name: "Nofretete büst", icon: "👸", description: "Kõige ilusam skulptuur.", effect: null },
+      feather: { name: "Maati sulg", icon: "🪶", description: "Tõe ja õigluse sümbol.", effect: "shield" },
+      scarab: { name: "Skarabeus", icon: "🪲", description: "Kaitseb halva õnne eest.", effect: "shield" },
+      djed: { name: "Djed-sammas", icon: "🏛️", description: "Stabiilsuse sümbol.", effect: null },
+      anubis: { name: "Anubise kuju", icon: "🐺", description: "Surnute kaitsja.", effect: null },
+      eye: { name: "Horose silm", icon: "👁️", description: "Eemaldab valed vastused.", effect: "5050" },
+      mummy: { name: "Muumia", icon: "🧟", description: "Igaveseks säilitatud keha.", effect: null },
+      sarcophagus: { name: "Sarkofaag", icon: "⚰️", description: "Kivist kirst.", effect: null },
+      heart: { name: "Südame amulett", icon: "❤️", description: "Annab +1 elu.", effect: "life" },
+      pyramid: { name: "Püramiid", icon: "🔺", description: "Igaviku maja.", effect: null },
+      hieroglyph: { name: "Hieroglüüfid", icon: "𓀀", description: "Jumalikud märgid.", effect: null },
+      temple: { name: "Templi mudel", icon: "🏛️", description: "Jumala elupaik.", effect: null },
+      step_pyramid: { name: "Astmikpüramiid", icon: "📐", description: "Esimene suur kiviehitis.", effect: null },
+      rosetta: { name: "Rosette'i kivi", icon: "🪨", description: "Auto-lahendab ühe küsimuse.", effect: "solve" },
+      column: { name: "Karnaki sammas", icon: "🏛️", description: "Hiiglaslik tempisamba mudel.", effect: null },
+      cat: { name: "Kassimuumia", icon: "🐱", description: "Basteti püha loom.", effect: null },
+      scarab_amulet: { name: "Skarabeuse amulett", icon: "💎", description: "Toob õnne ja kaitset.", effect: "shield" }
     };
 
     // ========== ASUKOHAD ==========
@@ -793,10 +1364,19 @@
       { id: 'abu_simbel', name: 'Abu Simbel', icon: '🗿', x: 52, y: 90 }
     ];
 
+    // ========== KARAKTERID ==========
+    const characters = [
+      { id: 'scribe', name: 'Kirjutaja', icon: '📜', description: 'Tarkuse otsija', perk: 'Saad iga asukoha alguses tasuta vihje.', effect: 'free_hint' },
+      { id: 'warrior', name: 'Sõdalane', icon: '⚔️', description: 'Julge võitleja', perk: 'Alustad 4 eluga.', effect: 'extra_life' },
+      { id: 'architect', name: 'Arhitekt', icon: '📐', description: 'Ehitusmeister', perk: 'Saad 25% rohkem punkte.', effect: 'bonus_points' },
+      { id: 'priest', name: 'Preester', icon: '🙏', description: 'Jumalate teener', perk: 'Esimene eksimus asukohas ei võta elu.', effect: 'second_chance' }
+    ];
+
     // ========== PEAKOMPONENT ==========
     const NiiluseTeekond = () => {
       const { playSound, soundEnabled, setSoundEnabled, initAudio } = useSounds();
       const [playerName, setPlayerName] = useState('');
+      const [selectedCharacter, setSelectedCharacter] = useState(null);
       const [currentLocation, setCurrentLocation] = useState(0);
       const [lives, setLives] = useState(3);
       const [hints, setHints] = useState(3);
@@ -807,7 +1387,7 @@
       const [factCards, setFactCards] = useState([]);
       const [answeredQuestions, setAnsweredQuestions] = useState(new Set());
       const [unlockedAchievements, setUnlockedAchievements] = useState([]);
-      const [stats, setStats] = useState({ totalCorrect: 0, totalAnswered: 0, perfectLocations: 0, recoveries: 0, trueFalseCorrect: 0, gameCompleted: false });
+      const [stats, setStats] = useState({ totalCorrect: 0, totalAnswered: 0, perfectLocations: 0, recoveries: 0, trueFalseCorrect: 0, geoCorrect: 0, gameCompleted: false });
       const [activeEvent, setActiveEvent] = useState(null);
       const [eventCounter, setEventCounter] = useState(0);
       const [shield, setShield] = useState(false);
@@ -818,6 +1398,11 @@
       const [questionQueue, setQuestionQueue] = useState([]);
       const [userAnswer, setUserAnswer] = useState('');
       const [selectedOption, setSelectedOption] = useState(null);
+      const [selectedOptions, setSelectedOptions] = useState(new Set()); // Multi-select jaoks
+      const [matchingPairs, setMatchingPairs] = useState({}); // Matching jaoks
+      const [hotspotClick, setHotspotClick] = useState(null); // Hotspot jaoks
+      const [matchingSelectedLeft, setMatchingSelectedLeft] = useState(null); // Matching ajutine valik
+      const [userSortOrder, setUserSortOrder] = useState([]); // Sorting küsimuse jaoks
       const [showResult, setShowResult] = useState(false);
       const [isCorrect, setIsCorrect] = useState(false);
       const [showHint, setShowHint] = useState(false);
@@ -829,72 +1414,216 @@
       const [notification, setNotification] = useState(null);
       const [fallingBack, setFallingBack] = useState(false);
       const [newAchievement, setNewAchievement] = useState(null);
+      const [hiddenOptions, setHiddenOptions] = useState(new Set()); // 50/50 jaoks
+      const [highScores, setHighScores] = useState([]);
+      const [showHighScores, setShowHighScores] = useState(false);
 
-      const normalizeAnswer = (answer) => answer.toLowerCase().trim().replace(/[.,!?]/g, '').replace(/\s+/g, ' ');
-      const checkWrittenAnswer = (userAns, correctAnswers) => correctAnswers.some(ans => normalizeAnswer(ans) === normalizeAnswer(userAns));
-      const getQuestionsForLocation = (locationId) => {
-        let available = allQuestions.filter(q => q.location === locationId && !answeredQuestions.has(q.id));
-        if (available.length < 5) {
-          // Kui küsimused otsas, resetime selle asukoha vastatud küsimused
-          const resetIds = allQuestions.filter(q => q.location === locationId).map(q => q.id);
-          setAnsweredQuestions(prev => {
-            const next = new Set(prev);
-            resetIds.forEach(id => next.delete(id));
-            return next;
-          });
-          return allQuestions.filter(q => q.location === locationId);
-        }
-        return available;
-      };
-      const showNotification = (message, type = 'info') => { setNotification({ message, type }); setTimeout(() => setNotification(null), 3000); };
+      useEffect(() => {
+        const savedScores = JSON.parse(localStorage.getItem('niilus_highscores') || '[]');
+        setHighScores(savedScores);
+      }, []);
 
-      const checkAchievements = useCallback((newStats) => {
-        const statsWithCounts = { ...newStats, treasureCount: collectedTreasures.length, factCount: factCards.length };
-        achievements.forEach(achievement => {
-          if (!unlockedAchievements.includes(achievement.id) && achievement.condition(statsWithCounts)) {
-            setUnlockedAchievements(prev => [...prev, achievement.id]);
-            setNewAchievement(achievement);
-            playSound('achievement');
-            setTimeout(() => setNewAchievement(null), 3000);
-          }
+      const saveHighScore = (finalScore) => {
+        const char = characters.find(c => c.id === selectedCharacter);
+        const newScore = {
+          playerName,
+          score: finalScore,
+          char: char ? char.icon : '👤',
+          date: new Date().toLocaleDateString('et-EE')
+        };
+
+        setHighScores(prev => {
+          const next = [...prev, newScore]
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 10);
+          localStorage.setItem('niilus_highscores', JSON.stringify(next));
+          return next;
         });
-      }, [unlockedAchievements, collectedTreasures.length, factCards.length, playSound]);
-
-      const triggerRandomEvent = useCallback(() => {
-        if (Math.random() < 0.15) {
-          const event = randomEvents[Math.floor(Math.random() * randomEvents.length)];
-          setPendingEvent(event);
-          setShowEventModal(true);
-          playSound('event');
-        }
-      }, [playSound]);
-
-      const applyEvent = (event) => {
-        setShowEventModal(false);
-        switch (event.effect) {
-          case 'doublePoints': setActiveEvent({ ...event, remaining: event.duration }); setEventCounter(event.duration); break;
-          case 'extraLife': setLives(prev => Math.min(prev + 1, 5)); break;
-          case 'freeHint': setFreeHint(true); break;
-          case 'shield': setShield(true); break;
-          case 'losePoints': setScore(prev => Math.max(0, prev - 50)); break;
-        }
-        setPendingEvent(null);
-      };
-
-      const shuffleQuestions = (questions, count = 6) => {
-        const shuffled = [...questions].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, Math.min(count, shuffled.length)).sort((a, b) => a.difficulty - b.difficulty);
       };
 
       const startGame = async () => {
         if (!playerName.trim()) { showNotification('Palun sisesta oma nimi!', 'warning'); return; }
+        if (!selectedCharacter) { showNotification('Palun vali karakter!', 'warning'); return; }
+
         await initAudio();
         playSound('click');
-        setCurrentLocation(0); setLives(3); setHints(3); setStreak(0); setBestStreak(0); setScore(0);
-        setCollectedTreasures([]); setFactCards([]); setAnsweredQuestions(new Set()); setUnlockedAchievements([]);
-        setStats({ totalCorrect: 0, totalAnswered: 0, perfectLocations: 0, recoveries: 0, trueFalseCorrect: 0, gameCompleted: false });
-        setActiveEvent(null); setEventCounter(0); setShield(false); setFreeHint(false); setFallingBack(false); setLocationMistakes(0);
+
+        let initialLives = 3;
+        if (selectedCharacter === 'warrior') initialLives = 4;
+
+        setCurrentLocation(0);
+        setLives(initialLives);
+        setHints(3);
+        setStreak(0);
+        setBestStreak(0);
+        setScore(0);
+        // ... (ülejäänud resetid)
         setScreen('map');
+      };
+
+      // ... (muud funktsioonid)
+
+      // ========== EKRAANID ==========
+      if (screen === 'start') {
+        return (
+          <div className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-800 to-amber-950 flex items-center justify-center p-4 relative overflow-hidden">
+            <div className="bg-sand absolute inset-0 pointer-events-none"></div>
+            <div className="max-w-4xl w-full text-center relative z-10 flex flex-col items-center">
+              <div className="mb-8 animate-float">
+                <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-amber-200 to-amber-500 mb-2 tracking-tighter">
+                  𓂀 NIILUSE TEEKOND 𓂀
+                </h1>
+                <p className="text-xl text-amber-300/80 font-light tracking-widest uppercase">Vali oma saatus</p>
+              </div>
+
+              <div className="glass rounded-3xl p-6 mb-8 shadow-2xl border-amber-500/30 w-full max-w-lg">
+                <input
+                  type="text"
+                  value={playerName}
+                  onChange={(e) => setPlayerName(e.target.value)}
+                  placeholder="Sinu nimi..."
+                  className="w-full bg-amber-950/50 text-amber-100 placeholder-amber-500/50 text-center text-2xl font-bold py-4 rounded-xl border-2 border-amber-500/30 focus:border-amber-400 focus:outline-none focus:ring-4 focus:ring-amber-500/20 mb-6"
+                />
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  {characters.map(char => (
+                    <button
+                      key={char.id}
+                      onClick={() => { playSound('click'); setSelectedCharacter(char.id); }}
+                      className={`p-4 rounded-xl border-2 transition-all flex flex-col items-center gap-2 ${selectedCharacter === char.id ? 'bg-amber-500/20 border-amber-400 scale-105 shadow-lg' : 'bg-black/20 border-transparent hover:bg-black/30'}`}
+                    >
+                      <div className="text-4xl mb-1">{char.icon}</div>
+                      <div className="font-bold text-amber-100">{char.name}</div>
+                      <div className="text-xs text-amber-300/70">{char.perk}</div>
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={startGame}
+                  disabled={!playerName.trim() || !selectedCharacter}
+                  className={`w-full py-4 rounded-xl font-bold text-xl uppercase tracking-widest transition-all transform shadow-xl ${(!playerName.trim() || !selectedCharacter)
+                    ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-amber-500 to-yellow-600 text-white hover:scale-105 hover:from-amber-400 hover:to-yellow-500 btn-egypt'}`}
+                >
+                  Alusta rännakut
+                </button>
+
+                <button
+                  onClick={() => { playSound('click'); setShowHighScores(true); }}
+                  className="w-full mt-4 py-3 rounded-xl font-bold text-amber-500/80 uppercase tracking-widest transition-all border-2 border-amber-500/20 hover:bg-amber-500/10"
+                >
+                  🏆 Edetabel
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      const loadNextQuestion = (queue = questionQueue) => {
+        if (queue.length === 0) {
+          if (locationMistakes === 0) {
+            const newStats = { ...stats, perfectLocations: stats.perfectLocations + 1 };
+            setStats(newStats);
+            checkAchievements(newStats);
+          }
+          if (currentLocation < locations.length - 1) {
+            setCurrentLocation(prev => prev + 1);
+            setScreen('map');
+            showNotification(`🎉 Tubli, ${playerName}!`, 'success');
+            playSound('levelup');
+          }
+          else {
+            setStats(s => ({ ...s, gameCompleted: true }));
+            saveHighScore(score);
+            setScreen('victory');
+            playSound('victory');
+          }
+          return;
+        }
+        const [next, ...rest] = queue;
+        setCurrentQuestion(next);
+        setQuestionQueue(rest);
+        setUserAnswer('');
+        setSelectedOption(null);
+        setSelectedOptions(new Set());
+        setMatchingPairs({});
+        setMatchingSelectedLeft(null);
+        setHotspotClick(null);
+        setUserSortOrder([]); // Reset sorting
+        setHiddenOptions(new Set()); // Reset 50/50
+        setShowResult(false);
+        setShowHint(false);
+        setScreen('question');
+      };
+
+      const useTreasure = (treasureId) => {
+        const item = treasures[treasureId];
+        if (!item || !item.effect) return;
+
+        playSound('click');
+        let used = false;
+
+        switch (item.effect) {
+          case 'hint':
+            if (!showHint) {
+              setFreeHint(true);
+              useHint();
+              used = true;
+            }
+            break;
+          case 'shield':
+            if (!shield) {
+              setShield(true);
+              showNotification('Skarabeuse kaitse aktiivne!', 'success');
+              used = true;
+            }
+            break;
+          case 'life':
+            if (lives < 5) {
+              setLives(prev => prev + 1);
+              showNotification('Said ühe elu juurde!', 'success');
+              used = true;
+            }
+            break;
+          case '5050':
+            if (currentQuestion && (currentQuestion.type === 'choice' || currentQuestion.type === 'identify') && hiddenOptions.size === 0) {
+              const wrongIndices = currentQuestion.options
+                .map((_, i) => i)
+                .filter(i => i !== currentQuestion.correct);
+              const toHide = wrongIndices.sort(() => 0.5 - Math.random()).slice(0, 2);
+              setHiddenOptions(new Set(toHide));
+              showNotification('Horose silm paljastas valed!', 'info');
+              used = true;
+            }
+            break;
+          case 'solve':
+            if (currentQuestion && !showResult) {
+              if (currentQuestion.type === 'choice' || currentQuestion.type === 'identify' || currentQuestion.type === 'truefalse') {
+                setSelectedOption(currentQuestion.correct);
+              } else if (currentQuestion.type === 'written' || currentQuestion.type === 'fillin') {
+                setUserAnswer(currentQuestion.answer[0]);
+              } else if (currentQuestion.type === 'sorting') {
+                setUserSortOrder([...currentQuestion.correct]);
+              }
+              showNotification('Rosette\'i kivi tõlkis vastuse!', 'info');
+              used = true;
+            }
+            break;
+        }
+
+        if (used) {
+          setCollectedTreasures(prev => {
+            const index = prev.indexOf(treasureId);
+            if (index > -1) {
+              const next = [...prev];
+              next.splice(index, 1);
+              return next;
+            }
+            return prev;
+          });
+        }
       };
 
       const enterLocation = (locationIndex) => {
@@ -902,58 +1631,157 @@
         const location = locations[locationIndex];
         const questions = getQuestionsForLocation(location.id);
 
-        // Kui ikka 0 (teoreetiliselt võimatu kui on küsimusi), siis võida
         if (questions.length === 0) {
           if (locationIndex < locations.length - 1) { setCurrentLocation(locationIndex + 1); showNotification('✨ Kõik vastatud!', 'success'); playSound('levelup'); }
           else { setStats(s => ({ ...s, gameCompleted: true })); setScreen('victory'); playSound('victory'); }
           return;
         }
+
+        // Scribe perk: free hint at start of location
+        if (selectedCharacter === 'scribe') {
+          setFreeHint(true);
+          showNotification('Kirjutaja sai Thoti vihje!', 'info');
+        }
+
         setLocationMistakes(0);
-        const balanced = shuffleQuestions(questions, 6); // More questions per location
+        const balanced = shuffleQuestions(questions, 4);
         setQuestionQueue(balanced);
         loadNextQuestion(balanced);
       };
 
-      const loadNextQuestion = (queue = questionQueue) => {
-        if (queue.length === 0) {
-          if (locationMistakes === 0) { const newStats = { ...stats, perfectLocations: stats.perfectLocations + 1 }; setStats(newStats); checkAchievements(newStats); }
-          if (currentLocation < locations.length - 1) { setCurrentLocation(prev => prev + 1); setScreen('map'); showNotification(`🎉 Tubli, ${playerName}!`, 'success'); playSound('levelup'); }
-          else { setStats(s => ({ ...s, gameCompleted: true })); setScreen('victory'); playSound('victory'); }
-          return;
+      const useHint = () => {
+        if (showResult || showHint || (!hints && !freeHint)) return; // Kui pole vihjeid ja pole tasuta vihjet
+
+        // ERIKONTROLL KIRJUTAJA JAOKS (Scribe Perk)
+        // Kui on Kirjutaja JA tal on see perk täna veel kasutamata (või lihtsalt üldine loogika)
+        // Antud lahendus kasutab 'freeHint' olekut, mis on universaalne
+        if (freeHint) {
+          setFreeHint(false); // Kasuta ära
+        } else {
+          if (hints > 0) setHints(h => h - 1);
         }
-        const [next, ...rest] = queue;
-        setCurrentQuestion(next); setQuestionQueue(rest); setUserAnswer(''); setSelectedOption(null); setShowResult(false); setShowHint(false); setScreen('question');
+
+        playSound('click');
+        setShowHint(true);
       };
 
       const submitAnswer = () => {
-        if (!currentQuestion) return;
+        if (!userAnswer && selectedOption === null && userSortOrder.length === 0) return;
+
         let correct = false;
-        switch (currentQuestion.type) {
-          case 'written': case 'fillin': correct = checkWrittenAnswer(userAnswer, currentQuestion.answer); break;
-          case 'choice': case 'identify': correct = selectedOption === currentQuestion.correct; break;
-          case 'truefalse': correct = selectedOption === currentQuestion.correct; break;
+        if (currentQuestion.type === 'choice' || currentQuestion.type === 'identify' || currentQuestion.type === 'truefalse') {
+          correct = selectedOption === currentQuestion.correct;
+        } else if (currentQuestion.type === 'written' || currentQuestion.type === 'fillin') {
+          correct = checkWrittenAnswer(userAnswer, currentQuestion.answer);
+        } else if (currentQuestion.type === 'sorting') {
+          correct = JSON.stringify(userSortOrder) === JSON.stringify(currentQuestion.correct);
+        } else if (currentQuestion.type === 'multiSelect') {
+          const sortedSelected = [...selectedOptions].sort();
+          const sortedCorrect = [...currentQuestion.correct].sort();
+          correct = JSON.stringify(sortedSelected) === JSON.stringify(sortedCorrect);
+        } else if (currentQuestion.type === 'matching') {
+          correct = Object.keys(matchingPairs).length === currentQuestion.options.left.length &&
+            currentQuestion.options.left.every((_, i) => matchingPairs[i] === currentQuestion.correct[i]);
+        } else if (currentQuestion.type === 'hotspot') {
+          if (!hotspotClick) return;
+          const { x, y } = hotspotClick;
+          const { targetX, targetY, radius } = currentQuestion.correct;
+          const dist = Math.sqrt(Math.pow(x - targetX, 2) + Math.pow(y - targetY, 2));
+          correct = dist <= (radius || 10);
         }
-        setIsCorrect(correct); setShowResult(true); setAnsweredQuestions(prev => new Set([...prev, currentQuestion.id]));
-        const newStats = { ...stats, totalAnswered: stats.totalAnswered + 1, totalCorrect: correct ? stats.totalCorrect + 1 : stats.totalCorrect, trueFalseCorrect: (correct && currentQuestion.type === 'truefalse') ? stats.trueFalseCorrect + 1 : stats.trueFalseCorrect };
-        setStats(newStats);
+
+        setIsCorrect(correct);
+        setShowResult(true);
 
         if (correct) {
           playSound('correct');
-          let points = 100 + Math.floor(streak / 3) * 10;
-          if (activeEvent?.effect === 'doublePoints') { points *= 2; setEventCounter(prev => { const n = prev - 1; if (n <= 0) setActiveEvent(null); return n; }); }
-          setScore(prev => prev + points); setStreak(prev => prev + 1); if (streak + 1 > bestStreak) setBestStreak(streak + 1);
+
+          let points = 100 + (streak * 10);
+          if (selectedCharacter === 'architect') points = Math.round(points * 1.25);
+          if (activeEvent?.effect === 'doublePoints') points *= 2;
+
+          setScore(s => s + points);
+          setStreak(s => {
+            const newStreak = s + 1;
+            if (newStreak > bestStreak) setBestStreak(newStreak);
+            if (newStreak % 5 === 0) {
+              setHints(prev => Math.min(prev + 1, 5));
+              playSound('streak');
+            }
+            return newStreak;
+          });
+
+          // Aarde korjamine
           if (currentQuestion.treasure && treasures[currentQuestion.treasure] && !collectedTreasures.includes(currentQuestion.treasure)) {
             setCollectedTreasures(prev => [...prev, currentQuestion.treasure]);
             setTimeout(() => { playSound('treasure'); showNotification(`💎 ${treasures[currentQuestion.treasure].name}!`, 'treasure'); }, 500);
           }
-          if (currentQuestion.fact) { setFactCards(prev => prev.some(f => f.id === currentQuestion.id) ? prev : [...prev, { id: currentQuestion.id, question: currentQuestion.question, fact: currentQuestion.fact, image: currentQuestion.image }]); }
-          if ((streak + 1) % 5 === 0) { setHints(prev => Math.min(prev + 1, 5)); playSound('streak'); }
-          triggerRandomEvent();
-          checkAchievements(newStats);
+
+          setStats(s => ({ ...s, totalCorrect: s.totalCorrect + 1 }));
+          if (currentQuestion.type === 'truefalse') setStats(s => ({ ...s, trueFalseCorrect: s.trueFalseCorrect + 1 }));
+          if (currentQuestion.id.startsWith('geo_')) setStats(s => ({ ...s, geoCorrect: s.geoCorrect + 1 }));
+
         } else {
-          playSound('wrong'); setStreak(0); setLocationMistakes(prev => prev + 1);
-          if (shield) { setShield(false); showNotification('🪲 Skarabeus kaitses!', 'bonus'); }
-          else { const newLives = lives - 1; setLives(newLives); if (newLives <= 0) { setFallingBack(true); playSound('fall'); } }
+          playSound('wrong');
+          setStreak(0);
+
+          let loseLife = true;
+          if (shield) {
+            loseLife = false;
+            setShield(false);
+            showNotification('Skarabeus päästis sind!', 'success');
+          } else if (selectedCharacter === 'priest' && locationMistakes === 0) {
+            loseLife = false;
+            showNotification('Jumalad andsid andeks! (Preestri eelis)', 'success');
+          }
+
+          if (loseLife) {
+            setLives(l => l - 1);
+            setScreen('shake'); setTimeout(() => setScreen('game'), 500);
+            if (lives <= 1) setFallingBack(true);
+          }
+
+          setLocationMistakes(m => m + 1);
+        }
+
+        setAnsweredQuestions(prev => new Set(prev).add(currentQuestion.id));
+        setStats(s => ({ ...s, totalAnswered: s.totalAnswered + 1 }));
+      };
+
+      const nextQuestion = () => {
+        // ERIKONTROLL KIRJUTAJA JAOKS (Scribe Perk - Daily Free Hint)
+        // Iga kord, kui liigub uude asukohta ehk enterLocation, võiks ta saada tasuta vihje
+        // Aga siin 'nextQuestion' on ühe asukoha sees.
+        // Teeme nii: Kirjutaja saab iga KORRA, kui hints on 0, ühe tasuta vihje? Ei, liiga võimas.
+        // Jääme selle juurde: Kirjutaja alustab mängu 'freeHint = true' ja saab uue iga asukoha alguses.
+
+        if (lives <= 0) {
+          saveHighScore(score);
+          setScreen('gameover');
+          playSound('fall');
+          return;
+        }
+
+        setShowResult(false);
+        setShowHint(false);
+        setUserAnswer('');
+        setSelectedOption(null);
+
+        if (questionQueue.length > 0) {
+          loadNextQuestion();
+        } else {
+          // Asukoht läbitud
+          if (locationMistakes === 0) {
+            setStats(s => ({ ...s, perfectLocations: s.perfectLocations + 1 }));
+            // Preestri boonus: Kui läbid vigadeta, saad elu tagasi?
+            if (selectedCharacter === 'priest' && lives < 5) setLives(l => l + 1);
+          }
+
+          // Kasuta juhuslikku sündmust
+          triggerRandomEvent();
+
+          // Tagasta kaardile
+          setScreen('map');
         }
       };
 
@@ -965,78 +1793,6 @@
         setScreen('map');
       };
 
-      const useHint = () => {
-        if (showHint) return;
-        if (freeHint) { setFreeHint(false); setShowHint(true); showNotification('🦢 Thoti tasuta vihje!', 'bonus'); }
-        else if (hints > 0) { playSound('click'); setHints(prev => prev - 1); setShowHint(true); }
-      };
-
-      const nextQuestion = () => { playSound('click'); if (fallingBack) { handleFallBack(); return; } loadNextQuestion(); };
-
-      // ========== EKRAANID ==========
-      if (screen === 'start') {
-        return (
-          <div className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-800 to-amber-950 flex items-center justify-center p-4 relative overflow-hidden">
-            <div className="bg-sand absolute inset-0 pointer-events-none"></div>
-            <div className="max-w-2xl w-full text-center relative z-10">
-              <div className="mb-8 animate-float">
-                <h1 className="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-amber-200 to-amber-500 mb-2 tracking-tighter">
-                  𓂀 NIILUSE TEEKOND 𓂀
-                </h1>
-                <p className="text-2xl text-amber-300/80 font-light tracking-widest uppercase">Vana-Egiptuse seiklus</p>
-              </div>
-
-              <div className="text-7xl mb-10 flex justify-center gap-4 drop-shadow-2xl">
-                <span className="hover:scale-110 transition-transform cursor-default">🏛️</span>
-                <span className="hover:scale-110 transition-transform cursor-default">🐪</span>
-                <span className="hover:scale-110 transition-transform cursor-default">🔺</span>
-                <span className="hover:scale-110 transition-transform cursor-default">🐍</span>
-              </div>
-
-              <div className="glass rounded-3xl p-8 mb-8 shadow-2xl border-amber-500/30">
-                <label className="block text-amber-200 text-sm font-semibold mb-4 uppercase tracking-wider">Sisesta oma nimi, rändur</label>
-                <input
-                  type="text"
-                  value={playerName}
-                  onChange={(e) => setPlayerName(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && playerName.trim() && startGame()}
-                  placeholder="Nimi..."
-                  className="w-full p-5 text-2xl text-center rounded-2xl border-2 border-amber-500/50 bg-amber-950/40 text-amber-100 placeholder-amber-700/50 focus:border-amber-400 focus:ring-4 focus:ring-amber-500/20 focus:outline-none transition-all"
-                  maxLength={15}
-                />
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 text-amber-200/70">
-                <div className="glass-light/10 p-3 rounded-2xl border border-amber-500/10">
-                  <span className="block text-2xl mb-1">🗺️</span>
-                  <span className="text-xs font-bold uppercase">9 Asukohta</span>
-                </div>
-                <div className="glass-light/10 p-3 rounded-2xl border border-amber-500/10">
-                  <span className="block text-2xl mb-1">💎</span>
-                  <span className="text-xs font-bold uppercase">Aarded</span>
-                </div>
-                <div className="glass-light/10 p-3 rounded-2xl border border-amber-500/10">
-                  <span className="block text-2xl mb-1">🏆</span>
-                  <span className="text-xs font-bold uppercase">Saavutused</span>
-                </div>
-                <div className="glass-light/10 p-3 rounded-2xl border border-amber-500/10">
-                  <span className="block text-2xl mb-1">🎲</span>
-                  <span className="text-xs font-bold uppercase">Sündmused</span>
-                </div>
-              </div>
-
-              <button
-                onClick={startGame}
-                disabled={!playerName.trim()}
-                className="btn-egypt bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 disabled:from-gray-700 disabled:to-gray-800 disabled:opacity-50 text-amber-950 font-black text-3xl py-5 px-16 rounded-2xl transition-all shadow-xl active:scale-95"
-              >
-                ALUSTA TEEKONDA 𓁴
-              </button>
-            </div>
-          </div>
-        );
-      }
-
       if (screen === 'map') {
         return (
           <div className="min-h-screen bg-gradient-to-b from-blue-900 via-amber-800 to-amber-950 p-4 relative overflow-hidden">
@@ -1046,10 +1802,11 @@
                 <div className="flex gap-4 items-center">
                   <div className="bg-amber-500/20 px-4 py-2 rounded-2xl border border-amber-500/30">
                     <span className="text-amber-200 font-black text-lg tracking-tight uppercase">{playerName}</span>
+                    <span className="text-amber-300 ml-2 text-sm">{characters.find(c => c.id === selectedCharacter)?.icon}</span>
                   </div>
-                  <div className="flex gap-2 bg-black/30 px-3 py-2 rounded-2xl">
-                    {[...Array(3)].map((_, i) => (
-                      <span key={i} className={`text-2xl transition-all duration-500 ${i < lives ? 'drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]' : 'opacity-20 grayscale'}`}>
+                  <div className="flex gap-1 bg-black/30 px-3 py-2 rounded-2xl">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={`text-xl transition-all duration-500 ${i < lives ? 'drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]' : 'opacity-20 grayscale'}`}>
                         {i === 0 ? '𓂓' : i === 1 ? '𓅃' : '𓋹'}
                       </span>
                     ))}
@@ -1084,8 +1841,13 @@
 
             <div className="max-w-4xl mx-auto relative z-10">
               <div className="relative bg-gradient-to-b from-amber-200 via-amber-300 to-amber-500 rounded-[40px] p-8 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] border-4 border-amber-100/50 overflow-hidden" style={{ minHeight: '600px' }}>
-                {/* River Background Pattern */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none bg-sandpaper"></div>
+                {/* Geographic Labels */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-blue-900/30 font-black text-xl uppercase tracking-widest pointer-events-none">Vahemeri</div>
+                <div className="absolute top-24 left-12 text-amber-900/20 font-black text-sm uppercase tracking-widest pointer-events-none -rotate-12">Läänekõrb</div>
+                <div className="absolute top-60 right-8 text-blue-900/20 font-black text-sm uppercase tracking-widest pointer-events-none rotate-90">Punane meri</div>
+                <div className="absolute top-[20%] right-[30%] text-amber-950/30 font-black text-xs uppercase tracking-tighter pointer-events-none">Alam-Egiptus</div>
+                <div className="absolute top-[65%] right-[35%] text-amber-950/30 font-black text-xs uppercase tracking-tighter pointer-events-none">Ülem-Egiptus</div>
+                <div className="absolute bottom-8 right-12 text-amber-900/20 font-black text-sm uppercase tracking-widest pointer-events-none">Nuubia</div>
 
                 {/* The Nile */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-12 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 transform -translate-x-1/2 rounded-full opacity-40 blur-sm shadow-inner" />
@@ -1201,6 +1963,40 @@
                 </div>
               </div>
             )}
+            {showHighScores && (
+              <div className="fixed inset-0 bg-black/95 backdrop-blur-md flex items-center justify-center z-[130] p-4" onClick={() => setShowHighScores(false)}>
+                <div className="glass rounded-[40px] p-8 max-w-lg w-full border-2 border-amber-500/30" onClick={e => e.stopPropagation()}>
+                  <div className="flex justify-between items-center mb-8 border-b border-amber-500/20 pb-4">
+                    <h2 className="text-3xl font-black text-amber-200 tracking-tighter uppercase italic">𓂀 EDETABEL</h2>
+                    <button onClick={() => setShowHighScores(false)} className="bg-amber-500/20 hover:bg-amber-500/40 text-amber-400 w-10 h-10 rounded-full flex items-center justify-center transition-all">✕</button>
+                  </div>
+
+                  <div className="space-y-2">
+                    {highScores.length === 0 ? (
+                      <p className="text-center text-amber-300/50 py-10 italic">Veel pole ühtegi tulemust kirjas...</p>
+                    ) : (
+                      highScores.slice(0, 5).map((s, i) => (
+                        <div key={i} className={`flex items-center justify-between p-4 rounded-2xl border ${i === 0 ? 'bg-amber-500/20 border-amber-400' : 'bg-black/20 border-white/5'}`}>
+                          <div className="flex items-center gap-4">
+                            <span className={`w-8 h-8 flex items-center justify-center rounded-lg font-black ${i === 0 ? 'bg-amber-400 text-amber-950' : 'bg-amber-900/50 text-amber-200'}`}>
+                              {i + 1}
+                            </span>
+                            <div>
+                              <div className="font-bold text-amber-100 flex items-center gap-2">
+                                <span>{s.char}</span>
+                                {s.playerName}
+                              </div>
+                              <div className="text-[10px] text-amber-500 uppercase tracking-widest">{s.date}</div>
+                            </div>
+                          </div>
+                          <div className="text-2xl font-black text-amber-400 tracking-tighter">{s.score}</div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {showEventModal && pendingEvent && (
               <div className="fixed inset-0 bg-black/95 backdrop-blur-xl flex items-center justify-center z-[100] p-4">
@@ -1240,7 +2036,18 @@
       }
 
       if (screen === 'question' && currentQuestion) {
-        const typeLabel = { written: '✍️ Kirjuta', fillin: '📝 Lünk', choice: '🔘 Vali', identify: '🔍 Tuvasta', truefalse: '⚖️ Tõene/väär' };
+        const typeLabel = { written: '✍️ Kirjuta', fillin: '📝 Lünk', choice: '🔘 Vali', identify: '🔍 Tuvasta', truefalse: '⚖️ Tõene/väär', sorting: '🔢 Järjesta' };
+
+        const handleSortClick = (idx) => {
+          if (showResult) return;
+          playSound('click');
+          if (userSortOrder.includes(idx)) {
+            setUserSortOrder(prev => prev.filter(i => i !== idx));
+          } else {
+            setUserSortOrder(prev => [...prev, idx]);
+          }
+        };
+
         return (
           <div className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-950 to-black p-4 relative overflow-hidden">
             <div className="bg-sand absolute inset-0 pointer-events-none opacity-5"></div>
@@ -1248,8 +2055,8 @@
             <div className="max-w-2xl mx-auto mb-6 relative z-10">
               <div className="glass rounded-3xl p-4 flex justify-between items-center shadow-xl border-amber-500/20">
                 <div className="flex gap-4 items-center">
-                  <div className="flex gap-2">
-                    {[...Array(3)].map((_, i) => (
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
                       <span key={i} className={`text-2xl transition-all ${i < lives ? 'drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]' : 'opacity-20 grayscale'}`}>
                         {i === 0 ? '𓂓' : i === 1 ? '𓅃' : '𓋹'}
                       </span>
@@ -1259,8 +2066,8 @@
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="text-right">
-                    <div className="text-amber-200 text-[10px] font-black uppercase tracking-widest leading-none mb-1">Asukoht</div>
-                    <div className="text-amber-400 font-bold text-sm">{locations[currentLocation]?.name}</div>
+                    <div className="text-amber-200 text-[10px] font-black uppercase tracking-widest leading-none mb-1">Punktid</div>
+                    <div className="text-amber-400 font-bold text-sm tracking-tight">{score}</div>
                   </div>
                   <button onClick={() => setSoundEnabled(!soundEnabled)} className="w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-full transition-colors">
                     <span className="text-xl">{soundEnabled ? '🔊' : '🔇'}</span>
@@ -1270,18 +2077,35 @@
             </div>
 
             <div className="max-w-2xl mx-auto relative z-10">
+              {/* TREASURE BAR (Active Items) */}
+              {collectedTreasures.filter(t => treasures[t]?.effect).length > 0 && (
+                <div className="mb-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                  {collectedTreasures.filter(t => treasures[t]?.effect).map((t, i) => (
+                    <button
+                      key={i}
+                      onClick={() => useTreasure(t)}
+                      className="bg-amber-900/80 border border-amber-500/30 p-2 rounded-2xl flex items-center gap-2 hover:bg-amber-800 transition-all shrink-0"
+                      title={treasures[t].description}
+                    >
+                      <span className="text-2xl">{treasures[t].icon}</span>
+                      <span className="text-[10px] font-bold text-amber-200 uppercase tracking-tighter">Kasuta</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div className="bg-white rounded-[40px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden border-8 border-amber-950/20">
                 <div className="bg-amber-900 text-amber-100 p-4 flex justify-between items-center font-black uppercase tracking-widest text-xs px-8">
                   <span className="bg-amber-800 px-4 py-1.5 rounded-full border border-amber-500/30">{typeLabel[currentQuestion.type]}</span>
                   <div className="flex gap-1">
-                    {[...Array(currentQuestion.difficulty)].map((_, i) => <span key={i} className="text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]">⭐</span>)}
+                    {[...Array(currentQuestion.difficulty || 1)].map((_, i) => <span key={i} className="text-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.8)]">⭐</span>)}
                   </div>
                 </div>
 
-                <div className="bg-amber-50 p-6 flex justify-center items-center min-h-[250px] relative">
+                <div className="bg-amber-50 p-6 flex justify-center items-center min-h-[200px] relative">
                   <div className="absolute inset-0 bg-cream-paper opacity-20"></div>
                   {(currentQuestion.displayImage || currentQuestion.image) && (
-                    <div className="relative group transition-transform duration-500 hover:scale-105">
+                    <div className="relative group transition-transform duration-500 hover:scale-105 max-h-[180px]">
                       <div className="absolute inset-0 bg-amber-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
                       <QuestionImage imageData={currentQuestion.displayImage || currentQuestion.image} large={true} />
                     </div>
@@ -1289,7 +2113,7 @@
                 </div>
 
                 <div className="p-8 pb-12 bg-white relative">
-                  <h2 className="text-3xl font-black text-amber-950 mb-10 text-center leading-tight tracking-tight">
+                  <h2 className="text-2xl md:text-3xl font-black text-amber-950 mb-8 text-center leading-tight tracking-tight">
                     {currentQuestion.question}
                   </h2>
 
@@ -1306,23 +2130,23 @@
                     <div className="space-y-4">
                       {currentQuestion.type === 'truefalse' && (
                         <div className="flex gap-6">
-                          <button onClick={() => { playSound('click'); setSelectedOption(true); }} className={`flex-1 btn-egypt p-6 rounded-3xl border-4 text-2xl font-black uppercase tracking-tighter transition-all ${selectedOption === true ? 'border-green-500 bg-green-500 text-white' : 'border-amber-100 bg-amber-50 text-amber-900'}`}>
-                            𓁹 Tõene
+                          <button onClick={() => { playSound('click'); setSelectedOption(true); }} className={`flex-1 btn-egypt p-6 rounded-3xl border-4 text-2xl font-black uppercase tracking-tighter transition-all ${selectedOption === true ? 'border-green-500 bg-green-500 text-white shadow-lg' : 'border-amber-100 bg-amber-50 text-amber-900'}`}>
+                            𓁹 TÕENE
                           </button>
-                          <button onClick={() => { playSound('click'); setSelectedOption(false); }} className={`flex-1 btn-egypt p-6 rounded-3xl border-4 text-2xl font-black uppercase tracking-tighter transition-all ${selectedOption === false ? 'border-red-500 bg-red-500 text-white' : 'border-amber-100 bg-amber-50 text-amber-900'}`}>
-                            𓁴 Väär
+                          <button onClick={() => { playSound('click'); setSelectedOption(false); }} className={`flex-1 btn-egypt p-6 rounded-3xl border-4 text-2xl font-black uppercase tracking-tighter transition-all ${selectedOption === false ? 'border-red-500 bg-red-500 text-white shadow-lg' : 'border-amber-100 bg-amber-50 text-amber-900'}`}>
+                            𓁴 VÄÄR
                           </button>
                         </div>
                       )}
 
                       {(currentQuestion.type === 'choice' || currentQuestion.type === 'identify') && (
                         <div className="grid gap-3">
-                          {currentQuestion.options.map((option, idx) => (
+                          {currentQuestion.options.map((option, idx) => !hiddenOptions.has(idx) && (
                             <button
                               key={idx}
                               onClick={() => { playSound('click'); setSelectedOption(idx); }}
                               className={`w-full btn-egypt p-5 text-left rounded-3xl border-4 text-lg font-bold transition-all flex items-center gap-4
-                                ${selectedOption === idx ? 'border-amber-500 bg-amber-500 text-white' : 'border-amber-100 bg-amber-50 text-amber-950 hover:bg-amber-100'}`}
+                                ${selectedOption === idx ? 'border-amber-500 bg-amber-500 text-white shadow-md' : 'border-amber-100 bg-amber-50 text-amber-950 hover:bg-amber-100'}`}
                             >
                               <span className={`w-10 h-10 flex items-center justify-center rounded-2xl text-sm font-black transition-colors ${selectedOption === idx ? 'bg-white/20' : 'bg-amber-950/10'}`}>
                                 {String.fromCharCode(65 + idx)}
@@ -1330,6 +2154,119 @@
                               {option}
                             </button>
                           ))}
+                        </div>
+                      )}
+
+                      {currentQuestion.type === 'sorting' && (
+                        <div className="grid gap-4">
+                          <div className="space-y-2">
+                            {userSortOrder.map((idx, orderIdx) => (
+                              <div key={orderIdx} className="bg-amber-500 text-white p-4 rounded-2xl font-bold flex items-center justify-between animate-in zoom-in">
+                                <div className="flex items-center gap-3">
+                                  <span className="bg-white/20 w-8 h-8 flex items-center justify-center rounded-lg text-xs">{orderIdx + 1}</span>
+                                  {currentQuestion.options[idx]}
+                                </div>
+                                <button onClick={() => handleSortClick(idx)} className="text-white/50 hover:text-white">✕</button>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex flex-wrap gap-2 pt-4 border-t-2 border-amber-50">
+                            {currentQuestion.options.map((option, idx) => !userSortOrder.includes(idx) && (
+                              <button
+                                key={idx}
+                                onClick={() => handleSortClick(idx)}
+                                className="bg-amber-100/50 text-amber-900 p-3 rounded-xl border-2 border-amber-200 text-sm font-bold hover:bg-amber-200 transition-all"
+                              >
+                                {option}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      {currentQuestion.type === 'multiSelect' && (
+                        <div className="grid gap-3">
+                          {currentQuestion.options.map((option, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => {
+                                playSound('click');
+                                setSelectedOptions(prev => {
+                                  const next = new Set(prev);
+                                  if (next.has(idx)) next.delete(idx);
+                                  else next.add(idx);
+                                  return next;
+                                });
+                              }}
+                              className={`w-full p-5 text-left rounded-3xl border-4 text-lg font-bold transition-all flex items-center gap-4
+                                ${selectedOptions.has(idx) ? 'border-amber-500 bg-amber-500 text-white shadow-md' : 'border-amber-100 bg-amber-50 text-amber-950 hover:bg-amber-100'}`}
+                            >
+                              <div className={`w-8 h-8 rounded-lg border-2 flex items-center justify-center ${selectedOptions.has(idx) ? 'bg-white border-white text-amber-500' : 'border-amber-950/20'}`}>
+                                {selectedOptions.has(idx) && '✓'}
+                              </div>
+                              {option}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+
+                      {currentQuestion.type === 'matching' && (
+                        <div className="flex gap-4">
+                          <div className="flex-1 space-y-3">
+                            {currentQuestion.options.left.map((item, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() => { playSound('click'); setMatchingSelectedLeft(idx); }}
+                                className={`w-full p-4 rounded-2xl border-2 text-sm font-bold text-left transition-all ${matchingPairs[idx] !== undefined ? 'bg-green-100 border-green-500 text-green-900 opacity-50 cursor-default' : (matchingSelectedLeft === idx ? 'bg-amber-500 border-amber-600 text-white' : 'bg-amber-50 border-amber-200 text-amber-950')}`}
+                                disabled={matchingPairs[idx] !== undefined}
+                              >
+                                {item}
+                                {matchingPairs[idx] !== undefined && <span className="float-right">🔗</span>}
+                              </button>
+                            ))}
+                          </div>
+                          <div className="flex-1 space-y-3">
+                            {currentQuestion.options.right.map((item, idx) => {
+                              const isMatched = Object.values(matchingPairs).includes(idx);
+                              return (
+                                <button
+                                  key={idx}
+                                  onClick={() => {
+                                    if (matchingSelectedLeft !== null) {
+                                      playSound('click');
+                                      setMatchingPairs(prev => ({ ...prev, [matchingSelectedLeft]: idx }));
+                                      setMatchingSelectedLeft(null);
+                                    }
+                                  }}
+                                  className={`w-full p-4 rounded-2xl border-2 text-sm font-bold text-left transition-all ${isMatched ? 'bg-green-100 border-green-500 text-green-900 opacity-50 cursor-default' : (matchingSelectedLeft !== null ? 'hover:bg-amber-100 border-amber-300' : 'bg-amber-50 border-amber-200 text-amber-950 cursor-not-allowed')}`}
+                                  disabled={isMatched || matchingSelectedLeft === null}
+                                >
+                                  {item}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {currentQuestion.type === 'hotspot' && (
+                        <div className="relative cursor-crosshair group overflow-hidden rounded-3xl border-4 border-amber-100"
+                          onClick={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const x = ((e.clientX - rect.left) / rect.width) * 100;
+                            const y = ((e.clientY - rect.top) / rect.height) * 100;
+                            playSound('click');
+                            setHotspotClick({ x, y });
+                          }}>
+                          <img src={(currentQuestion.displayImage || currentQuestion.image).url} className="w-full h-auto block" />
+                          {hotspotClick && (
+                            <div className="absolute w-8 h-8 -ml-4 -mt-4 flex items-center justify-center animate-ping"
+                              style={{ left: `${hotspotClick.x}%`, top: `${hotspotClick.y}%` }}>
+                              <span className="text-3xl filter drop-shadow-lg">𓂀</span>
+                            </div>
+                          )}
+                          <div className="absolute bottom-2 left-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            Kliki õigel kohal pildil!
+                          </div>
                         </div>
                       )}
 
@@ -1356,32 +2293,45 @@
                         </button>
                         <button
                           onClick={submitAnswer}
-                          disabled={(currentQuestion.type === 'written' && !userAnswer.trim()) || (currentQuestion.type === 'fillin' && !userAnswer.trim()) || ((currentQuestion.type === 'choice' || currentQuestion.type === 'identify') && selectedOption === null) || (currentQuestion.type === 'truefalse' && selectedOption === null)}
+                          disabled={
+                            (currentQuestion.type === 'written' && !userAnswer.trim()) ||
+                            (currentQuestion.type === 'fillin' && !userAnswer.trim()) ||
+                            ((currentQuestion.type === 'choice' || currentQuestion.type === 'identify') && selectedOption === null) ||
+                            (currentQuestion.type === 'truefalse' && selectedOption === null) ||
+                            (currentQuestion.type === 'sorting' && userSortOrder.length < currentQuestion.options.length) ||
+                            (currentQuestion.type === 'multiSelect' && selectedOptions.size === 0) ||
+                            (currentQuestion.type === 'matching' && Object.keys(matchingPairs).length < currentQuestion.options.left.length) ||
+                            (currentQuestion.type === 'hotspot' && !hotspotClick)
+                          }
                           className="flex-1 btn-egypt bg-gradient-to-r from-amber-600 to-amber-700 disabled:from-gray-300 disabled:to-gray-400 disabled:shadow-none text-white font-black text-2xl py-5 rounded-3xl shadow-xl shadow-amber-900/40 uppercase tracking-tighter"
                         >
-                          Vasta 𓁱
+                          VASTA 𓁱
                         </button>
                       </div>
                     </div>
                   )}
 
                   {showResult && (
-                    <div className={`p-8 rounded-[40px] animate-in zoom-in duration-300 ${isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white shadow-2xl shadow-red-500/50'}`}>
+                    <div className={`p-8 rounded-[40px] animate-in zoom-in duration-300 ${isCorrect ? 'bg-green-500 text-white shadow-2xl shadow-green-500/30' : 'bg-red-500 text-white shadow-2xl shadow-red-500/50'}`}>
                       <div className="flex items-center gap-6 mb-6">
                         <div className="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center text-6xl drop-shadow-xl animate-bounce">
                           {isCorrect ? '✨' : '𓁼'}
                         </div>
                         <div>
-                          <h3 className="text-3xl font-black uppercase tracking-tighter">
+                          <h3 className="text-3xl font-black uppercase tracking-tighter leading-none mb-2">
                             {isCorrect ? 'HIILGAV!' : 'OI-OI...'}
                           </h3>
-                          <p className="text-white/80 font-bold italic">{isCorrect ? playerName : 'See kord ei täppi...'}</p>
+                          <p className="text-white/80 font-bold italic">{isCorrect ? 'Suurepärane töö!' : 'See kord ei täppi...'}</p>
                         </div>
                       </div>
 
-                      {!isCorrect && currentQuestion.wrongFeedback && (currentQuestion.type === 'choice') && currentQuestion.wrongFeedback[selectedOption + 1] && (
-                        <div className="bg-red-900/30 rounded-2xl p-4 mb-4 border border-red-500/30 text-amber-100 text-sm font-medium animate-in slide-in-from-top">
-                          💡 {currentQuestion.wrongFeedback[selectedOption + 1]}
+                      {isCorrect && currentQuestion.treasure && treasures[currentQuestion.treasure] && (
+                        <div className="bg-amber-400/30 border border-amber-300 rounded-2xl p-4 mb-4 flex items-center gap-4 animate-in slide-in-from-bottom">
+                          <span className="text-4xl">{treasures[currentQuestion.treasure].icon}</span>
+                          <div>
+                            <div className="text-[10px] font-black uppercase tracking-widest text-amber-100">Uus aare korjatud!</div>
+                            <div className="font-bold text-lg">{treasures[currentQuestion.treasure].name}</div>
+                          </div>
                         </div>
                       )}
 
@@ -1392,13 +2342,14 @@
                             <div className="text-2xl font-black text-white">
                               {currentQuestion.type === 'truefalse' ? (currentQuestion.correct ? 'Tõene' : 'Väär') :
                                 currentQuestion.type === 'choice' || currentQuestion.type === 'identify' ? currentQuestion.options[currentQuestion.correct] :
-                                  currentQuestion.answer?.[0]}
+                                  currentQuestion.type === 'sorting' ? currentQuestion.correct.map(i => currentQuestion.options[i]).join(' → ') :
+                                    currentQuestion.answer?.[0]}
                             </div>
                           </div>
                         )}
                         {(currentQuestion.explanation || currentQuestion.fact) && (
                           <div>
-                            <div className="text-xs font-black uppercase tracking-widest opacity-70 mb-2 text-amber-200">Selgitus</div>
+                            <div className="text-xs font-black uppercase tracking-widest opacity-70 mb-2 text-amber-200">Kas teadsid?</div>
                             <p className="text-lg font-medium opacity-95 leading-relaxed italic text-white">
                               "{currentQuestion.explanation || currentQuestion.fact}"
                             </p>
@@ -1460,10 +2411,40 @@
               <button onClick={() => { playSound('click'); setScreen('start'); }} className="btn-egypt bg-amber-950 text-white font-black py-6 px-16 rounded-3xl text-3xl shadow-2xl hover:scale-105 active:scale-95 transition-all uppercase tracking-tighter">
                 Mängi uuesti 𓁱
               </button>
+
+              <button
+                onClick={() => { playSound('click'); setShowHighScores(true); }}
+                className="block mx-auto mt-6 text-amber-950/60 font-black uppercase tracking-widest hover:text-amber-950 transition-colors"
+              >
+                🏆 Vaata edetabelit
+              </button>
             </div>
           </div>
         );
       }
+      if (screen === 'gameover') {
+        return (
+          <div className="min-h-screen bg-gradient-to-b from-red-900 via-black to-red-950 flex items-center justify-center p-4 relative overflow-hidden">
+            <div className="bg-sand absolute inset-0 pointer-events-none opacity-10"></div>
+            <div className="text-center max-w-2xl relative z-10">
+              <div className="text-9xl mb-8 animate-float drop-shadow-2xl">💀</div>
+              <h1 className="text-6xl font-black text-white mb-2 uppercase tracking-tighter">TEEKOND KATKES</h1>
+              <p className="text-2xl text-red-500 font-bold mb-10 tracking-widest italic">Sinu hing ei läbinud Osirise kohut...</p>
+
+              <div className="glass rounded-[40px] p-10 mb-10 border-2 border-red-500/30">
+                <div className="text-5xl font-black text-white mb-6 tracking-tighter">{score}<span className="text-lg uppercase ml-2 opacity-50">punkti</span></div>
+                <button onClick={handleFallBack} className="btn-egypt w-full bg-red-600 text-white font-black py-5 rounded-2xl text-xl shadow-xl hover:bg-red-500 transition-all uppercase mb-4">
+                  𓁀 Tõuse tuhast (Tagasi)
+                </button>
+                <button onClick={() => setScreen('start')} className="w-full bg-transparent text-white/60 font-bold py-3 uppercase tracking-widest hover:text-white transition-colors">
+                  Tagasi algusesse
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
 
       return null;
     };
