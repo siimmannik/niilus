@@ -434,6 +434,25 @@
         image: images.nile,
         explanation: "Niilus oli koduks paljudele ohtlikele loomadele, kellest krokodill ja jõehobu olid egiptlaste jaoks kõige kardetumad ja austatumad."
       },
+      {
+        id: 'new_delta_10', type: 'choice', location: 'delta', difficulty: 1,
+        question: "Kui pikk on umbes Niiluse jõgi, mida peetakse maailma pikimaks?",
+        options: ["Umbes 2000 km", "Umbes 4500 km", "Umbes 6650 km", "Umbes 10 000 km"],
+        correct: 2,
+        image: images.nile,
+        explanation: "Niilus on umbes 6650 km pikkune. See voolab läbi kümne riigi ja oli Vana-Egiptuse tsivilisatsiooni ellujäämise ainus tagatis keset kõrbet."
+      },
+      {
+        id: 'new_delta_11', type: 'matching', location: 'delta', difficulty: 2,
+        question: "Ühenda kõrb ja selle asukoht Egiptuse suhtes!",
+        options: {
+          left: ["Idas asuv kõrb", "Läänes asuv kõrb"],
+          right: ["Arabia kõrb", "Liibüa kõrb (Sahara osa)"]
+        },
+        correct: [0, 1],
+        image: images.egypt_map,
+        explanation: "Egiptust piiras idast Arabia kõrb ja läänest tohutu Liibüa kõrb, mis on osa Saharast. Need looduslikud piirid pakkusid maale kaitset sissetungijate eest."
+      },
       // ... (muud delta küsimused)
 
       // ===================== GIZA & MEMPHIS (Old Kingdom & Society) =====================
@@ -563,6 +582,38 @@
           3: "Kohv avastati Etioopiast alles aastatuhandeid hiljem."
         }
       },
+      {
+        id: 'new_memphis_11', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Millal ligikaudu ühendati Ülem- ja Alam-Egiptus üheks riigiks?",
+        options: ["u 4000 eKr", "u 3100 eKr", "u 2500 eKr", "u 1500 eKr"],
+        correct: 1,
+        image: images.narmer,
+        explanation: "Vana-Egiptuse riik ja tsivilisatsioon said alguse umbes 3100 eKr, kui esimene vaarao ühendas Niiluse oru ja delta."
+      },
+      {
+        id: 'new_memphis_12', type: 'sorting', location: 'memphis', difficulty: 2,
+        question: "Sorteeri Vana-Egiptuse ajaloo peamised riigiperioodid kronoloogiliselt!",
+        options: ["Vana riik", "Keskmine riik", "Uus riik"],
+        correct: [0, 1, 2],
+        image: images.egypt_map,
+        explanation: "Egiptuse ajalugu jaotatakse kolmeks hiilgeajaks: Vana riik (püramiidide aeg), Keskmine riik ja Uus riik (suurriigi aeg)."
+      },
+      {
+        id: 'new_memphis_13', type: 'multiSelect', location: 'memphis', difficulty: 3,
+        question: "Vali vaarao peamised võimusümbolid ja tunnused! (Vali 3 õiget)",
+        options: ["Topeltkroon", "Kärus (kepp) ja piits", "Võltshabe", "Raudrüü"],
+        correct: [0, 1, 2],
+        image: images.tutankhamun,
+        explanation: "Vaarao võimu tähistasid topeltkroon, peamüts nemes, kõver kepp (kärus) ja piits ning rituaalne võltshabe."
+      },
+      {
+        id: 'new_memphis_14', type: 'sorting', location: 'memphis', difficulty: 3,
+        question: "Aseta ühiskonnagrupid paika Egiptuse sotsiaalses püramiidis (alustades tipust)!",
+        options: ["Vaarao", "Preestrid ja aadlikud", "Sõdurid ja ametnikud", "Talupojad ja käsitöölised"],
+        correct: [0, 1, 2, 3],
+        image: images.scribe,
+        explanation: "Egiptuse ühiskond oli rangelt hierarhiline, kus tipus oli jumalik vaarao ja kõige suurema osa moodustasid talupojad, kelle tööst riik elatus."
+      },
 
       // ===================== GIZA (Pyramids) =====================
       {
@@ -674,7 +725,22 @@
         question: "Kes oli arhitekt, kes kujundas esimese püramiidi (Džoseri oma) ja keda hiljem kummardati kui meditsiini jumalat?",
         answer: ["imhotep"],
         image: images.step_pyramid,
-        explanation: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt ja arst. Ta oli esimene teadaolev geenius inimajaloos, keda rahvas mäletas tuhandeid aastaid."
+        explanation: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt and arst. Ta oli esimene teadaolev geenius inimajaloos, keda rahvas mäletas tuhandeid aastaid."
+      },
+      {
+        id: 'new_giza_11', type: 'choice', location: 'giza', difficulty: 2,
+        question: "Mis oli mastaba egiptuse ajaloos?",
+        options: ["Templi torn", "Madal ja lame hauakamber", "Sõjavanker", "Kullast ehe"],
+        correct: 1,
+        image: images.step_pyramid,
+        explanation: "Mastaba oli varajane, tellistest ehitatud lame hauakamber. Just mastabate üksteise otsa ladumisest arenesid hiljem välja esimesed püramiidid."
+      },
+      {
+        id: 'new_giza_12', type: 'written', location: 'giza', difficulty: 2,
+        question: "Kes on see kolmas vaarao (lisaks Khufule ja Khafrele), kellele ehitati Giza kompleksi kolmas ja väikseim püramiid?",
+        answer: ["menkaure", "mykerinos"],
+        image: images.giza,
+        explanation: "Giza kolm suurt püramiidi kuulusid vaaraodele Khufu (Cheops), Khafre (Chefren) ja Menkaure (Mykerinos)."
       },
 
       // ===================== AMARNA (Religion Revolution) =====================
@@ -897,6 +963,33 @@
           3: "Obelisk on ehitis, üheainsast kiviplokist sammas."
         }
       },
+      {
+        id: 'new_abydos_11', type: 'matching', location: 'abydos', difficulty: 3,
+        question: "Ühenda hinge osa ja selle tähendus!",
+        options: {
+          left: ["Ka", "Ba"],
+          right: ["Elujõud ja energia", "Isiksus ja hing"]
+        },
+        correct: [0, 1],
+        image: images.osiris,
+        explanation: "Egiptlased uskusid, et inimene koosneb mitmest osast. 'Ka' oli elujõud, mis vajas toitu, ja 'Ba' oli isiksus, mis võis linnuna haust välja lennata."
+      },
+      {
+        id: 'new_abydos_12', type: 'choice', location: 'abydos', difficulty: 2,
+        question: "Mitu päeva kestis tavaliselt keha kuivatamine natronis (soolas) muumifitseerimise ajal?",
+        options: ["10 päeva", "40 päeva", "70 päeva", "1 aasta"],
+        correct: 1,
+        image: images.mummy,
+        explanation: "Keha kuivatamine natronis kestis täpselt 40 päeva. See oli protsessi kõige olulisem osa, et eemaldada niiskus ja peatada lagunemine."
+      },
+      {
+        id: 'new_abydos_13', type: 'multiSelect', location: 'abydos', difficulty: 3,
+        question: "Millised organid pandi palsameerimisel eraldi kanoop-anumatesse? (Vali 2 õiget)",
+        options: ["Maks", "Kopsud", "Süda", "Aju"],
+        correct: [0, 1],
+        image: images.canopic_jars,
+        explanation: "Kanoopidesse pandi maks, kopsud, magu ja sooled. Süda jäeti kehasse ja aju visati tavaliselt minema, kuna peeti seda kasutuks."
+      },
 
       // ===================== TEEBA (New Kingdom & Gods) =====================
       // ===================== TEEBA (New Kingdom & Power) =====================
@@ -1003,6 +1096,21 @@
           2: "Pistrik oli taevajumal Horuse ja vaarao võimu sümbol.",
           3: "Pelikan oli egiptlaste jaoks mütoloogiline, kuid mitte Teeba peamine sümbol."
         }
+      },
+      {
+        id: 'new_teeba_11', type: 'written', location: 'teeba', difficulty: 3,
+        question: "Mis oli selle võõra rahva nimi, kes vallutas Egiptuse u u 1650 eKr ja tõi kaasa sõjavankrid?",
+        answer: ["hüksosed", "hyksos"],
+        image: images.war_chariot,
+        explanation: "Hüksosed (karjaste kuningad) valitsesid Egiptust üle saja aasta. Nende väljaajamine tähistas Uue riigi algust ja Egiptuse saamist suurriigiks."
+      },
+      {
+        id: 'new_teeba_12', type: 'choice', location: 'teeba', difficulty: 2,
+        question: "Millise kuulsa lahingu pidas Ramses II hetiitidega, mis viis maailma esimese rahulepinguni?",
+        options: ["Megiddo lahing", "Kadeshi lahing", "Aktioni lahing", "Gaugamela lahing"],
+        correct: 1,
+        image: images.ramses_ii,
+        explanation: "Kadeshi lahing (u 1274 eKr) oli üks suurimaid sõjavankrite lahinguid ajaloos. Kuigi mõlemad poole pidasid end võitjaks, järgnes sellele ajaloo esimene kirjalik rahuleping."
       },
 
       // ===================== KARNAK (Temples & Rituals) =====================
@@ -1113,6 +1221,22 @@
           3: "Sobek on krokodillipeaga Niiluse ja viljakuse jumal."
         }
       },
+      {
+        id: 'new_karnak_11', type: 'choice', location: 'karnak', difficulty: 3,
+        question: "Umbes mitu erinevat märki kuulus Vana-Egiptuse hieroglüüfkirja süsteemi selle hiilgeajal?",
+        options: ["u 20", "u 100", "üle 700", "üle 5000"],
+        correct: 2,
+        image: images.hieroglyphs,
+        explanation: "Egiptuse piltkiri oli väga keeruline, koosnedes enam kui 700-st erinevast märgist. Need võisid tähistada nii häälikuid, silpe kui ka terveid mõisteid."
+      },
+      {
+        id: 'new_karnak_12', type: 'choice', location: 'karnak', difficulty: 2,
+        question: "Millal avastati kuulus Rosetta kivi, mis võimaldas hieroglüüfe dešifreerida?",
+        options: ["1550 eKr", "1799 pKr", "1822 pKr", "1922 pKr"],
+        correct: 1,
+        image: images.rosetta,
+        explanation: "Rosetta kivi leiti Napoleoni Egiptuse-retke ajal 1799. aastal. Alles 1822. aastal suutis Champollion selle abil kirja saladused murda."
+      },
 
       // ===================== KUNINGATE ORG (Tombs) =====================
       {
@@ -1220,6 +1344,15 @@
           3: "Sfinks on hiiglaslik kaljukuju Giza kõrbes."
         }
       },
+      {
+        id: 'new_valley_11', type: 'choice', location: 'kuningate_org', difficulty: 2,
+        question: "Millal valitses ligikaudu lapsvaarao Tutanhamon, kelle haud leiti 1922. aastal puutumatuna?",
+        options: ["u 3100 eKr", "u 2500 eKr", "u 1332-1323 eKr", "u 30 eKr"],
+        correct: 2,
+        image: images.tutankhamun,
+        explanation: "Tutanhamon valitses Uue riigi ajal, umbes aastatel 1332–1323 eKr. Kuigi ta oli lühikest aega valitsenud kuningas, tegi leid talle maailmakuulsaks."
+      },
+
 
       // ===================== ABU SIMBEL & FINAL ERA (Ramses & End) =====================
       {
@@ -1298,6 +1431,28 @@
         answer: ["rosette kivi", "rosetta kivi"],
         image: images.rosetta,
         explanation: "Rosette'i kivil oli sama tekst kirjas kolmes keeles: hieroglüüfides, demootilises kirjas ja vanakreeka keeles. See andis Champollionile võtme koodi murdmiseks."
+      },
+      {
+        id: 'new_abu_11', type: 'choice', location: 'abu_simbel', difficulty: 2,
+        question: "Millal langes Egiptus lõplikult Rooma võimu alla, tähistades vaaraode aja lõppu?",
+        options: ["1000 eKr", "525 eKr", "332 eKr", "30 eKr"],
+        correct: 3,
+        image: images.cleopatra,
+        explanation: "Aastal 30 eKr, pärast Kleopatra VII surma, muutus Egiptus Rooma provintsiks. See lõpetas üle 3000 aasta kestnud vaaraode valitsemisaja."
+      },
+      {
+        id: 'new_abu_12', type: 'written', location: 'abu_simbel', difficulty: 2,
+        question: "Kes oli see viimane Egiptuse naisvaarao, kes püüdis riiki päästa suhete kaudu Caesari ja Antoniusega?",
+        answer: ["kleopatra", "kleopatra vii"],
+        image: images.cleopatra,
+        explanation: "Kleopatra VII oli viimane iseseisev Egiptuse valitseja. Ta kuulus kreeka päritolu Ptolemaioste dünastiasse, kes valitsesid Egiptust alates Aleksander Suurest."
+      },
+      {
+        id: 'new_abu_13', type: 'truefalse', location: 'abu_simbel', difficulty: 1,
+        question: "Egiptlaste loodud 365-päevane päikesekalender on aluseks meie tänapäevasele kalendrile.",
+        correct: true,
+        image: images.ra,
+        explanation: "Egiptlastel oli 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus. See täpne süsteem võeti hiljem üle roomlaste poolt (Juliuse kalender) ja on meie ajaarvamise vundamendiks."
       },
       {
         id: 'new_abu_9', type: 'choice', location: 'abu_simbel', difficulty: 2,
@@ -1457,11 +1612,88 @@
         setStreak(0);
         setBestStreak(0);
         setScore(0);
-        // ... (ülejäänud resetid)
+        setAnsweredQuestions(new Set());
+        setCollectedTreasures([]);
+        setFactCards([]);
+        setUnlockedAchievements([]);
+        setStats({ totalCorrect: 0, totalAnswered: 0, perfectLocations: 0, recoveries: 0, trueFalseCorrect: 0, geoCorrect: 0, gameCompleted: false });
+        setActiveEvent(null);
+        setEventCounter(0);
+        setShield(false);
+        setFreeHint(false);
         setScreen('map');
       };
 
-      // ... (muud funktsioonid)
+      const showNotification = (message, type = 'info') => {
+        setNotification({ message, type });
+        setTimeout(() => setNotification(null), 3000);
+      };
+
+      const checkAchievements = (currentStats) => {
+        achievements.forEach(ach => {
+          if (!unlockedAchievements.includes(ach.id)) {
+            const statsForCondition = {
+              ...currentStats,
+              treasureCount: collectedTreasures.length,
+              factCount: factCards.length
+            };
+            if (ach.condition(statsForCondition)) {
+              setUnlockedAchievements(prev => [...prev, ach.id]);
+              setNewAchievement(ach);
+              playSound('achievement');
+              setTimeout(() => setNewAchievement(null), 5000);
+            }
+          }
+        });
+      };
+
+      const getQuestionsForLocation = (locationId) => {
+        return allQuestions.filter(q => q.location === locationId && !answeredQuestions.has(q.id));
+      };
+
+      const shuffleQuestions = (array, count) => {
+        const shuffled = [...array].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+      };
+
+      const checkWrittenAnswer = (userAnswer, correctAnswers) => {
+        const normalizedUser = userAnswer.trim().toLowerCase().replace(/[.,!?;:]/g, '');
+        return correctAnswers.some(ans => {
+          const normalizedAns = ans.toLowerCase().replace(/[.,!?;:]/g, '');
+          return normalizedUser === normalizedAns || (normalizedUser.includes(normalizedAns) && normalizedAns.length > 3);
+        });
+      };
+
+      const triggerRandomEvent = () => {
+        if (Math.random() < 0.3) {
+          const event = randomEvents[Math.floor(Math.random() * randomEvents.length)];
+          setPendingEvent(event);
+          setShowEventModal(true);
+          playSound('event');
+        }
+      };
+
+      const applyEvent = (event) => {
+        setActiveEvent(event);
+        setEventCounter(event.duration || 0);
+
+        if (event.effect === 'extraLife') {
+          setLives(l => Math.min(l + 1, 5));
+          showNotification('Sinu elud suurenesid!', 'success');
+        } else if (event.effect === 'losePoints') {
+          setScore(s => Math.max(0, s - 50));
+          showNotification('Kaotasid 50 punkti!', 'warning');
+        } else if (event.effect === 'freeHint') {
+          setFreeHint(true);
+          showNotification('Sinu järgmine vihje on tasuta!', 'success');
+        } else if (event.effect === 'shield') {
+          setShield(true);
+          showNotification('Skarabeuse kaitse aktiivne!', 'success');
+        }
+
+        setShowEventModal(false);
+        setPendingEvent(null);
+      };
 
       // ========== EKRAANID ==========
       if (screen === 'start') {
@@ -1767,6 +1999,14 @@
         setUserAnswer('');
         setSelectedOption(null);
 
+        if (activeEvent && eventCounter > 0) {
+          setEventCounter(prev => {
+            const next = prev - 1;
+            if (next === 0) setActiveEvent(null);
+            return next;
+          });
+        }
+
         if (questionQueue.length > 0) {
           loadNextQuestion();
         } else {
@@ -1850,21 +2090,21 @@
                 <div className="absolute bottom-8 right-12 text-amber-900/20 font-black text-sm uppercase tracking-widest pointer-events-none">Nuubia</div>
 
                 {/* The Nile */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-12 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 transform -translate-x-1/2 rounded-full opacity-40 blur-sm shadow-inner" />
-                <div className="absolute left-1/2 top-0 bottom-0 w-8 bg-gradient-to-r from-blue-500 via-blue-300 to-blue-500 transform -translate-x-1/2 rounded-full opacity-60 animate-pulse" />
+                <div className="absolute left-1/2 top-0 bottom-0 w-12 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 transform -translate-x-1/2 rounded-full opacity-40 blur-sm shadow-inner pointer-events-none" />
+                <div className="absolute left-1/2 top-0 bottom-0 w-8 bg-gradient-to-r from-blue-500 via-blue-300 to-blue-500 transform -translate-x-1/2 rounded-full opacity-60 animate-pulse pointer-events-none" />
 
                 {locations.map((loc, idx) => (
-                  <div key={loc.id} className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-700" style={{ left: `${loc.x}%`, top: `${loc.y}%` }}>
+                  <div key={loc.id} className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-700" style={{ left: `${loc.x}%`, top: `${loc.y}%`, zIndex: idx === currentLocation ? 50 : 10 }}>
                     <div className="relative">
                       {idx === currentLocation && (
-                        <div className="absolute -inset-4 bg-amber-400 rounded-full animate-ping opacity-20"></div>
+                        <div className="absolute -inset-4 bg-amber-400 rounded-full animate-ping opacity-20 pointer-events-none"></div>
                       )}
                       <button
                         onClick={() => idx === currentLocation && enterLocation(idx)}
                         disabled={idx !== currentLocation}
                         className={`relative w-20 h-20 rounded-3xl flex items-center justify-center text-4xl transition-all duration-500 shadow-xl
                           ${idx < currentLocation ? 'bg-green-600/40 text-green-100 opacity-60 scale-90 border-2 border-green-500/30' :
-                            idx === currentLocation ? 'bg-amber-600 text-white scale-125 border-4 border-amber-100 hover:rotate-12 cursor-pointer z-20' :
+                            idx === currentLocation ? 'bg-amber-600 text-white scale-125 border-4 border-amber-100 hover:rotate-12 cursor-pointer' :
                               'bg-amber-900/20 text-amber-900/30 opacity-40 scale-75 border-2 border-amber-900/10'}`}
                       >
                         {loc.icon}
