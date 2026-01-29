@@ -135,6 +135,34 @@
         box-shadow: 0 0 5px #fbbf24;
       }
     }
+
+    .shake {
+      animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    }
+
+    @keyframes shake {
+
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
   </style>
 </head>
 
@@ -1701,6 +1729,7 @@
       const [fallingBack, setFallingBack] = useState(false);
       const [newAchievement, setNewAchievement] = useState(null);
       const [hiddenOptions, setHiddenOptions] = useState(new Set()); // 50/50 jaoks
+      const [isShaking, setIsShaking] = useState(false);
       const [highScores, setHighScores] = useState([]);
       const [showHighScores, setShowHighScores] = useState(false);
 
@@ -2100,7 +2129,8 @@
 
           if (loseLife) {
             setLives(l => l - 1);
-            setScreen('shake'); setTimeout(() => setScreen('game'), 500);
+            setIsShaking(true);
+            setTimeout(() => setIsShaking(false), 500);
             if (lives <= 1) setFallingBack(true);
           }
 
@@ -2420,7 +2450,7 @@
         };
 
         return (
-          <div className="min-h-screen bg-gradient-to-b from-amber-900 via-amber-950 to-black p-4 relative overflow-hidden">
+          <div className={`min-h-screen bg-gradient-to-b from-amber-900 via-amber-950 to-black p-4 relative overflow-hidden ${isShaking ? 'shake' : ''}`}>
             <div className="bg-sand absolute inset-0 pointer-events-none opacity-5"></div>
 
             <div className="max-w-2xl mx-auto mb-6 relative z-10">
