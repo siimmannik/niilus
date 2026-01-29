@@ -1919,14 +1919,18 @@
             const newStats = { ...stats, perfectLocations: stats.perfectLocations + 1 };
             setStats(newStats);
             checkAchievements(newStats);
+            if (selectedCharacter === 'priest' && lives < 5) {
+              setLives(l => l + 1);
+              showNotification('Jumalad kiidavad sind! (+1 elu)', 'success');
+            }
           }
+
           if (currentLocation < locations.length - 1) {
             setCurrentLocation(prev => prev + 1);
             setScreen('map');
             showNotification(`🎉 Tubli, ${playerName}!`, 'success');
             playSound('levelup');
-          }
-          else {
+          } else {
             setStats(s => ({ ...s, gameCompleted: true }));
             saveHighScore(score);
             setScreen('victory');
@@ -1934,6 +1938,7 @@
           }
           return;
         }
+
         const [next, ...rest] = queue;
         setCurrentQuestion(next);
         setQuestionQueue(rest);
@@ -2172,17 +2177,8 @@
           loadNextQuestion();
         } else {
           // Asukoht läbitud
-          if (locationMistakes === 0) {
-            setStats(s => ({ ...s, perfectLocations: s.perfectLocations + 1 }));
-            // Preestri boonus: Kui läbid vigadeta, saad elu tagasi?
-            if (selectedCharacter === 'priest' && lives < 5) setLives(l => l + 1);
-          }
-
-          // Kasuta juhuslikku sündmust
           triggerRandomEvent();
-
-          // Tagasta kaardile
-          setScreen('map');
+          loadNextQuestion([]); // Kasuta ühtset loogikat asukoha vahetamiseks
         }
       };
 
