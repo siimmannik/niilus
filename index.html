@@ -261,7 +261,8 @@
       alexander: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Alexander_the_Great_mosaic.jpg/200px-Alexander_the_Great_mosaic.jpg", emoji: "⚔️" },
       howard_carter: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Howard_Carter_with_Innermost_Coffin_of_Tutankhamun.jpg/200px-Howard_Carter_with_Innermost_Coffin_of_Tutankhamun.jpg", emoji: "🔦" },
       amarna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/House_Altar_Akhenaten_Nefertiti_Berlin.jpg/200px-House_Altar_Akhenaten_Nefertiti_Berlin.jpg", emoji: "🏛️" },
-      aten: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Aten_disk.jpg/200px-Aten_disk.jpg", emoji: "☀️" }
+      aten: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Aten_disk.jpg/200px-Aten_disk.jpg", emoji: "☀️" },
+      war_chariot: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Egyptian_Chariot.jpg/280px-Egyptian_Chariot.jpg", emoji: "🏎️" }
     };
 
     // Pildikomponent
@@ -521,6 +522,30 @@
         }
       },
       {
+        id: 'new_memphis_5', type: 'multiSelect', location: 'memphis', difficulty: 2,
+        question: "Millised neist olid vaarao võimusümbolid? (Vali 2 õiget)",
+        options: ["Topeltkroon", "Savitahvel", "Kärus ja piits", "Raudmõõk"],
+        correct: [0, 2],
+        image: images.tutankhamun,
+        explanation: "Vaarao võimusümbolid olid topeltkroon (ühendatud Egiptuse märk), võltshabe, nemes-peakate ning kärus ja piits, mis sümboliseerisid karjase ja valitseja rolli."
+      },
+      {
+        id: 'new_memphis_6', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Mitu päeva oli Vana-Egiptuse päikesekalendris, mis on ka meie kalendri aluseks?",
+        options: ["354 päeva", "360 päeva", "365 päeva", "370 päeva"],
+        correct: 2,
+        image: images.egypt_map,
+        explanation: "Egiptlased kasutasid 365-päevast kalendrit: 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus."
+      },
+      {
+        id: 'new_memphis_7', type: 'choice', location: 'memphis', difficulty: 1,
+        question: "Miks oli kirjutaja (skriiba) amet Vana-Egiptuses väga austatud?",
+        options: ["Nad olid tugevaimad sõdurid", "Nad oskasid ainsana püramiide ehitada", "Kirjaoskus oli haruldane ja andis pääsu riigiametitesse", "Nad olid vaarao sugulased"],
+        correct: 2,
+        image: images.scribe,
+        explanation: "Kirjaoskus oli keeruline ja selle omandamine võttis aastaid. Kirjutajad olid haritud eliit, kes vabastati füüsilisest tööst ja maksudest."
+      },
+      {
         id: 'new_memphis_5', type: 'truefalse', location: 'memphis', difficulty: 2,
         question: "Egiptuse käsitöölised said oma töö eest palka rahas.",
         correct: false,
@@ -623,6 +648,14 @@
         image: images.step_pyramid,
         explanation: "Varaseim suur püramiid oli vaarao Džoseri astmikpüramiid Sakkaras, mille ehitas arhitekt Imhotep. See meenutas hiiglaslikku treppi taevasse ja tähistas uue ajastu algust ehituskunstis.",
         treasure: "step_pyramid"
+      },
+      {
+        id: 'new_giza_12', type: 'choice', location: 'giza', difficulty: 1,
+        question: "Kuidas nimetati varasemat hauatüüpi – madalat lameda katusega tellisehitist, millest arenesid püramiidid?",
+        options: ["Tempel", "Mastaba", "Sarkofaag", "Obelisk"],
+        correct: 1,
+        image: images.step_pyramid,
+        explanation: "Mastaba oli Vana-Egiptuse haua tüüp, madal nelinurkne ehitis, mille kuju meenutas pinki. Nende üksteise peale ladumisest tekkisid esimesed astmikpüramiidid."
       },
       {
         id: 'new_giza_2', type: 'choice', location: 'giza', difficulty: 2,
@@ -973,6 +1006,14 @@
         correct: [0, 1],
         image: images.osiris,
         explanation: "Egiptlased uskusid, et inimene koosneb mitmest osast. 'Ka' oli elujõud, mis vajas toitu, ja 'Ba' oli isiksus, mis võis linnuna haust välja lennata."
+      },
+      {
+        id: 'new_abydos_15', type: 'choice', location: 'abydos', difficulty: 2,
+        question: "Kes oli Egiptuse mütoloogia järgi kurja kehastus ja Osirise vend, kes ta tappis?",
+        options: ["Horus", "Anubis", "Seth", "Thoth"],
+        correct: 2,
+        image: images.seth,
+        explanation: "Seth oli kaose ja tormide jumal, kes tappis oma venna Osirise. Hiljem võitis Osirise poeg Horus Sethi ja temast sai vaaraode kaitsja."
       },
       {
         id: 'new_abydos_12', type: 'choice', location: 'abydos', difficulty: 2,
