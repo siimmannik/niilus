@@ -262,7 +262,12 @@
       howard_carter: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Howard_Carter_with_Innermost_Coffin_of_Tutankhamun.jpg/200px-Howard_Carter_with_Innermost_Coffin_of_Tutankhamun.jpg", emoji: "🔦" },
       amarna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/House_Altar_Akhenaten_Nefertiti_Berlin.jpg/200px-House_Altar_Akhenaten_Nefertiti_Berlin.jpg", emoji: "🏛️" },
       aten: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Aten_disk.jpg/200px-Aten_disk.jpg", emoji: "☀️" },
-      war_chariot: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Egyptian_Chariot.jpg/280px-Egyptian_Chariot.jpg", emoji: "🏎️" }
+      war_chariot: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Egyptian_Chariot.jpg/280px-Egyptian_Chariot.jpg", emoji: "🏎️" },
+      sekhmet: { url: "images/sekhmet.png", emoji: "🦁" },
+      bes: { url: "images/bes.png", emoji: "👺" },
+      taweret: { url: "images/taweret.png", emoji: "🦛" },
+      khepri: { url: "images/khepri.png", emoji: "🪲" },
+      bubastis: { url: "images/bubastis.png", emoji: "🐱" }
     };
 
     // Pildikomponent
@@ -444,6 +449,28 @@
         explanation: "Niilus on umbes 6650 km pikkune. See voolab läbi kümne riigi ja oli Vana-Egiptuse tsivilisatsiooni ellujäämise ainus tagatis keset kõrbet."
       },
       {
+        id: 'new_delta_cats_1', type: 'truefalse', location: 'delta', difficulty: 1,
+        question: "Vana-Egiptuses oli kassi tapmine keelatud ja selle eest võis karistada surmanuhtlusega.",
+        correct: true,
+        image: images.bastet,
+        explanation: "Kassid olid pühad loomad ja vaarao kaitse all. Ajaloolane Diodoros kirjeldab, kuidas aastal 59 eKr tappis rahvahulk Rooma diplomaadi, kes oli kogemata kassi alla ajanud."
+      },
+      {
+        id: 'new_delta_cats_2', type: 'choice', location: 'delta', difficulty: 2,
+        question: "Millise suurlinna keskel asus punasest graniidist tempel, mis oli pühendatud kassijumalanna Bastetile?",
+        options: ["Memphis", "Teeba", "Bubastis", "Giza"],
+        correct: 2,
+        image: images.bubastis,
+        explanation: "Bubastise linn (Egiptuse keeles Per-Bast) oli kassijumalanna kultuse keskus, kus igal aastal toimusid suured pidustused."
+      },
+      {
+        id: 'new_delta_khepri', type: 'written', location: 'delta', difficulty: 2,
+        question: "Kes oli mardikajumal, kes sümboliseeris tärkavat päikest ja maailma loomist?",
+        answer: ["khepri", "hepri"],
+        image: images.khepri,
+        explanation: "Khepri (ka Hepri) tähendab 'seda, kes on sündinud'. Teda kujutati mardikana, kes veeretab päikeseketast üle taeva, sarnaselt sitasitikale, kes veeretab sõnnikupalli."
+      },
+      {
         id: 'new_delta_11', type: 'matching', location: 'delta', difficulty: 2,
         question: "Ühenda kõrb ja selle asukoht Egiptuse suhtes!",
         options: {
@@ -593,6 +620,30 @@
         image: images.scribe,
         explanation: "Kirjutajaks õppimine oli raske ja kestis aastaid. Poisid alustasid õpinguid varakult, harjutades sadu märke ja rangeid reegleid.",
         treasure: "hieroglyph"
+      },
+      {
+        id: 'new_memphis_bes', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Millise Egiptuse kodukaitsja ja laste hoidja jumala järgi on tõenäoliselt saanud nime Ibiza saar?",
+        options: ["Anubis", "Bes", "Ptah", "Thoth"],
+        correct: 1,
+        image: images.bes,
+        explanation: "Bes oli populaarne ka kreeklaste ja foiniiklaste seas. Ibiza nimi (Ebusus) tähendas 'Besi saart', kuna usuti, et sealne puuduv roomajate hulk on tema teenene."
+      },
+      {
+        id: 'new_memphis_purity', type: 'choice', location: 'memphis', difficulty: 3,
+        question: "Mitu korda päevas pidid Egiptuse preestrid end Herodotose järgi külma veega pesema, et püsida rituaalselt puhtad?",
+        options: ["Üks kord", "Kaks korda", "Neli korda", "Seitse korda"],
+        correct: 2,
+        image: images.scribe,
+        explanation: "Preestrid pidid järgima rangeid reegleid: nad pesid end täielikult kaks korda päeval ja kaks korda öösel, raseerisid kogu keha ja kandsid vaid linaseid riideid."
+      },
+      {
+        id: 'new_memphis_newyear', type: 'choice', location: 'memphis', difficulty: 2,
+        question: "Millal algas Vana-Egiptuse kalendriaasta, tähistades uue elu ja Niiluse tõusu algust?",
+        options: ["Jaanuaris", "Märtsis", "Juunis", "Septembris"],
+        correct: 2,
+        image: images.nile,
+        explanation: "Egiptlaste uus aasta algas suvise pööripäeva paiku (juunis), kui Niiluse vesi hakkas tõusma, tuues endaga kaasa viljakat muda."
       },
       {
         id: 'new_memphis_10', type: 'choice', location: 'memphis', difficulty: 2,
@@ -1277,6 +1328,41 @@
         correct: 1,
         image: images.rosetta,
         explanation: "Rosetta kivi leiti Napoleoni Egiptuse-retke ajal 1799. aastal. Alles 1822. aastal suutis Champollion selle abil kirja saladused murda."
+      },
+      {
+        id: 'new_karnak_feeding', type: 'choice', location: 'karnak', difficulty: 2,
+        question: "Mitu korda päevas pakkusid preestrid Karnaki templis Amon-Ra kujule süüa ja juua?",
+        options: ["Korra päevas", "Kaks korda", "Kolm korda", "Ainult täiskuu ajal"],
+        correct: 2,
+        image: images.karnak,
+        explanation: "Jumalad said toitu hommikul, keskpäeval ja õhtul. Ülempreester serveeris parimat leiba ja liha (näiteks hane või tuvi)."
+      },
+      {
+        id: 'new_karnak_sekhmet_legend', type: 'choice', location: 'karnak', difficulty: 2,
+        question: "Millega värvis Amon-Ra õlle punaseks, et petta ja uinutada märatsevat lõvijumalanna Sehmetit?",
+        options: ["Veiniga", "Verega", "Punase ookriga", "Granaatõunaga"],
+        correct: 2,
+        image: images.sekhmet,
+        explanation: "Legend räägib, et Sehmet märatses inimkonda hävitades. Amon-Ra valas maa üle punase ookriga värvitud õllega, mida Sehmet pidas vereks ja jõi end päästvalt purju."
+      },
+      {
+        id: 'new_karnak_matching_gods', type: 'matching', location: 'karnak', difficulty: 3,
+        question: "Ühenda jumal ja tema olemus/kuju!",
+        options: {
+          left: ["Bes", "Taweret", "Sehmet", "Amon-Ra"],
+          right: ["Kärbus ja kodukaitsja", "Jõehobu-sünnitaja", "Lõvipea-tuline", "Päikese-kuningas"]
+        },
+        correct: [0, 1, 2, 3],
+        image: images.bes,
+        explanation: "Bes ja Taweret olid kodudes austatud kaitsjad, Sehmet ja Amon-Ra aga võimsad riiklikud jumalused."
+      },
+      {
+        id: 'new_karnak_theodosius', type: 'choice', location: 'karnak', difficulty: 3,
+        question: "Kes oli see Rooma keiser, kes aastal 384 pKr käskis kõik Egiptuse templid sulgeda ja paganluse keelata?",
+        options: ["Augustus", "Constantinus Suur", "Theodosius", "Nero"],
+        correct: 2,
+        image: images.rosetta,
+        explanation: "Keiser Theodosius tegi kristlusest riigiusu ja käskis hävitada või sulgeda kõik vanad templid, tähistades sellega Vana-Egiptuse religiooni lõppu."
       },
 
       // ===================== KUNINGATE ORG (Tombs) =====================
