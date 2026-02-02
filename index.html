@@ -170,6 +170,7 @@
   <div id="root"></div>
 
   <script type="text/babel">
+    console.log("Script starting...");
     const { useState, useEffect, useRef, useCallback } = React;
 
     // ========== HELIEFEKTID ==========
@@ -350,7 +351,8 @@
         wrongFeedback: {
           0: "Enamik maailma jõgesid voolab tõesti lõunasse, kuid Niilus on erand, voolates Vahemere poole.",
           2: "Idast läände voolamine tähendaks kõrbesse suundumist, kuid Niilus järgib oru põhja-suunda.",
-          3: "Niilus ei voola itta, Punase mere poole, vaid püsib oma viljakas orus."}
+          3: "Niilus ei voola itta, Punase mere poole, vaid püsib oma viljakas orus."
+        }
       },
       {
         id: "geo_hotspot_1", type: "hotspot", location: "delta", difficulty: 1,
@@ -358,21 +360,24 @@
         image: images.egypt_map,
         correct: { targetX: 50, targetY: 12, radius: 10 },
         hint: "Niiluse delta on viljakas kolmnurkne piirkond Põhja-Egiptuses, kus Niilus hargneb ja suubub Vahem...",
-        explanation: "Niiluse delta on viljakas kolmnurkne piirkond Põhja-Egiptuses, kus Niilus hargneb ja suubub Vahemere sisse. See oli Vana-Egiptuse kõige viljakam ala."},
+        explanation: "Niiluse delta on viljakas kolmnurkne piirkond Põhja-Egiptuses, kus Niilus hargneb ja suubub Vahemere sisse. See oli Vana-Egiptuse kõige viljakam ala."
+      },
       {
         id: "geo_hotspot_2", type: "hotspot", location: "delta", difficulty: 2,
         question: "Kus asub Punane meri?",
         image: images.egypt_map,
         correct: { targetX: 85, targetY: 55, radius: 15 },
         hint: "Punane meri piirab Egiptust idast",
-        explanation: "Punane meri piirab Egiptust idast. See oli oluline meretee ja eraldas Egiptust Araabia poolsaarest."},
+        explanation: "Punane meri piirab Egiptust idast. See oli oluline meretee ja eraldas Egiptust Araabia poolsaarest."
+      },
       {
         id: "geo_hotspot_3", type: "hotspot", location: "delta", difficulty: 2,
         question: "Leia kaardilt Ülem-Egiptus (jõe ülemjooks lõuna pool)!",
         image: images.egypt_map,
         correct: { targetX: 52, targetY: 75, radius: 15 },
         hint: "Ülem-Egiptus asus jõe voolusuuna järgi 'üleval' ehk lõunas",
-        explanation: "Ülem-Egiptus asus jõe voolusuuna järgi 'üleval' ehk lõunas. Selle sümboliks oli valge kroon ja lootoslill."},
+        explanation: "Ülem-Egiptus asus jõe voolusuuna järgi 'üleval' ehk lõunas. Selle sümboliks oli valge kroon ja lootoslill."
+      },
       {
         id: "new_delta_2", type: "choice", location: "delta", difficulty: 2,
         question: "Millal jõudis harilikult Egiptusesse tulvavesi, mis tähistas üleujutuse algust?",
@@ -384,7 +389,8 @@
         wrongFeedback: {
           0: "Märts on Egiptuses saagikoristuse aeg, mil maa hakkab uue tulva ootel kuivama.",
           2: "September on üleujutuse kõrgaeg, mil vesi püsib põldudel, kuid tulv algab varem.",
-          3: "Detsember on talv, mil vili juba kasvab taandunud veest jäänud mudas."}
+          3: "Detsember on talv, mil vili juba kasvab taandunud veest jäänud mudas."
+        }
       },
       {
         id: "new_delta_3", type: "choice", location: "delta", difficulty: 2,
@@ -397,7 +403,8 @@
         wrongFeedback: {
           0: "Põhjanaela kasutati navigeerimiseks, kuid see ei olnud seotud Niiluse rütmiga.",
           2: "Orion oli egiptlastele tähtis (seostati Osirisega), kuid uut aastat kuulutas Siirius.",
-          3: "Veenus on planeet, mitte täht, ega märkinud kalendriaasta algust."}
+          3: "Veenus on planeet, mitte täht, ega märkinud kalendriaasta algust."
+        }
       },
       {
         id: "new_delta_4", type: "truefalse", location: "delta", difficulty: 1,
@@ -406,14 +413,16 @@
         image: images.scribe,
         hint: "Egiptuse teadus oli praktilise suunitlusega",
         explanation: "Egiptuse teadus oli praktilise suunitlusega. Arstiteaduses olid nad väga edasijõudnud, osates teha keerulisi operatsioone. Nad mõistsid, et haiguste tõrjel pole esmatähtsad palved, vaid õige diagnoos ja kohane ravi.",
-        treasure: "lotus"},
+        treasure: "lotus"
+      },
       {
         id: "new_delta_5", type: "written", location: "delta", difficulty: 3,
         question: "Kuidas nimetati egiptlaste praktilist teadust, mis tähendas kreeka keeles 'maamõõtmine'?",
         answer: ["geomeetria"],
         image: images.egypt_map,
         hint: "Geomeetria tekkis Egiptuses vajadusest pärast iga-aastast Niiluse üleujutust põllupiirid uuesti p...",
-        explanation: "Geomeetria tekkis Egiptuses vajadusest pärast iga-aastast Niiluse üleujutust põllupiirid uuesti paika panna. Nad oskasid arvutada kolmnurga ja ringi pindala (tundes arvu pii) ning püramiidi ruumala."},
+        explanation: "Geomeetria tekkis Egiptuses vajadusest pärast iga-aastast Niiluse üleujutust põllupiirid uuesti paika panna. Nad oskasid arvutada kolmnurga ja ringi pindala (tundes arvu pii) ning püramiidi ruumala."
+      },
       {
         id: "new_delta_6", type: "choice", location: "delta", difficulty: 1,
         question: "Kuidas nimetasid egiptlased oma maad, mis tähendas 'Must Maa'?",
@@ -425,7 +434,8 @@
         wrongFeedback: {
           0: "Deshret tähistas just Punast Maad ehk elutut kõrbe.",
           2: "Oaas on üksik haljasala kõrbes, kuid mitte kogu Egiptuse nimi.",
-          3: "Mesopotaamia (Kahejõe-maa) asus hoopis tänapäeva Iraagi aladel."}
+          3: "Mesopotaamia (Kahejõe-maa) asus hoopis tänapäeva Iraagi aladel."
+        }
       },
       {
         id: "new_delta_7", type: "written", location: "delta", difficulty: 2,
@@ -433,7 +443,8 @@
         answer: ["vahemeri"],
         image: images.egypt_map,
         hint: "Niilus suubub põhjas Vahemerre, moodustades hiiglasliku ja viljaka delta",
-        explanation: "Niilus suubub põhjas Vahemerre, moodustades hiiglasliku ja viljaka delta. See oli Egiptuse värav Euroopasse ja Lähis-itta."},
+        explanation: "Niilus suubub põhjas Vahemerre, moodustades hiiglasliku ja viljaka delta. See oli Egiptuse värav Euroopasse ja Lähis-itta."
+      },
       {
         id: "new_delta_8", type: "choice", location: "delta", difficulty: 2,
         question: "Mis oli peamine kirjutusmaterjal, mida valmistati Niiluse kallastel kasvavast roost?",
@@ -445,7 +456,8 @@
         wrongFeedback: {
           0: "Pärgamenti tehti loomanahkadest ja see muutus populaarseks palju hiljem.",
           1: "Savitahvleid kasutasid egiptlaste naabrid sumerid Mesopotaamias.",
-          3: "Tänapäevane paber leiutati Hiinas sadu aastaid pärast püramiidide aega."}
+          3: "Tänapäevane paber leiutati Hiinas sadu aastaid pärast püramiidide aega."
+        }
       },
       {
         id: "new_delta_9", type: "truefalse", location: "delta", difficulty: 2,
@@ -454,7 +466,8 @@
         image: images.egypt_map,
         hint: "Valge Niilus algab Victoria järvest ja Sinine Niilus Etioopia mägedest",
         explanation: "Valge Niilus algab Victoria järvest ja Sinine Niilus Etioopia mägedest. Need kaks saavad kokku Hartumis ja voolavad ühiselt läbi Egiptuse Vahemerre.",
-        treasure: "papyrus"},
+        treasure: "papyrus"
+      },
       {
         id: "sort_delta_1", type: "sorting", location: "delta", difficulty: 2,
         question: "Pane need Egiptuse põllumajanduse etapid ajaliselt järjekorda!",
@@ -463,7 +476,8 @@
         image: images.farmers,
         hint: "Egiptuse kalender jagunes kolmeks neljakuuliseks aastaajaks: Akhet (üleujutus), Peret (külv ja vi...",
         explanation: "Egiptuse kalender jagunes kolmeks neljakuuliseks aastaajaks: Akhet (üleujutus), Peret (külv ja vilja tärkamine) ning Shemu (saagikoristus ja kuivus).",
-        treasure: "papyrus"},
+        treasure: "papyrus"
+      },
       {
         id: "new_delta_multi", type: "multiSelect", location: "delta", difficulty: 2,
         question: "Millised neist loomadest elasid muistsel ajal Niiluse jões ja selle kallastel? (Vali 2 õiget)",
@@ -471,7 +485,8 @@
         correct: [0, 1],
         image: images.nile,
         hint: "Niilus oli koduks paljudele ohtlikele loomadele, kellest krokodill ja jõehobu olid egiptlaste jao...",
-        explanation: "Niilus oli koduks paljudele ohtlikele loomadele, kellest krokodill ja jõehobu olid egiptlaste jaoks kõige kardetumad ja austatumad."},
+        explanation: "Niilus oli koduks paljudele ohtlikele loomadele, kellest krokodill ja jõehobu olid egiptlaste jaoks kõige kardetumad ja austatumad."
+      },
       {
         id: "new_delta_10", type: "choice", location: "delta", difficulty: 1,
         question: "Kui pikk on umbes Niiluse jõgi, mida peetakse maailma pikimaks?",
@@ -479,14 +494,16 @@
         correct: 2,
         image: images.nile,
         hint: "Niilus on umbes 6650 km pikkune",
-        explanation: "Niilus on umbes 6650 km pikkune. See voolab läbi kümne riigi ja oli Vana-Egiptuse tsivilisatsiooni ellujäämise ainus tagatis keset kõrbet."},
+        explanation: "Niilus on umbes 6650 km pikkune. See voolab läbi kümne riigi ja oli Vana-Egiptuse tsivilisatsiooni ellujäämise ainus tagatis keset kõrbet."
+      },
       {
         id: "new_delta_cats_1", type: "truefalse", location: "delta", difficulty: 1,
         question: "Vana-Egiptuses oli kassi tapmine keelatud ja selle eest võis karistada surmanuhtlusega.",
         correct: true,
         image: images.bastet,
         hint: "Kassid olid pühad loomad ja vaarao kaitse all",
-        explanation: "Kassid olid pühad loomad ja vaarao kaitse all. Ajaloolane Diodoros kirjeldab, kuidas aastal 59 eKr tappis rahvahulk Rooma diplomaadi, kes oli kogemata kassi alla ajanud."},
+        explanation: "Kassid olid pühad loomad ja vaarao kaitse all. Ajaloolane Diodoros kirjeldab, kuidas aastal 59 eKr tappis rahvahulk Rooma diplomaadi, kes oli kogemata kassi alla ajanud."
+      },
       {
         id: "new_delta_cats_2", type: "choice", location: "delta", difficulty: 2,
         question: "Millise suurlinna keskel asus punasest graniidist tempel, mis oli pühendatud kassijumalanna Bastetile?",
@@ -494,14 +511,16 @@
         correct: 2,
         image: images.bubastis,
         hint: "Bubastise linn (Egiptuse keeles Per-Bast) oli kassijumalanna kultuse keskus, kus igal aastal toim...",
-        explanation: "Bubastise linn (Egiptuse keeles Per-Bast) oli kassijumalanna kultuse keskus, kus igal aastal toimusid suured pidustused."},
+        explanation: "Bubastise linn (Egiptuse keeles Per-Bast) oli kassijumalanna kultuse keskus, kus igal aastal toimusid suured pidustused."
+      },
       {
         id: "new_delta_khepri", type: "written", location: "delta", difficulty: 2,
         question: "Kes oli mardikajumal, kes sümboliseeris tärkavat päikest ja maailma loomist?",
         answer: ["khepri", "hepri"],
         image: images.khepri,
         hint: "Khepri (ka Hepri) tähendab 'seda, kes on sündinud'",
-        explanation: "Khepri (ka Hepri) tähendab 'seda, kes on sündinud'. Teda kujutati mardikana, kes veeretab päikeseketast üle taeva, sarnaselt sitasitikale, kes veeretab sõnnikupalli."},
+        explanation: "Khepri (ka Hepri) tähendab 'seda, kes on sündinud'. Teda kujutati mardikana, kes veeretab päikeseketast üle taeva, sarnaselt sitasitikale, kes veeretab sõnnikupalli."
+      },
       {
         id: "new_delta_11", type: "matching", location: "delta", difficulty: 2,
         question: "Ühenda kõrb ja selle asukoht Egiptuse suhtes!",
@@ -512,7 +531,8 @@
         correct: [0, 1],
         image: images.egypt_map,
         hint: "Egiptust piiras idast Arabia kõrb ja läänest tohutu Liibüa kõrb, mis on osa Saharast",
-        explanation: "Egiptust piiras idast Arabia kõrb ja läänest tohutu Liibüa kõrb, mis on osa Saharast. Need looduslikud piirid pakkusid maale kaitset sissetungijate eest."},
+        explanation: "Egiptust piiras idast Arabia kõrb ja läänest tohutu Liibüa kõrb, mis on osa Saharast. Need looduslikud piirid pakkusid maale kaitset sissetungijate eest."
+      },
       // ... (muud delta küsimused)
 
       // ===================== GIZA & MEMPHIS (Old Kingdom & Society) =====================
@@ -527,7 +547,8 @@
         wrongFeedback: {
           0: "Kuigi vaaraod peeti jumalikuks, pole see sõna otsene tähendus.",
           2: "Kuningas oli vaarao sünonüüm, kuid 'vaarao' tähendus peitub ehitises.",
-          3: "Päikese poeg (Sa-Ra) oli üks valitseja paljudest tiitlitest, kuid mitte 'vaarao' tähendus."}
+          3: "Päikese poeg (Sa-Ra) oli üks valitseja paljudest tiitlitest, kuid mitte 'vaarao' tähendus."
+        }
       },
       {
         id: "new_memphis_2", type: "choice", location: "memphis", difficulty: 2,
@@ -540,7 +561,8 @@
         wrongFeedback: {
           0: "Delta asub põhjas, kuid Memphis rajati just kahe piirkonna ühenduskohta.",
           2: "Kuningate org asub Teeba lähedal ja muutus tähtsaks alles Uue riigi ajal.",
-          3: "Nuubia piir asub kaugel lõunas, Memphis aga riigi keskme lähedal."}
+          3: "Nuubia piir asub kaugel lõunas, Memphis aga riigi keskme lähedal."
+        }
       },
       {
         id: "new_memphis_3", type: "choice", location: "memphis", difficulty: 2,
@@ -553,7 +575,8 @@
         wrongFeedback: {
           0: "Kümnendik on ajalooliselt tuntud kui 'kirikumaks', kuid Egiptuses oli koormis märksa rängem.",
           2: "Riik püsiski talupoegade maksudest ja töökohustusest, maksud olid vältimatud.",
-          3: "Kogu saagi loovutamine tähendaks nälga; pool jäeti talupojale endale ellujäämises."}
+          3: "Kogu saagi loovutamine tähendaks nälga; pool jäeti talupojale endale ellujäämises."
+        }
       },
       {
         id: "new_memphis_matching", type: "matching", location: "memphis", difficulty: 3,
@@ -565,7 +588,8 @@
         correct: [2, 0, 1, 3], // Horus=Kull, Anubis=Šaakal, Bastet=Kass, Sobek=Krokodill
         image: images.osiris,
         hint: "Egiptuse jumalatel olid sageli loomade pead, mis sümboliseerisid nende iseloomu või võimeid",
-        explanation: "Egiptuse jumalatel olid sageli loomade pead, mis sümboliseerisid nende iseloomu või võimeid."},
+        explanation: "Egiptuse jumalatel olid sageli loomade pead, mis sümboliseerisid nende iseloomu või võimeid."
+      },
       {
         id: "new_memphis_4", type: "choice", location: "memphis", difficulty: 1,
         question: "Milline ühiskonnakiht asus vaarao järel järgmisena võimupüramiidi tipus?",
@@ -578,7 +602,8 @@
         wrongFeedback: {
           0: "Sõdurid olid olulised, kuid asusid hierarhias ülikutest ja preestritest madalamal.",
           2: "Käsitöölised olid vabad inimesed, kuid nende sotsiaalne positsioon oli madal.",
-          3: "Talupojad moodustasid ühiskonna suurima osa, kuid asusid püramiidi põhjas."}
+          3: "Talupojad moodustasid ühiskonna suurima osa, kuid asusid püramiidi põhjas."
+        }
       },
       {
         id: "new_memphis_5", type: "multiSelect", location: "memphis", difficulty: 2,
@@ -587,7 +612,8 @@
         correct: [0, 2],
         image: images.tutankhamun,
         hint: "Vaarao võimusümbolid olid topeltkroon (ühendatud Egiptuse märk), võltshabe, nemes-peakate ning kä...",
-        explanation: "Vaarao võimusümbolid olid topeltkroon (ühendatud Egiptuse märk), võltshabe, nemes-peakate ning kärus ja piits, mis sümboliseerisid karjase ja valitseja rolli."},
+        explanation: "Vaarao võimusümbolid olid topeltkroon (ühendatud Egiptuse märk), võltshabe, nemes-peakate ning kärus ja piits, mis sümboliseerisid karjase ja valitseja rolli."
+      },
       {
         id: "new_memphis_6", type: "choice", location: "memphis", difficulty: 2,
         question: "Mitu päeva oli Vana-Egiptuse päikesekalendris, mis on ka meie kalendri aluseks?",
@@ -595,7 +621,8 @@
         correct: 2,
         image: images.egypt_map,
         hint: "Egiptlased kasutasid 365-päevast kalendrit: 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus",
-        explanation: "Egiptlased kasutasid 365-päevast kalendrit: 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus."},
+        explanation: "Egiptlased kasutasid 365-päevast kalendrit: 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus."
+      },
       {
         id: "new_memphis_7", type: "choice", location: "memphis", difficulty: 1,
         question: "Miks oli kirjutaja (skriiba) amet Vana-Egiptuses väga austatud?",
@@ -603,7 +630,8 @@
         correct: 2,
         image: images.scribe,
         hint: "Kirjaoskus oli keeruline ja selle omandamine võttis aastaid",
-        explanation: "Kirjaoskus oli keeruline ja selle omandamine võttis aastaid. Kirjutajad olid haritud eliit, kes vabastati füüsilisest tööst ja maksudest."},
+        explanation: "Kirjaoskus oli keeruline ja selle omandamine võttis aastaid. Kirjutajad olid haritud eliit, kes vabastati füüsilisest tööst ja maksudest."
+      },
       {
         id: "new_memphis_5", type: "truefalse", location: "memphis", difficulty: 2,
         question: "Egiptuse käsitöölised said oma töö eest palka rahas.",
@@ -611,14 +639,16 @@
         image: images.workers,
         hint: "Raha Vana-Egiptuses ei tuntud",
         explanation: "Raha Vana-Egiptuses ei tuntud. Käsitöölistele ja ka teistele töötajatele tasuti tarbeesemete ning toiduga (vili, õlu, riie). See oli natuuramajandus, kus väärtust mõõdeti kaubavahetusega.",
-        treasure: "scarab"},
+        treasure: "scarab"
+      },
       {
         id: "new_memphis_6", type: "written", location: "memphis", difficulty: 2,
         question: "Kes oli see jumal, keda peeti Memphise linna kaitsjaks ja käsitööliste jumalaks?",
         answer: ["ptah"],
         image: images.narmer,
         hint: "Ptah oli loomisjumal, kes arvati olevat maailma oma mõtte ja sõnaga loonud",
-        explanation: "Ptah oli loomisjumal, kes arvati olevat maailma oma mõtte ja sõnaga loonud. Tema kultuse keskus oli pealinn Memphis."},
+        explanation: "Ptah oli loomisjumal, kes arvati olevat maailma oma mõtte ja sõnaga loonud. Tema kultuse keskus oli pealinn Memphis."
+      },
       {
         id: "new_memphis_7", type: "choice", location: "memphis", difficulty: 2,
         question: "Millist materjali kasutasid Egiptuse kirjutajad mustandite ja jooniste jaoks sagedamini kui kallist papüürust?",
@@ -630,7 +660,8 @@
         wrongFeedback: {
           0: "Saviplaate kasutasid mesopotaamlased, egiptlased eelistasid teisi materjale.",
           2: "Metall oli liiga kallis ja raske kirjutamiseks.",
-          3: "Puitu kasutati harva, peamiselt koolitahvlitena, mis kaeti kipsiga."}
+          3: "Puitu kasutati harva, peamiselt koolitahvlitena, mis kaeti kipsiga."
+        }
       },
       {
         id: "new_memphis_8", type: "choice", location: "memphis", difficulty: 1,
@@ -643,7 +674,8 @@
         wrongFeedback: {
           0: "Kiilkiri oli Mesopotaamia rahvaste kiri, mida vajutati savisse.",
           2: "Ladina kiri tekkis alles tuhandeid aastaid hiljem Rooma riigis.",
-          3: "Araabia kiri jõudis Egiptusesse alles peale islamivallutusi 7. sajandil."}
+          3: "Araabia kiri jõudis Egiptusesse alles peale islamivallutusi 7. sajandil."
+        }
       },
       {
         id: "new_memphis_9", type: "truefalse", location: "memphis", difficulty: 2,
@@ -652,7 +684,8 @@
         image: images.scribe,
         hint: "Kirjutajaks õppimine oli raske ja kestis aastaid",
         explanation: "Kirjutajaks õppimine oli raske ja kestis aastaid. Poisid alustasid õpinguid varakult, harjutades sadu märke ja rangeid reegleid.",
-        treasure: "hieroglyph"},
+        treasure: "hieroglyph"
+      },
       {
         id: "new_memphis_bes", type: "choice", location: "memphis", difficulty: 2,
         question: "Millise Egiptuse kodukaitsja ja laste hoidja jumala järgi on tõenäoliselt saanud nime Ibiza saar?",
@@ -669,7 +702,8 @@
         correct: 2,
         image: images.scribe,
         hint: "Preestrid pidid järgima rangeid reegleid: nad pesid end täielikult kaks korda päeval ja kaks kord...",
-        explanation: "Preestrid pidid järgima rangeid reegleid: nad pesid end täielikult kaks korda päeval ja kaks korda öösel, raseerisid kogu keha ja kandsid vaid linaseid riideid."},
+        explanation: "Preestrid pidid järgima rangeid reegleid: nad pesid end täielikult kaks korda päeval ja kaks korda öösel, raseerisid kogu keha ja kandsid vaid linaseid riideid."
+      },
       {
         id: "new_memphis_newyear", type: "choice", location: "memphis", difficulty: 2,
         question: "Millal algas Vana-Egiptuse kalendriaasta, tähistades uue elu ja Niiluse tõusu algust?",
@@ -677,7 +711,8 @@
         correct: 2,
         image: images.nile,
         hint: "Egiptlaste uus aasta algas suvise pööripäeva paiku (juunis), kui Niiluse vesi hakkas tõusma, tuue...",
-        explanation: "Egiptlaste uus aasta algas suvise pööripäeva paiku (juunis), kui Niiluse vesi hakkas tõusma, tuues endaga kaasa viljakat muda."},
+        explanation: "Egiptlaste uus aasta algas suvise pööripäeva paiku (juunis), kui Niiluse vesi hakkas tõusma, tuues endaga kaasa viljakat muda."
+      },
       {
         id: "new_memphis_10", type: "choice", location: "memphis", difficulty: 2,
         question: "Mis oli egiptlaste peamine jook, mida tarbisid nii lapsed kui täiskasvanud toidukorra kõrvale?",
@@ -689,7 +724,8 @@
         wrongFeedback: {
           0: "Vein oli luksuskaup, mida nautisid peamiselt ülikud pidukoosviibimistel.",
           1: "Piim oli olemas, kuid see rüüstus soojas kliimas kiiresti ja polnud peamine jook.",
-          3: "Kohv avastati Etioopiast alles aastatuhandeid hiljem."}
+          3: "Kohv avastati Etioopiast alles aastatuhandeid hiljem."
+        }
       },
       {
         id: "new_memphis_11", type: "choice", location: "memphis", difficulty: 2,
@@ -698,7 +734,8 @@
         correct: 1,
         image: images.narmer,
         hint: "Vana-Egiptuse riik ja tsivilisatsioon said alguse umbes 3100 eKr, kui esimene vaarao ühendas Niil...",
-        explanation: "Vana-Egiptuse riik ja tsivilisatsioon said alguse umbes 3100 eKr, kui esimene vaarao ühendas Niiluse oru ja delta."},
+        explanation: "Vana-Egiptuse riik ja tsivilisatsioon said alguse umbes 3100 eKr, kui esimene vaarao ühendas Niiluse oru ja delta."
+      },
       {
         id: "new_memphis_12", type: "sorting", location: "memphis", difficulty: 2,
         question: "Sorteeri Vana-Egiptuse ajaloo peamised riigiperioodid kronoloogiliselt!",
@@ -706,7 +743,8 @@
         correct: [0, 1, 2],
         image: images.egypt_map,
         hint: "Egiptuse ajalugu jaotatakse kolmeks hiilgeajaks: Vana riik (püramiidide aeg), Keskmine riik ja Uu...",
-        explanation: "Egiptuse ajalugu jaotatakse kolmeks hiilgeajaks: Vana riik (püramiidide aeg), Keskmine riik ja Uus riik (suurriigi aeg)."},
+        explanation: "Egiptuse ajalugu jaotatakse kolmeks hiilgeajaks: Vana riik (püramiidide aeg), Keskmine riik ja Uus riik (suurriigi aeg)."
+      },
       {
         id: "new_memphis_13", type: "multiSelect", location: "memphis", difficulty: 3,
         question: "Vali vaarao peamised võimusümbolid ja tunnused! (Vali 3 õiget)",
@@ -714,7 +752,8 @@
         correct: [0, 1, 2],
         image: images.tutankhamun,
         hint: "Vaarao võimu tähistasid topeltkroon, peamüts nemes, kõver kepp (kärus) ja piits ning rituaalne võ...",
-        explanation: "Vaarao võimu tähistasid topeltkroon, peamüts nemes, kõver kepp (kärus) ja piits ning rituaalne võltshabe."},
+        explanation: "Vaarao võimu tähistasid topeltkroon, peamüts nemes, kõver kepp (kärus) ja piits ning rituaalne võltshabe."
+      },
       {
         id: "new_memphis_14", type: "sorting", location: "memphis", difficulty: 3,
         question: "Aseta ühiskonnagrupid paika Egiptuse sotsiaalses püramiidis (alustades tipust)!",
@@ -722,7 +761,8 @@
         correct: [0, 1, 2, 3],
         image: images.scribe,
         hint: "Egiptuse ühiskond oli rangelt hierarhiline, kus tipus oli jumalik vaarao ja kõige suurema osa moo...",
-        explanation: "Egiptuse ühiskond oli rangelt hierarhiline, kus tipus oli jumalik vaarao ja kõige suurema osa moodustasid talupojad, kelle tööst riik elatus."},
+        explanation: "Egiptuse ühiskond oli rangelt hierarhiline, kus tipus oli jumalik vaarao ja kõige suurema osa moodustasid talupojad, kelle tööst riik elatus."
+      },
 
       // ===================== GIZA (Pyramids) =====================
       {
@@ -732,7 +772,8 @@
         image: images.step_pyramid,
         hint: "Varaseim suur püramiid oli vaarao Džoseri astmikpüramiid Sakkaras, mille ehitas arhitekt Imhotep",
         explanation: "Varaseim suur püramiid oli vaarao Džoseri astmikpüramiid Sakkaras, mille ehitas arhitekt Imhotep. See meenutas hiiglaslikku treppi taevasse ja tähistas uue ajastu algust ehituskunstis.",
-        treasure: "step_pyramid"},
+        treasure: "step_pyramid"
+      },
       {
         id: "new_giza_12", type: "choice", location: "giza", difficulty: 1,
         question: "Kuidas nimetati varasemat hauatüüpi – madalat lameda katusega tellisehitist, millest arenesid püramiidid?",
@@ -740,7 +781,8 @@
         correct: 1,
         image: images.step_pyramid,
         hint: "Mastaba oli Vana-Egiptuse haua tüüp, madal nelinurkne ehitis, mille kuju meenutas pinki",
-        explanation: "Mastaba oli Vana-Egiptuse haua tüüp, madal nelinurkne ehitis, mille kuju meenutas pinki. Nende üksteise peale ladumisest tekkisid esimesed astmikpüramiidid."},
+        explanation: "Mastaba oli Vana-Egiptuse haua tüüp, madal nelinurkne ehitis, mille kuju meenutas pinki. Nende üksteise peale ladumisest tekkisid esimesed astmikpüramiidid."
+      },
       {
         id: "new_giza_2", type: "choice", location: "giza", difficulty: 2,
         question: "Mida sümboliseeris egiptlastele püramiidi kuju lisaks hauale?",
@@ -752,7 +794,8 @@
         wrongFeedback: {
           0: "Kuigi püramiid meenutab mäge, oli religioosne tähendus seotud päikese ja taevasse tõusmisega.",
           2: "Lootos oli elu sümbol, kuid püramiidi kuju sümboliseeris päikesekiiri (benben-kivi).",
-          3: "Jõge sümboliseerisid siksakilised jooned, püramiid kuulus kindlalt maapinnale ja taevasse suunatud tippu."}
+          3: "Jõge sümboliseerisid siksakilised jooned, püramiid kuulus kindlalt maapinnale ja taevasse suunatud tippu."
+        }
       },
       {
         id: "new_giza_3", type: "choice", location: "giza", difficulty: 2,
@@ -765,7 +808,8 @@
         wrongFeedback: {
           0: "See on riigi ühendamise aeg, mil ehitati pigem mastabaid, mitte suuri püramiide.",
           2: "See on Uue riigi aeg, mil eelistati kaljuhaudu Kuningate orus.",
-          3: "Sel ajal oli Egiptus juba languses või võõrvõimu all, püramiide enam ei ehitatud."}
+          3: "Sel ajal oli Egiptus juba languses või võõrvõimu all, püramiide enam ei ehitatud."
+        }
       },
       {
         id: "new_giza_4", type: "identify", location: "giza", difficulty: 1,
@@ -779,7 +823,8 @@
         wrongFeedback: {
           0: "Grifoon on müütiline loom kulli pea ja lõvi kehaga, levinud pigem Kreekas.",
           2: "Anubis on šaakalipeaga jumal, keda Sfinks ei kujuta.",
-          3: "Muumia on balsameeritud keha, mitte hiiglaslik kaljukuju."}
+          3: "Muumia on balsameeritud keha, mitte hiiglaslik kaljukuju."
+        }
       },
       {
         id: "new_giza_5", type: "truefalse", location: "giza", difficulty: 2,
@@ -788,7 +833,8 @@
         image: images.workers,
         hint: "Uuemad arheoloogilised leiud näitavad, et püramiide ehitasid vabad talupojad ja vilunud käsitöölised",
         explanation: "Uuemad arheoloogilised leiud näitavad, et püramiide ehitasid vabad talupojad ja vilunud käsitöölised. Nad said oma töö eest head süüa (liha, leiba) ja neile oli see auasi ehitada oma jumal-kuningale hauakambrit.",
-        treasure: "pyramid"},
+        treasure: "pyramid"
+      },
       {
         id: "new_giza_6", type: "choice", location: "giza", difficulty: 2,
         question: "Millega olid Giza püramiidid algselt kaetud, nii et need särasid päikese käes pimestavalt valgelt?",
@@ -800,7 +846,8 @@
         wrongFeedback: {
           0: "Ainult püramiidi tipp (püramidion) võis olla kullatud või kullasulamiga kaetud.",
           1: "Hõbe oli Egiptuses haruldasem kui kuld ja seda ehituses ei kasutatud.",
-          2: "Saviga kaeti pigem tavaliste inimeste päikesekuivatatud tellistest maju."}
+          2: "Saviga kaeti pigem tavaliste inimeste päikesekuivatatud tellistest maju."
+        }
       },
       {
         id: "new_giza_hotspot", type: "hotspot", location: "giza", difficulty: 2,
@@ -808,14 +855,16 @@
         image: images.giza,
         correct: { targetX: 75, targetY: 65, radius: 20 },
         hint: "Suur Sfinks on hiiglaslik kuju, millel on lõvi keha ja inimese pea",
-        explanation: "Suur Sfinks on hiiglaslik kuju, millel on lõvi keha ja inimese pea. See valvab Giza püramiidide läheduses."},
+        explanation: "Suur Sfinks on hiiglaslik kuju, millel on lõvi keha ja inimese pea. See valvab Giza püramiidide läheduses."
+      },
       {
         id: "new_giza_7", type: "written", location: "giza", difficulty: 3,
         question: "Kui kõrge oli Suur püramiid (Cheopsi püramiid) algselt meetrites (ümardatuna)?",
         answer: ["147", "146"],
         image: images.giza,
         hint: "Cheopsi püramiid oli algselt umbes 147 meetrit kõrge ja püsis maailma kõrgeima ehitisena üle 3800...",
-        explanation: "Cheopsi püramiid oli algselt umbes 147 meetrit kõrge ja püsis maailma kõrgeima ehitisena üle 3800 aasta kuni Lincolni katedraali valmimiseni Inglismaal."},
+        explanation: "Cheopsi püramiid oli algselt umbes 147 meetrit kõrge ja püsis maailma kõrgeima ehitisena üle 3800 aasta kuni Lincolni katedraali valmimiseni Inglismaal."
+      },
       {
         id: "new_giza_8", type: "choice", location: "giza", difficulty: 2,
         question: "Mitu kiviplokki kulus Cheopsi püramiidi ehitamiseks umbes?",
@@ -827,7 +876,8 @@
         wrongFeedback: {
           0: "See arv on palju liiga väike nii hiiglasliku ehitise jaoks.",
           1: "Isegi poole miljoni plokiga ei saaks nii suurt mahtu täita.",
-          3: "10 miljonit on liialdus, isegi antiikmaailma suurima ehitise kohta."}
+          3: "10 miljonit on liialdus, isegi antiikmaailma suurima ehitise kohta."
+        }
       },
       {
         id: "new_giza_9", type: "truefalse", location: "giza", difficulty: 2,
@@ -836,14 +886,16 @@
         image: images.giza,
         hint: "Egiptuse arhitektid kasutasid tähtede liikumist, et orienteerida püramiidide küljed millimeetri t...",
         explanation: "Egiptuse arhitektid kasutasid tähtede liikumist, et orienteerida püramiidide küljed millimeetri täpsusega ilmakaarte suunas.",
-        treasure: "step_pyramid"},
+        treasure: "step_pyramid"
+      },
       {
         id: "new_giza_10", type: "written", location: "giza", difficulty: 3,
         question: "Kes oli arhitekt, kes kujundas esimese püramiidi (Džoseri oma) ja keda hiljem kummardati kui meditsiini jumalat?",
         answer: ["imhotep"],
         image: images.step_pyramid,
         hint: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt and arst",
-        explanation: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt and arst. Ta oli esimene teadaolev geenius inimajaloos, keda rahvas mäletas tuhandeid aastaid."},
+        explanation: "Imhotep oli geniaalne mees – vaarao vesiir, arhitekt and arst. Ta oli esimene teadaolev geenius inimajaloos, keda rahvas mäletas tuhandeid aastaid."
+      },
       {
         id: "new_giza_11", type: "choice", location: "giza", difficulty: 2,
         question: "Mis oli mastaba egiptuse ajaloos?",
@@ -851,14 +903,16 @@
         correct: 1,
         image: images.step_pyramid,
         hint: "Mastaba oli varajane, tellistest ehitatud lame hauakamber",
-        explanation: "Mastaba oli varajane, tellistest ehitatud lame hauakamber. Just mastabate üksteise otsa ladumisest arenesid hiljem välja esimesed püramiidid."},
+        explanation: "Mastaba oli varajane, tellistest ehitatud lame hauakamber. Just mastabate üksteise otsa ladumisest arenesid hiljem välja esimesed püramiidid."
+      },
       {
         id: "new_giza_12", type: "written", location: "giza", difficulty: 2,
         question: "Kes on see kolmas vaarao (lisaks Khufule ja Khafrele), kellele ehitati Giza kompleksi kolmas ja väikseim püramiid?",
         answer: ["menkaure", "mykerinos"],
         image: images.giza,
         hint: "Giza kolm suurt püramiidi kuulusid vaaraodele Khufu (Cheops), Khafre (Chefren) ja Menkaure (Myker...",
-        explanation: "Giza kolm suurt püramiidi kuulusid vaaraodele Khufu (Cheops), Khafre (Chefren) ja Menkaure (Mykerinos)."},
+        explanation: "Giza kolm suurt püramiidi kuulusid vaaraodele Khufu (Cheops), Khafre (Chefren) ja Menkaure (Mykerinos)."
+      },
 
       // ===================== AMARNA (Religion Revolution) =====================
       {
@@ -868,7 +922,8 @@
         image: images.akhenaten,
         hint: "Vaarao Amenhotep IV viis läbi usureformi, tõstes peajumalaks päikeseketta Atoni",
         explanation: "Vaarao Amenhotep IV viis läbi usureformi, tõstes peajumalaks päikeseketta Atoni. Ta muutis oma nime Ehnatoniks ('Atonile kasulik') ja rajas uue pealinna Ahetatoni.",
-        treasure: "sun_disk"},
+        treasure: "sun_disk"
+      },
       {
         id: "new_amarna_2", type: "choice", location: "amarna", difficulty: 3,
         question: "Kuhu rajas Ehnaton oma uue pealinna Ahetatoni?",
@@ -880,7 +935,8 @@
         wrongFeedback: {
           0: "Deltas puudus vajalik eraldatus preestritest ja see oli liiga kauge keskmest.",
           2: "Sudaani piir (Nuubia) oli vallutatud ala, kuid pealinn pidi jääma Egiptuse südamesse.",
-          3: "Egiptuse tsivilisatsioon oli suunatud Niilusele, mitte Punasele merele."}
+          3: "Egiptuse tsivilisatsioon oli suunatud Niilusele, mitte Punasele merele."
+        }
       },
       {
         id: "new_amarna_3", type: "identify", location: "amarna", difficulty: 1,
@@ -893,7 +949,8 @@
         wrongFeedback: {
           1: "Kleopatra valitses sajandeid hiljem, Ptolemaioste ajal.",
           2: "Hatšepsut oli küll kuulus naisvaarao, kuid elas ammu enne Amarna perioodi.",
-          3: "Nefertari oli Ramses II armastatud peanaine, mitte Ehnatoni oma."}
+          3: "Nefertari oli Ramses II armastatud peanaine, mitte Ehnatoni oma."
+        }
       },
       {
         id: "new_amarna_4", type: "truefalse", location: "amarna", difficulty: 2,
@@ -902,14 +959,16 @@
         image: images.akhenaten,
         hint: "Amarna kunst murdis vanad reeglid",
         explanation: "Amarna kunst murdis vanad reeglid. Vaaraod kujutati esimest korda koos oma naise ja tütardega hellades ning argistes stseenides, mitte ainult kangete ja jumalikena.",
-        treasure: "bust"},
+        treasure: "bust"
+      },
       {
         id: "new_amarna_5", type: "fillin", location: "amarna", difficulty: 2,
         question: "Ehnaton austas ainujumalat nimega _____, keda kujutati päikesekettana.",
         answer: ["aton", "aten"],
         image: images.aten,
         hint: "Atonit kujutati päikesekettana, mille kiired lõppesid väikeste kätega, mis ulatasid vaaraole elus...",
-        explanation: "Atonit kujutati päikesekettana, mille kiired lõppesid väikeste kätega, mis ulatasid vaaraole elusümbolit - ankh'i."},
+        explanation: "Atonit kujutati päikesekettana, mille kiired lõppesid väikeste kätega, mis ulatasid vaaraole elusümbolit - ankh'i."
+      },
       {
         id: "new_amarna_6", type: "choice", location: "amarna", difficulty: 2,
         question: "Mis oli Tutanhamoni esialgne nimi enne vana usundi taastamist?",
@@ -921,7 +980,8 @@
         wrongFeedback: {
           0: "Tutanhamon oli nimi, mille ta võttis hiljem Amoni austamiseks.",
           2: "Amenhotep oli tema vanaisa ja ka isa algne nimi.",
-          3: "Thutmosis oli hoopis teise dünastia tuntuim vallutaja."}
+          3: "Thutmosis oli hoopis teise dünastia tuntuim vallutaja."
+        }
       },
       {
         id: "new_amarna_7", type: "truefalse", location: "amarna", difficulty: 2,
@@ -930,14 +990,16 @@
         image: images.aten,
         hint: "Atonit kujutati abstraktselt päikeseketta ja kiirtena, mitte aga inimese või loomana",
         explanation: "Atonit kujutati abstraktselt päikeseketta ja kiirtena, mitte aga inimese või loomana. See oli suur muutus võrreldes varasema Egiptuse kunstiga.",
-        treasure: "sun_disk"},
+        treasure: "sun_disk"
+      },
       {
         id: "new_amarna_8", type: "written", location: "amarna", difficulty: 3,
         question: "Mida tähistab Ehnatoni nimi tõlkes (Atonile...)?",
         answer: ["kasulik", "meelepärane"],
         image: images.akhenaten,
         hint: "Ehnaton (Akhenaten) tähendas 'Atonile kasulik' või 'Atonile meelepärane'",
-        explanation: "Ehnaton (Akhenaten) tähendas 'Atonile kasulik' või 'Atonile meelepärane'."},
+        explanation: "Ehnaton (Akhenaten) tähendas 'Atonile kasulik' või 'Atonile meelepärane'."
+      },
       {
         id: "new_amarna_9", type: "choice", location: "amarna", difficulty: 2,
         question: "Mis juhtus Ahetatoni linnaga pärast Ehnatoni surma?",
@@ -949,7 +1011,8 @@
         wrongFeedback: {
           0: "Pealinn kolis kohe pärast Ehnatoni surma tagasi traditsioonilistesse keskustesse.",
           2: "Linna hooneid hoopis lammutati, et kasutada kive teiste ehitiste jaoks.",
-          3: "Linn jäi täiesti tühjaks ja mattus sajanditeks kõrbe liiva alla."}
+          3: "Linn jäi täiesti tühjaks ja mattus sajanditeks kõrbe liiva alla."
+        }
       },
       {
         id: "new_amarna_10", type: "identify", location: "amarna", difficulty: 2,
@@ -963,7 +1026,8 @@
         wrongFeedback: {
           0: "Amon oli jumal, kelle võimu ja rikkuse vastu Ehnaton just võitles.",
           2: "Ra oli vana päikesejumal, keda Ehnaton püüdis Atoniga asendada.",
-          3: "Osiris oli surnute jumal, kelle kultus keelati Ehnatoni ajal ajutiselt."}
+          3: "Osiris oli surnute jumal, kelle kultus keelati Ehnatoni ajal ajutiselt."
+        }
       },
 
       // ===================== ABYDOS (Afterlife & Gods) =====================
@@ -978,7 +1042,8 @@
         wrongFeedback: {
           0: "Meri asus põhjas ja idas, kuid läänesuund oli seotud just päikese loojumisega.",
           2: "Inimeste arv polnud oluline, määrav oli religioosne sümbolism.",
-          3: "Kõrb ümbritses Egiptust igast küljest, kuid lääs oli 'surnute pool' päikese tõttu."}
+          3: "Kõrb ümbritses Egiptust igast küljest, kuid lääs oli 'surnute pool' päikese tõttu."
+        }
       },
       {
         id: "new_abydos_2", type: "choice", location: "abydos", difficulty: 3,
@@ -991,7 +1056,8 @@
         wrongFeedback: {
           0: "See polnud füüsiline kaalumine, vaid moraalne and religioosne kohtumõistmine.",
           2: "Muumia valmistati maa peal enne matuseid, tseremoonia toimus juba teispoolsuses.",
-          3: "Toiduohvreid toodi templites ja haudades, kohtus aga otsustati hinge saatus."}
+          3: "Toiduohvreid toodi templites ja haudades, kohtus aga otsustati hinge saatus."
+        }
       },
       {
         id: "new_abydos_3", type: "written", location: "abydos", difficulty: 2,
@@ -1000,7 +1066,8 @@
         image: images.anubis,
         hint: "Anubis oli muumiaid kaitsev jumal",
         explanation: "Anubis oli muumiaid kaitsev jumal. Just tema oli see, kes mütoloogia järgi valmistas esimese muumia (Osirise) ja valvas seejärel kõiki surnuaedu.",
-        treasure: "anubis"},
+        treasure: "anubis"
+      },
       {
         id: "new_abydos_4", type: "truefalse", location: "abydos", difficulty: 1,
         question: "Palsameerimise käigus eemaldati kehast kõik siseelundid, kaasa arvatud süda.",
@@ -1008,14 +1075,16 @@
         image: images.canopic_jars,
         hint: "Enamik siseelundeid eemaldati ja pandi kanoopidesse, kuid süda jäeti kehasse",
         explanation: "Enamik siseelundeid eemaldati ja pandi kanoopidesse, kuid süda jäeti kehasse. Egiptlased uskusid, et süda on mõistuse ja tunnete asupaik ning seda läheb vaja allmaailma kohtus.",
-        treasure: "heart"},
+        treasure: "heart"
+      },
       {
         id: "new_abydos_5", type: "fillin", location: "abydos", difficulty: 2,
         question: "Kuidas nimetati tekstide kogu, mis andis surnule kaasa loitse ja juhiseid allmaailmas toimetulekuks?",
         answer: ["surnuteraamat"],
         image: images.book_dead,
         hint: "Surnuteraamat sisaldas vajalikke loitse, et peletada koletisi ja osata vastata jumalate küsimuste...",
-        explanation: "Surnuteraamat sisaldas vajalikke loitse, et peletada koletisi ja osata vastata jumalate küsimustele allmaailma väravates."},
+        explanation: "Surnuteraamat sisaldas vajalikke loitse, et peletada koletisi ja osata vastata jumalate küsimustele allmaailma väravates."
+      },
       {
         id: "sort_abydos_1", type: "sorting", location: "abydos", difficulty: 3,
         question: "Sorteeri mumifitseerimise etapid õigesse järjekorda!",
@@ -1024,7 +1093,8 @@
         image: images.mummy,
         hint: "Palsameerimine kestis kokku umbes 70 päeva",
         explanation: "Palsameerimine kestis kokku umbes 70 päeva. See oli püha rituaal, kus keha valmistati ette igaveseks eluks.",
-        treasure: "mummy"},
+        treasure: "mummy"
+      },
       {
         id: "new_abydos_6", type: "choice", location: "abydos", difficulty: 2,
         question: "Kes oli mütoloogia järgi esimene kuningas ja kes hiljem valitses surnute riiki?",
@@ -1036,7 +1106,8 @@
         wrongFeedback: {
           0: "Ra oli päikesejumal ja maailma esimene valitseja, kuid surnute riiki valitses Osiris.",
           2: "Horus oli Osirise poeg, kes valitses elusate inimeste üle pärast Sethi alistamist.",
-          3: "Seth oli kaose ja tormide jumal, keda seostati kurjusega."}
+          3: "Seth oli kaose ja tormide jumal, keda seostati kurjusega."
+        }
       },
       {
         id: "new_abydos_7", type: "written", location: "abydos", difficulty: 2,
@@ -1044,7 +1115,8 @@
         answer: ["shenu", "kartuss"],
         image: images.rosetta,
         hint: "Vaarao nimi ümbritseti ellipsiga, mis sümboliseeris igavikku ja kaitset",
-        explanation: "Vaarao nimi ümbritseti ellipsiga, mis sümboliseeris igavikku ja kaitset. Seda tuntakse ka nime all kartuss."},
+        explanation: "Vaarao nimi ümbritseti ellipsiga, mis sümboliseeris igavikku ja kaitset. Seda tuntakse ka nime all kartuss."
+      },
       {
         id: "new_abydos_8", type: "identify", location: "abydos", difficulty: 2,
         question: "Nendes anumates säilitati surnu siseelundeid.",
@@ -1057,7 +1129,8 @@
         wrongFeedback: {
           0: "Sarkofaag oli välimine kirst, kuhu asetati muumia ise.",
           2: "Amforad olid suured savinõud peamiselt veini või õli hoidmiseks.",
-          3: "Tavalised vaasid ei olnud rituaalselt siseelundite hoidmisega seotud."}
+          3: "Tavalised vaasid ei olnud rituaalselt siseelundite hoidmisega seotud."
+        }
       },
       {
         id: "new_abydos_9", type: "truefalse", location: "abydos", difficulty: 2,
@@ -1066,7 +1139,8 @@
         image: images.mummy,
         hint: "Ka oli inimese elujõud või 'teisik'",
         explanation: "Ka oli inimese elujõud või 'teisik'. Seetõttu viisid sugulased hauakambrisse reaalset toitu ja jooki, et surnu vaim nälga ei jääks.",
-        treasure: "djed"},
+        treasure: "djed"
+      },
       {
         id: "new_abydos_10", type: "choice", location: "abydos", difficulty: 1,
         question: "Milline on egiptuse elu sümbol (rist, millel on silmus ülal)?",
@@ -1078,7 +1152,8 @@
         wrongFeedback: {
           1: "Skarabeus oli pigem uuestisünni ja päikese sümbol, mitte rist.",
           2: "Fööniks (egiptlaste Bennu) oli haruldane lind, mitte sümbol-rist.",
-          3: "Obelisk on ehitis, üheainsast kiviplokist sammas."}
+          3: "Obelisk on ehitis, üheainsast kiviplokist sammas."
+        }
       },
       {
         id: "new_abydos_11", type: "matching", location: "abydos", difficulty: 3,
@@ -1090,7 +1165,8 @@
         correct: [0, 1],
         image: images.osiris,
         hint: "Egiptlased uskusid, et inimene koosneb mitmest osast",
-        explanation: "Egiptlased uskusid, et inimene koosneb mitmest osast. 'Ka' oli elujõud, mis vajas toitu, ja 'Ba' oli isiksus, mis võis linnuna haust välja lennata."},
+        explanation: "Egiptlased uskusid, et inimene koosneb mitmest osast. 'Ka' oli elujõud, mis vajas toitu, ja 'Ba' oli isiksus, mis võis linnuna haust välja lennata."
+      },
       {
         id: "new_abydos_15", type: "choice", location: "abydos", difficulty: 2,
         question: "Kes oli Egiptuse mütoloogia järgi kurja kehastus ja Osirise vend, kes ta tappis?",
@@ -1098,7 +1174,8 @@
         correct: 2,
         image: images.seth,
         hint: "Seth oli kaose ja tormide jumal, kes tappis oma venna Osirise",
-        explanation: "Seth oli kaose ja tormide jumal, kes tappis oma venna Osirise. Hiljem võitis Osirise poeg Horus Sethi ja temast sai vaaraode kaitsja."},
+        explanation: "Seth oli kaose ja tormide jumal, kes tappis oma venna Osirise. Hiljem võitis Osirise poeg Horus Sethi ja temast sai vaaraode kaitsja."
+      },
       {
         id: "new_abydos_12", type: "choice", location: "abydos", difficulty: 2,
         question: "Mitu päeva kestis tavaliselt keha kuivatamine natronis (soolas) muumifitseerimise ajal?",
@@ -1106,7 +1183,8 @@
         correct: 1,
         image: images.mummy,
         hint: "Keha kuivatamine natronis kestis täpselt 40 päeva",
-        explanation: "Keha kuivatamine natronis kestis täpselt 40 päeva. See oli protsessi kõige olulisem osa, et eemaldada niiskus ja peatada lagunemine."},
+        explanation: "Keha kuivatamine natronis kestis täpselt 40 päeva. See oli protsessi kõige olulisem osa, et eemaldada niiskus ja peatada lagunemine."
+      },
       {
         id: "new_abydos_13", type: "multiSelect", location: "abydos", difficulty: 3,
         question: "Millised organid pandi palsameerimisel eraldi kanoop-anumatesse? (Vali 2 õiget)",
@@ -1114,7 +1192,8 @@
         correct: [0, 1],
         image: images.canopic_jars,
         hint: "Kanoopidesse pandi maks, kopsud, magu ja sooled",
-        explanation: "Kanoopidesse pandi maks, kopsud, magu ja sooled. Süda jäeti kehasse ja aju visati tavaliselt minema, kuna peeti seda kasutuks."},
+        explanation: "Kanoopidesse pandi maks, kopsud, magu ja sooled. Süda jäeti kehasse ja aju visati tavaliselt minema, kuna peeti seda kasutuks."
+      },
 
       // ===================== TEEBA (New Kingdom & Gods) =====================
       // ===================== TEEBA (New Kingdom & Power) =====================
@@ -1129,7 +1208,8 @@
         wrongFeedback: {
           0: "Ramses II oli küll väga võimas ja ehitas palju, kuid territoorium ei ületanud Thutmosis III oma.",
           2: "Hatšepsut keskendus pigem kaubandusele ja ehitustele kui maadevallutustele.",
-          3: "Ehnatoni ajal kaotas Egiptus hoopis palju oma välispoliitilisest mõjust ususegaduste tõttu."}
+          3: "Ehnatoni ajal kaotas Egiptus hoopis palju oma välispoliitilisest mõjust ususegaduste tõttu."
+        }
       },
       {
         id: "new_teeba_2", type: "written", location: "teeba", difficulty: 3,
@@ -1137,7 +1217,8 @@
         answer: ["hetiitidega", "hetiidi kuningaga"],
         image: images.ramses_ii,
         hint: "Pärast raskeid ja veriseid lahinguid sõlmis Ramses II hetiitidega rahulepingu, millega jaotati mõ...",
-        explanation: "Pärast raskeid ja veriseid lahinguid sõlmis Ramses II hetiitidega rahulepingu, millega jaotati mõjupiirkonnad: Palestiina jäi Egiptusele, Põhja-Süüria aga hetiitidele."},
+        explanation: "Pärast raskeid ja veriseid lahinguid sõlmis Ramses II hetiitidega rahulepingu, millega jaotati mõjupiirkonnad: Palestiina jäi Egiptusele, Põhja-Süüria aga hetiitidele."
+      },
       {
         id: "new_teeba_3", type: "identify", location: "teeba", difficulty: 2,
         question: "Milline naine valitses Egiptust vaaraona, kandes isegi valehabet?",
@@ -1149,7 +1230,8 @@
         wrongFeedback: {
           1: "Kleopatra oli valitseja, kuid tema ei kandnud vaarao traditsioonilisi tunnuseid nagu valehabe sel viisil.",
           2: "Nofretete oli kaasvalitseja, kuid pole kindel, kas ta kunagi vaarao tiitlit üksi kandis.",
-          3: "Tiyi oli Amenhotep III naine ja väga mõjukas, kuid polnud ametlikult vaarao."}
+          3: "Tiyi oli Amenhotep III naine ja väga mõjukas, kuid polnud ametlikult vaarao."
+        }
       },
       {
         id: "new_teeba_4", type: "truefalse", location: "teeba", difficulty: 2,
@@ -1158,7 +1240,8 @@
         image: images.valley_kings,
         hint: "Kuna püramiidid torkasid kaugele silma, rüüstati need kiiresti",
         explanation: "Kuna püramiidid torkasid kaugele silma, rüüstati need kiiresti. Uue riigi vaaraod otsustasid end matta peidetud ja raskesti ligipääsetavasse kohta - Kuningate orgu Teeba lähedal.",
-        treasure: "feather"},
+        treasure: "feather"
+      },
       {
         id: "new_teeba_5", type: "choice", location: "teeba", difficulty: 1,
         question: "Kes oli Uue riigi peajumal, keda austati Teebas?",
@@ -1166,7 +1249,8 @@
         correct: 0,
         image: images.ra,
         hint: "Amon oli algselt Teeba piirkonna jumal, kuid Uue riigi ajal ühendati ta päikeseketta Raga, moodus...",
-        explanation: "Amon oli algselt Teeba piirkonna jumal, kuid Uue riigi ajal ühendati ta päikeseketta Raga, moodustades Amon-Ra - jumalate kuninga."},
+        explanation: "Amon oli algselt Teeba piirkonna jumal, kuid Uue riigi ajal ühendati ta päikeseketta Raga, moodustades Amon-Ra - jumalate kuninga."
+      },
       {
         id: "new_teeba_6", type: "choice", location: "teeba", difficulty: 2,
         question: "Milline relv, mida vedasid hobused, muutis Uue riigi sõjapidamise palju kiiremaks ja surmavamaks?",
@@ -1178,7 +1262,8 @@
         wrongFeedback: {
           0: "Egiptusel oli tugev laevastik, kuid Niilusel, mitte peamise maismaarelvana.",
           2: "Katapulte egiptlased sel ajal veel ei kasutanud, need tulid hiljem.",
-          3: "Sõjaelevante kasutasid alles palju hiljem ptolemaioste dünastia valitsejad."}
+          3: "Sõjaelevante kasutasid alles palju hiljem ptolemaioste dünastia valitsejad."
+        }
       },
       {
         id: "new_teeba_7", type: "written", location: "teeba", difficulty: 3,
@@ -1186,7 +1271,8 @@
         answer: ["punt", "punti maa"],
         image: images.hatshepsut,
         hint: "Ekspeditsioon Punti maale tõi Egiptusesse viirukit, mürri, kulda, eebenipuud ja isegi eksootilisi...",
-        explanation: "Ekspeditsioon Punti maale tõi Egiptusesse viirukit, mürri, kulda, eebenipuud ja isegi eksootilisi loomi, nagu paavianid ja leopardid."},
+        explanation: "Ekspeditsioon Punti maale tõi Egiptusesse viirukit, mürri, kulda, eebenipuud ja isegi eksootilisi loomi, nagu paavianid ja leopardid."
+      },
       {
         id: "new_teeba_8", type: "truefalse", location: "teeba", difficulty: 2,
         question: "Vana-Egiptuse naistel oli õigus omada vara, algatada lahutust ja pärida maad.",
@@ -1194,7 +1280,8 @@
         image: images.nefertiti,
         hint: "Erinevalt paljudest teistest antiikaja ühiskondadest (nt Kreeka), oli egiptuse naistel seaduse ee...",
         explanation: "Erinevalt paljudest teistest antiikaja ühiskondadest (nt Kreeka), oli egiptuse naistel seaduse ees peaaegu samad õigused kui meestel.",
-        treasure: "crook"},
+        treasure: "crook"
+      },
       {
         id: "new_teeba_9", type: "choice", location: "teeba", difficulty: 2,
         question: "Kes oli vaarao peamine nõuandja ja riigi 'tegevjuht', kes kontrollis makse ja kohtuid?",
@@ -1206,7 +1293,8 @@
         wrongFeedback: {
           0: "Ülempreestritel oli suur võim, kuid nad tegelesid peamiselt usuliste asjadega.",
           2: "Kirjutajaid oli palju ja nad täitsid vesiiri käske, kuid neil ei olnud nii kõrget rolli.",
-          3: "Kindralid juhtisid sõjaväge, kuid riigi siseasju ja makse kontrollis vesiir."}
+          3: "Kindralid juhtisid sõjaväge, kuid riigi siseasju ja makse kontrollis vesiir."
+        }
       },
       {
         id: "new_teeba_10", type: "identify", location: "teeba", difficulty: 2,
@@ -1220,7 +1308,8 @@
         wrongFeedback: {
           0: "Ibis oli tarkusejumal Thoti sümbol.",
           2: "Pistrik oli taevajumal Horuse ja vaarao võimu sümbol.",
-          3: "Pelikan oli egiptlaste jaoks mütoloogiline, kuid mitte Teeba peamine sümbol."}
+          3: "Pelikan oli egiptlaste jaoks mütoloogiline, kuid mitte Teeba peamine sümbol."
+        }
       },
       {
         id: "new_teeba_11", type: "written", location: "teeba", difficulty: 3,
@@ -1228,7 +1317,8 @@
         answer: ["hüksosed", "hyksos"],
         image: images.war_chariot,
         hint: "Hüksosed (karjaste kuningad) valitsesid Egiptust üle saja aasta",
-        explanation: "Hüksosed (karjaste kuningad) valitsesid Egiptust üle saja aasta. Nende väljaajamine tähistas Uue riigi algust ja Egiptuse saamist suurriigiks."},
+        explanation: "Hüksosed (karjaste kuningad) valitsesid Egiptust üle saja aasta. Nende väljaajamine tähistas Uue riigi algust ja Egiptuse saamist suurriigiks."
+      },
       {
         id: "new_teeba_12", type: "choice", location: "teeba", difficulty: 2,
         question: "Millise kuulsa lahingu pidas Ramses II hetiitidega, mis viis maailma esimese rahulepinguni?",
@@ -1236,7 +1326,8 @@
         correct: 1,
         image: images.ramses_ii,
         hint: "Kadeshi lahing (u 1274 eKr) oli üks suurimaid sõjavankrite lahinguid ajaloos",
-        explanation: "Kadeshi lahing (u 1274 eKr) oli üks suurimaid sõjavankrite lahinguid ajaloos. Kuigi mõlemad poole pidasid end võitjaks, järgnes sellele ajaloo esimene kirjalik rahuleping."},
+        explanation: "Kadeshi lahing (u 1274 eKr) oli üks suurimaid sõjavankrite lahinguid ajaloos. Kuigi mõlemad poole pidasid end võitjaks, järgnes sellele ajaloo esimene kirjalik rahuleping."
+      },
 
       // ===================== KARNAK (Temples & Rituals) =====================
       {
@@ -1250,7 +1341,8 @@
         wrongFeedback: {
           0: "Erinevalt tänapäeva kirikutest ei käinud rahvas templi sees palvetamas; nad ootasid õues.",
           2: "Kuigi templite juures võisid olla koolid (elumaja), oli templi põhiülesanne usuline teenistus.",
-          3: "Turg võis olla templi müüride taga, kuid tempel ise oli püha ja puutumatu paik."}
+          3: "Turg võis olla templi müüride taga, kuid tempel ise oli püha ja puutumatu paik."
+        }
       },
       {
         id: "new_karnak_2", type: "written", location: "karnak", difficulty: 2,
@@ -1259,7 +1351,8 @@
         image: images.karnak,
         hint: "Obeliskid sümboliseerisid tardunud päikesekiirt",
         explanation: "Obeliskid sümboliseerisid tardunud päikesekiirt. Need püstitati tavaliselt paarikaupa templite sissepääsude juurde, et austada päikesejumalat. Suurimad neist kaalusid sadu tonne.",
-        treasure: "column"},
+        treasure: "column"
+      },
       {
         id: "new_karnak_3", type: "identify", location: "karnak", difficulty: 2,
         question: "Kes oli see tarkuse, teaduse ja kirjakunsti jumal, keda kujutati ibis-linnu peaga?",
@@ -1272,7 +1365,8 @@
         wrongFeedback: {
           1: "Anubis on šaakalipeaga ja seotud surnutega, mitte kirjakunstiga.",
           2: "Horus on pistrikupeaga ja sümboliseerib taevast ning kuningavõimu.",
-          3: "Ra on päikesejumal, keda kujutati tihti kullipeaga ja päikesekettaga."}
+          3: "Ra on päikesejumal, keda kujutati tihti kullipeaga ja päikesekettaga."
+        }
       },
       {
         id: "new_karnak_4", type: "choice", location: "karnak", difficulty: 1,
@@ -1282,7 +1376,8 @@
         image: images.horus,
         hint: "Pistrikkujuline jumal Horus oli vaarao taevane võrdkuju",
         explanation: "Pistrikkujuline jumal Horus oli vaarao taevane võrdkuju. Iga elav vaarao kandis tiitlit 'Elav Horus'.",
-        treasure: "eye"},
+        treasure: "eye"
+      },
       {
         id: "new_karnak_5", type: "fillin", location: "karnak", difficulty: 3,
         question: "Milline mardikas sümboliseeris egiptlastele päikese liikumist ja uuestisündi?",
@@ -1290,7 +1385,8 @@
         image: images.scarab,
         hint: "Skarabeus (sitamardikas) veerev sõnnikupall meenutas egiptlastele päikeseketta liikumist üle taeva",
         explanation: "Skarabeus (sitamardikas) veerev sõnnikupall meenutas egiptlastele päikeseketta liikumist üle taeva. Teda peeti uue elu ja õnne sümboliks.",
-        treasure: "scarab_amulet"},
+        treasure: "scarab_amulet"
+      },
       {
         id: "new_karnak_6", type: "choice", location: "karnak", difficulty: 2,
         question: "Kuidas nimetati Karnaki templi hiiglaslikku sammassaali, kus on 134 hiiglaslikku sammast?",
@@ -1302,7 +1398,8 @@
         wrongFeedback: {
           0: "Püloon on templi hiiglaslik väravaehitis, mitte saal.",
           2: "Sarkofaag on kirst, mitte arhitektuurne saal.",
-          3: "Lüütium ei ole egiptuse ehituskunsti mõiste."}
+          3: "Lüütium ei ole egiptuse ehituskunsti mõiste."
+        }
       },
       {
         id: "new_karnak_7", type: "truefalse", location: "karnak", difficulty: 2,
@@ -1311,14 +1408,16 @@
         image: images.karnak,
         hint: "Kuigi peajumal oli Amon, austati seal ka tema naist Muti ja poega Khonsut (Teeba kolmik)",
         explanation: "Kuigi peajumal oli Amon, austati seal ka tema naist Muti ja poega Khonsut (Teeba kolmik). Neile kõigile on seal eraldi pühakojad.",
-        treasure: "temple"},
+        treasure: "temple"
+      },
       {
         id: "new_karnak_8", type: "written", location: "karnak", difficulty: 2,
         question: "Milleks kasutasid preestrid templi juures asuvat 'Püha järve'?",
         answer: ["rituaalne pesemine", "puhastumine"],
         image: images.karnak,
         hint: "Preestrid pidid ennast neli korda päevas (kaks korda päeval ja kaks korda öösel) püha järve vees ...",
-        explanation: "Preestrid pidid ennast neli korda päevas (kaks korda päeval ja kaks korda öösel) püha järve vees pesema, et olla puhas jumalate teenimiseks."},
+        explanation: "Preestrid pidid ennast neli korda päevas (kaks korda päeval ja kaks korda öösel) püha järve vees pesema, et olla puhas jumalate teenimiseks."
+      },
       {
         id: "new_karnak_9", type: "choice", location: "karnak", difficulty: 2,
         question: "Kuidas nimetatakse templi väravat, mis koosneb kahest hiiglaslikust ja lamedast tornist?",
@@ -1330,7 +1429,8 @@
         wrongFeedback: {
           0: "Obelisk on kitsas sammas, mitte väravaehitis.",
           2: "Mastaba oli Vana riigi aegne hauakamber, mitte templi värav.",
-          3: "Püramiid on kooniline ehitis, mitte tasapinnaline värav."}
+          3: "Püramiid on kooniline ehitis, mitte tasapinnaline värav."
+        }
       },
       {
         id: "new_karnak_10", type: "identify", location: "karnak", difficulty: 2,
@@ -1344,7 +1444,8 @@
         wrongFeedback: {
           0: "Horus on pistrikupeaga taevajumal.",
           1: "Anubis on šaakalipeaga surnute jumal.",
-          3: "Sobek on krokodillipeaga Niiluse ja viljakuse jumal."}
+          3: "Sobek on krokodillipeaga Niiluse ja viljakuse jumal."
+        }
       },
       {
         id: "new_karnak_11", type: "choice", location: "karnak", difficulty: 3,
@@ -1353,7 +1454,8 @@
         correct: 2,
         image: images.hieroglyphs,
         hint: "Egiptuse piltkiri oli väga keeruline, koosnedes enam kui 700-st erinevast märgist",
-        explanation: "Egiptuse piltkiri oli väga keeruline, koosnedes enam kui 700-st erinevast märgist. Need võisid tähistada nii häälikuid, silpe kui ka terveid mõisteid."},
+        explanation: "Egiptuse piltkiri oli väga keeruline, koosnedes enam kui 700-st erinevast märgist. Need võisid tähistada nii häälikuid, silpe kui ka terveid mõisteid."
+      },
       {
         id: "new_karnak_12", type: "choice", location: "karnak", difficulty: 2,
         question: "Millal avastati kuulus Rosetta kivi, mis võimaldas hieroglüüfe dešifreerida?",
@@ -1361,7 +1463,8 @@
         correct: 1,
         image: images.rosetta,
         hint: "Rosetta kivi leiti Napoleoni Egiptuse-retke ajal 1799",
-        explanation: "Rosetta kivi leiti Napoleoni Egiptuse-retke ajal 1799. aastal. Alles 1822. aastal suutis Champollion selle abil kirja saladused murda."},
+        explanation: "Rosetta kivi leiti Napoleoni Egiptuse-retke ajal 1799. aastal. Alles 1822. aastal suutis Champollion selle abil kirja saladused murda."
+      },
       {
         id: "new_karnak_feeding", type: "choice", location: "karnak", difficulty: 2,
         question: "Mitu korda päevas pakkusid preestrid Karnaki templis Amon-Ra kujule süüa ja juua?",
@@ -1369,7 +1472,8 @@
         correct: 2,
         image: images.karnak,
         hint: "Jumalad said toitu hommikul, keskpäeval ja õhtul",
-        explanation: "Jumalad said toitu hommikul, keskpäeval ja õhtul. Ülempreester serveeris parimat leiba ja liha (näiteks hane või tuvi)."},
+        explanation: "Jumalad said toitu hommikul, keskpäeval ja õhtul. Ülempreester serveeris parimat leiba ja liha (näiteks hane või tuvi)."
+      },
       {
         id: "new_karnak_sekhmet_legend", type: "choice", location: "karnak", difficulty: 2,
         question: "Millega värvis Amon-Ra õlle punaseks, et petta ja uinutada märatsevat lõvijumalanna Sehmetit?",
@@ -1377,7 +1481,8 @@
         correct: 2,
         image: images.sekhmet,
         hint: "Legend räägib, et Sehmet märatses inimkonda hävitades",
-        explanation: "Legend räägib, et Sehmet märatses inimkonda hävitades. Amon-Ra valas maa üle punase ookriga värvitud õllega, mida Sehmet pidas vereks ja jõi end päästvalt purju."},
+        explanation: "Legend räägib, et Sehmet märatses inimkonda hävitades. Amon-Ra valas maa üle punase ookriga värvitud õllega, mida Sehmet pidas vereks ja jõi end päästvalt purju."
+      },
       {
         id: "new_karnak_matching_gods", type: "matching", location: "karnak", difficulty: 3,
         question: "Ühenda jumal ja tema olemus/kuju!",
@@ -1388,7 +1493,8 @@
         correct: [0, 1, 2, 3],
         image: images.bes,
         hint: "Bes ja Taweret olid kodudes austatud kaitsjad, Sehmet ja Amon-Ra aga võimsad riiklikud jumalused",
-        explanation: "Bes ja Taweret olid kodudes austatud kaitsjad, Sehmet ja Amon-Ra aga võimsad riiklikud jumalused."},
+        explanation: "Bes ja Taweret olid kodudes austatud kaitsjad, Sehmet ja Amon-Ra aga võimsad riiklikud jumalused."
+      },
       {
         id: "new_karnak_theodosius", type: "choice", location: "karnak", difficulty: 3,
         question: "Kes oli see Rooma keiser, kes aastal 384 pKr käskis kõik Egiptuse templid sulgeda ja paganluse keelata?",
@@ -1396,7 +1502,8 @@
         correct: 2,
         image: images.rosetta,
         hint: "Keiser Theodosius tegi kristlusest riigiusu ja käskis hävitada või sulgeda kõik vanad templid, tä...",
-        explanation: "Keiser Theodosius tegi kristlusest riigiusu ja käskis hävitada või sulgeda kõik vanad templid, tähistades sellega Vana-Egiptuse religiooni lõppu."},
+        explanation: "Keiser Theodosius tegi kristlusest riigiusu ja käskis hävitada või sulgeda kõik vanad templid, tähistades sellega Vana-Egiptuse religiooni lõppu."
+      },
 
       // ===================== KUNINGATE ORG (Tombs) =====================
       {
@@ -1410,7 +1517,8 @@
         wrongFeedback: {
           0: "Püramiidid olid hiiglaslikud, nende maht poleks kunagi probleemiks saanud.",
           1: "Paekivi oli Egiptuses piisavalt, loobutid just praktilistel põhjustel.",
-          3: "Usk muutus (Amon-Ra), kuid matmiskombed muutusid just rüüstamiste tõttu."}
+          3: "Usk muutus (Amon-Ra), kuid matmiskombed muutusid just rüüstamiste tõttu."
+        }
       },
       {
         id: "new_valley_2", type: "choice", location: "kuningate_org", difficulty: 1,
@@ -1420,14 +1528,16 @@
         image: images.tutankhamun,
         hint: "Tutanhamon oli noorelt surnud vaarao, kelle haud ununes rüüstajate poolt",
         explanation: "Tutanhamon oli noorelt surnud vaarao, kelle haud ununes rüüstajate poolt. See andis arheoloogidele hindamatut teavet Egiptuse matmiskommete ja kunsti kohta.",
-        treasure: "mask"},
+        treasure: "mask"
+      },
       {
         id: "new_valley_3", type: "written", location: "kuningate_org", difficulty: 2,
         question: "Kes oli see Briti arheoloog, kes leidis Tutanhamoni haua?",
         answer: ["howard carter"],
         image: images.howard_carter,
         hint: "Howard Carter otsis Kuningate orus Tutanhamoni hauda aastaid",
-        explanation: "Howard Carter otsis Kuningate orus Tutanhamoni hauda aastaid. Tema avastus 1922. aastal on üks maailma kuulsamaid arheoloogilisi leide."},
+        explanation: "Howard Carter otsis Kuningate orus Tutanhamoni hauda aastaid. Tema avastus 1922. aastal on üks maailma kuulsamaid arheoloogilisi leide."
+      },
       {
         id: "new_valley_4", type: "truefalse", location: "kuningate_org", difficulty: 2,
         question: "Tutanhamon oli üks Vana-Egiptuse võimsamaid ja pikaajalisemaid valitsejaid.",
@@ -1435,7 +1545,8 @@
         image: images.tutankhamun,
         hint: "Vastupidi – Tutanhamon valitses vaid lühikest aega ja suri väga noorelt (umbes 19-aastaselt)",
         explanation: "Vastupidi – Tutanhamon valitses vaid lühikest aega ja suri väga noorelt (umbes 19-aastaselt). Ta sai kuulsaks ainult tänu sellele, et tema haud säilis rüüstamata.",
-        treasure: "crook"},
+        treasure: "crook"
+      },
       {
         id: "new_valley_5", type: "choice", location: "kuningate_org", difficulty: 2,
         question: "Mida tähistas Kuningate oru asukoht Niiluse läänekaldal?",
@@ -1447,7 +1558,8 @@
         wrongFeedback: {
           0: "Idakallas oli elavate päralt, kus päike tõusis ja elu algas.",
           2: "Asukoht ei tähistanud põhjasuunda, vaia päikese vertikaalset teekonda.",
-          3: "Läänekallas oli sageli just kõrbe algus, kus põlluharimine polnud võimalik, sobides seega matmispaigaks."}
+          3: "Läänekallas oli sageli just kõrbe algus, kus põlluharimine polnud võimalik, sobides seega matmispaigaks."
+        }
       },
       {
         id: "new_valley_6", type: "choice", location: "kuningate_org", difficulty: 2,
@@ -1460,7 +1572,8 @@
         wrongFeedback: {
           0: "Memphis oli pealinn ja asus kaugel põhjas.",
           2: "Karnak oli tohutu templikompleks, mitte elumajade küla.",
-          3: "Giza on tuntud püramiidide poolt, mis rajati hoopis varem."}
+          3: "Giza on tuntud püramiidide poolt, mis rajati hoopis varem."
+        }
       },
       {
         id: "new_valley_7", type: "truefalse", location: "kuningate_org", difficulty: 2,
@@ -1469,14 +1582,16 @@
         image: images.mummy,
         hint: "See oli üks tähtsamaid matuserituaale",
         explanation: "See oli üks tähtsamaid matuserituaale. Preester puudutas spetsiaalse tööriistaga muumia või kuju suud, silmi ja kõrvu, et äratada need uueks eluks.",
-        treasure: "anubis"},
+        treasure: "anubis"
+      },
       {
         id: "new_valley_8", type: "written", location: "kuningate_org", difficulty: 3,
         question: "Kuidas nimetasid egiptlased oma haudu, mis pidid kestma igavesti?",
         answer: ["igaviku maja"],
         image: images.valley_kings,
         hint: "Haud oli egiptlase jaoks 'igaviku maja'",
-        explanation: "Haud oli egiptlase jaoks 'igaviku maja'. Kui tavalised elumajad ehitati savitellistest, siis hauad raiuti kivisse või ehitati kivist, et need ei häviks."},
+        explanation: "Haud oli egiptlase jaoks 'igaviku maja'. Kui tavalised elumajad ehitati savitellistest, siis hauad raiuti kivisse või ehitati kivist, et need ei häviks."
+      },
       {
         id: "new_valley_9", type: "choice", location: "kuningate_org", difficulty: 2,
         question: "Mis oli peamine põhjus, miks hauad Kuningate orus vaatamata valvuritele ja peitmisele ikkagi rüüstati?",
@@ -1488,7 +1603,8 @@
         wrongFeedback: {
           0: "Vargad olid täiesti tavalised inimesed, sageli just vaesed külaelanikud.",
           2: "Needus pidi vargaid eemale peletama, kuid nälja ja ahnuse vastu see ei aidanud.",
-          3: "Maavärinad võisid haudu kahjustada, kuid aarded viisid minema ikka inimesed."}
+          3: "Maavärinad võisid haudu kahjustada, kuid aarded viisid minema ikka inimesed."
+        }
       },
       {
         id: "new_valley_10", type: "identify", location: "kuningate_org", difficulty: 2,
@@ -1502,7 +1618,8 @@
         wrongFeedback: {
           0: "Ramses II maske on leitud, kuid need pole nii kuulsad kui Tutanhamoni oma.",
           2: "Osirise kujusid pandi hauda kaasa, kuid see ese on just vaarao näomask.",
-          3: "Sfinks on hiiglaslik kaljukuju Giza kõrbes."}
+          3: "Sfinks on hiiglaslik kaljukuju Giza kõrbes."
+        }
       },
       {
         id: "new_valley_11", type: "choice", location: "kuningate_org", difficulty: 2,
@@ -1511,7 +1628,8 @@
         correct: 2,
         image: images.tutankhamun,
         hint: "Tutanhamon valitses Uue riigi ajal, umbes aastatel 1332–1323 eKr",
-        explanation: "Tutanhamon valitses Uue riigi ajal, umbes aastatel 1332–1323 eKr. Kuigi ta oli lühikest aega valitsenud kuningas, tegi leid talle maailmakuulsaks."},
+        explanation: "Tutanhamon valitses Uue riigi ajal, umbes aastatel 1332–1323 eKr. Kuigi ta oli lühikest aega valitsenud kuningas, tegi leid talle maailmakuulsaks."
+      },
 
 
       // ===================== ABU SIMBEL & FINAL ERA (Ramses & End) =====================
@@ -1526,7 +1644,8 @@
         wrongFeedback: {
           0: "Tutanhamoni ehituspärand on tema lühikese valitsuse tõttu väike.",
           2: "Ehnaton ehitas peamiselt oma uut pealinna, Abu Simbel asub aga kaugel lõunas Nuubia piiril.",
-          3: "Hatšepsut oli Ramsesest varem ja ehitas oma kuulsa templi Deir al-Bahrisse."}
+          3: "Hatšepsut oli Ramsesest varem ja ehitas oma kuulsa templi Deir al-Bahrisse."
+        }
       },
       {
         id: "new_abu_2", type: "truefalse", location: "abu_simbel", difficulty: 1,
@@ -1535,14 +1654,16 @@
         image: images.abu_simbel,
         hint: "1960ndatel aastatel tõsteti Abu Simbeli templid kivi-kivi haaval kõrgemale künkale",
         explanation: "1960ndatel aastatel tõsteti Abu Simbeli templid kivi-kivi haaval kõrgemale künkale. See oli hiigelprojekt, et päästa need uputamise eest pärast Assuani paisu valmimist.",
-        treasure: "statue"},
+        treasure: "statue"
+      },
       {
         id: "new_abu_3", type: "fillin", location: "abu_simbel", difficulty: 2,
         question: "Millise suurriigi kätte langes Egiptus lõplikult 525. aastal eKr?",
         answer: ["pärsia", "pärslaste"],
         image: images.abu_simbel,
         hint: "Pärsia sissetung lõpetas iseseisva Egiptuse valitsejate aja",
-        explanation: "Pärsia sissetung lõpetas iseseisva Egiptuse valitsejate aja. Hiljem tulid Aleksander Suure makedoonlased ja lõpuks Rooma keisririik."},
+        explanation: "Pärsia sissetung lõpetas iseseisva Egiptuse valitsejate aja. Hiljem tulid Aleksander Suure makedoonlased ja lõpuks Rooma keisririik."
+      },
       {
         id: "new_abu_4", type: "choice", location: "abu_simbel", difficulty: 1,
         question: "Milline ajaloolane nimetas Egiptust 'Niiluse kingituseks'?",
@@ -1554,7 +1675,8 @@
         wrongFeedback: {
           1: "Sokrates oli filosoof ega reisinud teadaolevalt Egiptusesse.",
           2: "Julius Caesar vallutas Egiptuse hiljem, kuid ta polnud ajaloolane.",
-          3: "Napoleon võttis Egiptuse retkele kaasa teadlasi, kuid Herodotos kirjutas sellest 2300 aastat varem."}
+          3: "Napoleon võttis Egiptuse retkele kaasa teadlasi, kuid Herodotos kirjutas sellest 2300 aastat varem."
+        }
       },
       {
         id: "new_abu_5", type: "written", location: "abu_simbel", difficulty: 3,
@@ -1563,7 +1685,8 @@
         image: images.rosetta,
         hint: "Champollion mõistis, et hieroglüüfid ei tähista ainult mõisteid, vaid ka häälikuid",
         explanation: "Champollion mõistis, et hieroglüüfid ei tähista ainult mõisteid, vaid ka häälikuid. See oli kaasaegne egüptoloogia sünnihetk.",
-        treasure: "rosetta"},
+        treasure: "rosetta"
+      },
       {
         id: "new_abu_6", type: "choice", location: "abu_simbel", difficulty: 2,
         question: "Mitu korda aastas paistab tõusev päike Abu Simbeli templi sügavusse, valgustades jumalate kujusid?",
@@ -1575,7 +1698,8 @@
         wrongFeedback: {
           0: "Päike paistab sisse ainult väga täpsel ajal tänu templi osavale planeerimisele.",
           1: "Tegemist on kahekordse nähtusega, mis kordub kevadisel ja sügisesel ajal.",
-          3: "Päike paistab sisse ja see on üks templi suurimaid insenertehnilisi saavutusi."}
+          3: "Päike paistab sisse ja see on üks templi suurimaid insenertehnilisi saavutusi."
+        }
       },
       {
         id: "new_abu_7", type: "truefalse", location: "abu_simbel", difficulty: 2,
@@ -1584,14 +1708,16 @@
         image: images.nefertiti,
         hint: "Pärast Kleopatra surma 30",
         explanation: "Pärast Kleopatra surma 30. aastal eKr muutus Egiptus Rooma provintsiks ja vaaraode 3000-aastane aeg sai lõplikult otsa.",
-        treasure: "sarcophagus"},
+        treasure: "sarcophagus"
+      },
       {
         id: "new_abu_8", type: "written", location: "abu_simbel", difficulty: 2,
         question: "Mis oli see kuulus kivi, mille leidsid Napoleoni sõdurid ja mis aitas hieroglüüfe lugeda?",
         answer: ["rosette kivi", "rosetta kivi"],
         image: images.rosetta,
         hint: "Rosette'i kivil oli sama tekst kirjas kolmes keeles: hieroglüüfides, demootilises kirjas ja vanak...",
-        explanation: "Rosette'i kivil oli sama tekst kirjas kolmes keeles: hieroglüüfides, demootilises kirjas ja vanakreeka keeles. See andis Champollionile võtme koodi murdmiseks."},
+        explanation: "Rosette'i kivil oli sama tekst kirjas kolmes keeles: hieroglüüfides, demootilises kirjas ja vanakreeka keeles. See andis Champollionile võtme koodi murdmiseks."
+      },
       {
         id: "new_abu_11", type: "choice", location: "abu_simbel", difficulty: 2,
         question: "Millal langes Egiptus lõplikult Rooma võimu alla, tähistades vaaraode aja lõppu?",
@@ -1599,21 +1725,24 @@
         correct: 3,
         image: images.cleopatra,
         hint: "Aastal 30 eKr, pärast Kleopatra VII surma, muutus Egiptus Rooma provintsiks",
-        explanation: "Aastal 30 eKr, pärast Kleopatra VII surma, muutus Egiptus Rooma provintsiks. See lõpetas üle 3000 aasta kestnud vaaraode valitsemisaja."},
+        explanation: "Aastal 30 eKr, pärast Kleopatra VII surma, muutus Egiptus Rooma provintsiks. See lõpetas üle 3000 aasta kestnud vaaraode valitsemisaja."
+      },
       {
         id: "new_abu_12", type: "written", location: "abu_simbel", difficulty: 2,
         question: "Kes oli see viimane Egiptuse naisvaarao, kes püüdis riiki päästa suhete kaudu Caesari ja Antoniusega?",
         answer: ["kleopatra", "kleopatra vii"],
         image: images.cleopatra,
         hint: "Kleopatra VII oli viimane iseseisev Egiptuse valitseja",
-        explanation: "Kleopatra VII oli viimane iseseisev Egiptuse valitseja. Ta kuulus kreeka päritolu Ptolemaioste dünastiasse, kes valitsesid Egiptust alates Aleksander Suurest."},
+        explanation: "Kleopatra VII oli viimane iseseisev Egiptuse valitseja. Ta kuulus kreeka päritolu Ptolemaioste dünastiasse, kes valitsesid Egiptust alates Aleksander Suurest."
+      },
       {
         id: "new_abu_13", type: "truefalse", location: "abu_simbel", difficulty: 1,
         question: "Egiptlaste loodud 365-päevane päikesekalender on aluseks meie tänapäevasele kalendrile.",
         correct: true,
         image: images.ra,
         hint: "Egiptlastel oli 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus",
-        explanation: "Egiptlastel oli 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus. See täpne süsteem võeti hiljem üle roomlaste poolt (Juliuse kalender) ja on meie ajaarvamise vundamendiks."},
+        explanation: "Egiptlastel oli 12 kuud (igaühes 30 päeva) pluss 5 lisapäeva aasta lõpus. See täpne süsteem võeti hiljem üle roomlaste poolt (Juliuse kalender) ja on meie ajaarvamise vundamendiks."
+      },
       {
         id: "new_abu_9", type: "choice", location: "abu_simbel", difficulty: 2,
         question: "Milline suur lahing Ramses II ja hetiitide vahel on jäädvustatud Abu Simbeli templi seintel?",
@@ -1625,7 +1754,8 @@
         wrongFeedback: {
           1: "Giza on tuntud püramiidide, mitte suurte lahingute poolest.",
           2: "Teeba oli rahumeelne usukeskus, lahing toimus kaugel kirdes.",
-          3: "Waterloo lahing toimus 1815. aastal ja seal kaotas Napoleon."}
+          3: "Waterloo lahing toimus 1815. aastal ja seal kaotas Napoleon."
+        }
       },
       {
         id: "sort_abu_1", type: "sorting", location: "abu_simbel", difficulty: 3,
@@ -1635,210 +1765,240 @@
         image: images.egypt_map,
         hint: "Egiptuse ajalugu jaotatakse tavaliselt kolmeks suureks riigiks, mille vahele ja peale jäid segase...",
         explanation: "Egiptuse ajalugu jaotatakse tavaliselt kolmeks suureks riigiks, mille vahele ja peale jäid segased vaheperioodid ja võõrvallutused.",
-        treasure: "rosetta"},
+        treasure: "rosetta"
+      },
       {
         id: "vikt_delta_0", type: "choice", location: "delta", difficulty: 1,
         question: "Milline jõgi oli Vana-Egiptuse tsivilisatsiooni alus?",
         options: ["Tigrise jõgi", "Niiluse jõgi", "Jordani jõgi"],
         correct: 1,
         hint: "Niiluse jõgi – maailma pikim jõgi (umbes 6650 km), mis voolas läbi kõrbe ja võimaldas põllumajandust",
-        explanation: "Niiluse jõgi – maailma pikim jõgi (umbes 6650 km), mis voolas läbi kõrbe ja võimaldas põllumajandust."},
+        explanation: "Niiluse jõgi – maailma pikim jõgi (umbes 6650 km), mis voolas läbi kõrbe ja võimaldas põllumajandust."
+      },
       {
         id: "vikt_delta_1", type: "choice", location: "delta", difficulty: 2,
         question: "Miks olid Niiluse üleujutused egiptlaste jaoks olulised?",
         options: ["Need tõid kaasa kalu, mida sai püüda", "Iga-aastased üleujutused jätsid maha viljaka muda, mis võimaldas kasvatada saaki keset kõrbe", "Üleujutused pesid ära haigusi tekitavad putukad"],
         correct: 1,
         hint: "Iga-aastased üleujutused (juulist oktoobrini) jätsid maha viljaka muda, mis võimaldas kasvatada s...",
-        explanation: "Iga-aastased üleujutused (juulist oktoobrini) jätsid maha viljaka muda, mis võimaldas kasvatada saaki keset kõrbe."},
+        explanation: "Iga-aastased üleujutused (juulist oktoobrini) jätsid maha viljaka muda, mis võimaldas kasvatada saaki keset kõrbe."
+      },
       {
         id: "vikt_delta_2", type: "choice", location: "delta", difficulty: 3,
         question: "Kuidas jagati Vana-Egiptus geograafiliselt kaheks osaks?",
         options: ["Ida-Egiptus ja Lääne-Egiptus", "Ülem-Egiptus (lõunas) ja Alam-Egiptus (põhjas)", "Kõrbe-Egiptus ja Oaasi-Egiptus"],
         correct: 1,
         hint: "Ülem-Egiptus (lõunas, jõe ülemjooksul) ja Alam-Egiptus (põhjas, Niiluse deltas)",
-        explanation: "Ülem-Egiptus (lõunas, jõe ülemjooksul) ja Alam-Egiptus (põhjas, Niiluse deltas)."},
+        explanation: "Ülem-Egiptus (lõunas, jõe ülemjooksul) ja Alam-Egiptus (põhjas, Niiluse deltas)."
+      },
       {
         id: "vikt_delta_3", type: "choice", location: "delta", difficulty: 1,
         question: "Milline kõrb asus Egiptusest idas ja milline läänest?",
         options: ["Sahara kõrb idas, Gobi kõrb läänes", "Araabia kõrb idas, Liibüa kõrb läänes", "Nuubia kõrb idas, Siinai kõrb läänes"],
         correct: 1,
         hint: "Idas Arabia kõrb, läänest Liibüa kõrb (Sahara osa)",
-        explanation: "Idas Arabia kõrb, läänest Liibüa kõrb (Sahara osa)."},
+        explanation: "Idas Arabia kõrb, läänest Liibüa kõrb (Sahara osa)."
+      },
       {
         id: "vikt_memphis_4", type: "choice", location: "memphis", difficulty: 2,
         question: "Millal ligikaudu tekkis Vana-Egiptuse tsivilisatsioon?",
         options: ["Umbes 5000 eKr", "Umbes 3100 eKr", "Umbes 1500 eKr"],
         correct: 1,
         hint: "Umbes 3100 eKr, kui Ülem- ja Alam-Egiptus ühendati",
-        explanation: "Umbes 3100 eKr, kui Ülem- ja Alam-Egiptus ühendati."},
+        explanation: "Umbes 3100 eKr, kui Ülem- ja Alam-Egiptus ühendati."
+      },
       {
         id: "vikt_memphis_5", type: "choice", location: "memphis", difficulty: 3,
         question: "Kes ühendas Egiptuse üheks riigiks?",
         options: ["Vaarao Tutanhamon", "Vaarao Narmer (tuntud ka kui Menes)", "Vaarao Ramses II"],
         correct: 1,
         hint: "Vaarao Narmer (tuntud ka kui Menes), umbes 3100 eKr",
-        explanation: "Vaarao Narmer (tuntud ka kui Menes), umbes 3100 eKr."},
+        explanation: "Vaarao Narmer (tuntud ka kui Menes), umbes 3100 eKr."
+      },
       {
         id: "vikt_memphis_6", type: "choice", location: "memphis", difficulty: 1,
         question: "Nimeta Vana-Egiptuse ajaloo kolm peamist perioodi õiges järjekorras.",
         options: ["Uus riik, Keskmine riik, Vana riik", "Vana riik, Keskmine riik, Uus riik", "Keskmine riik, Vana riik, Uus riik"],
         correct: 1,
         hint: "Vana riik (u 2686–2181 eKr), Keskmine riik (u 2055–1650 eKr) ja Uus riik (u 1550–1069 eKr)",
-        explanation: "Vana riik (u 2686–2181 eKr), Keskmine riik (u 2055–1650 eKr) ja Uus riik (u 1550–1069 eKr)."},
+        explanation: "Vana riik (u 2686–2181 eKr), Keskmine riik (u 2055–1650 eKr) ja Uus riik (u 1550–1069 eKr)."
+      },
       {
         id: "vikt_memphis_7", type: "choice", location: "memphis", difficulty: 2,
         question: "Millal vallutasid roomlased Egiptuse?",
         options: ["30 eKr, pärast Kleopatra VII surma", "332 eKr, Aleksander Suure ajal", "525 eKr, Pärsia vallutuse ajal"],
         correct: 0,
         hint: "30 eKr, pärast Kleopatra VII surma",
-        explanation: "30 eKr, pärast Kleopatra VII surma."},
+        explanation: "30 eKr, pärast Kleopatra VII surma."
+      },
       {
         id: "vikt_memphis_8", type: "choice", location: "memphis", difficulty: 3,
         question: "Kui kaua kestis Vana-Egiptuse tsivilisatsioon?",
         options: ["Umbes 1000 aastat", "Umbes 2000 aastat", "Üle 3000 aasta"],
         correct: 2,
         hint: "Vana-Egiptuse tsivilisatsioon kestis üle kolme tuhande aasta, umbes 3300–332 eKr",
-        explanation: "Vana-Egiptuse tsivilisatsioon kestis üle kolme tuhande aasta, umbes 3300–332 eKr."},
+        explanation: "Vana-Egiptuse tsivilisatsioon kestis üle kolme tuhande aasta, umbes 3300–332 eKr."
+      },
       {
         id: "vikt_memphis_9", type: "choice", location: "memphis", difficulty: 1,
         question: "Mis oli Vana riik ja millal see eksisteeris?",
         options: ["Egiptuse langusperiood, 1000–500 eKr", "Egiptuse ajaloo üks kõrgaegu, umbes 2649–2150 eKr, mil ehitati püramiidid", "Kreeka-Rooma ajastu Egiptuses, 332 eKr – 30 pKr"],
         correct: 1,
         hint: "Vana riik oli Egiptuse ajaloo üks kõrgaegu, mis kestis umbes 2649–2150 eKr",
-        explanation: "Vana riik oli Egiptuse ajaloo üks kõrgaegu, mis kestis umbes 2649–2150 eKr. Sel ajal ehitati vaaraode hauamonumendid ehk püramiidid ning võim oli tugeva tsentraliseeritud valitsuse käes."},
+        explanation: "Vana riik oli Egiptuse ajaloo üks kõrgaegu, mis kestis umbes 2649–2150 eKr. Sel ajal ehitati vaaraode hauamonumendid ehk püramiidid ning võim oli tugeva tsentraliseeritud valitsuse käes."
+      },
       {
         id: "vikt_memphis_10", type: "choice", location: "memphis", difficulty: 2,
         question: "Mis olid 'nomosed' ja kes neid juhtisid?",
         options: ["Templid, mida juhtisid preestrid", "42 piirkonda, mida juhtisid suurte volitustega ametnikud", "Sõjaväeüksused, mida juhtisid kindralid"],
         correct: 1,
         hint: "Nomosed olid 42 piirkonda, milleks maa jagunes",
-        explanation: "Nomosed olid 42 piirkonda, milleks maa jagunes. Neid juhtisid suurte volitustega ametnikud, kelle võim oli eluaegne ning pärandati poegadele edasi. See tähendas, et ametnikel oli egiptuse ühiskonnas kindel positsioon."},
+        explanation: "Nomosed olid 42 piirkonda, milleks maa jagunes. Neid juhtisid suurte volitustega ametnikud, kelle võim oli eluaegne ning pärandati poegadele edasi. See tähendas, et ametnikel oli egiptuse ühiskonnas kindel positsioon."
+      },
       {
         id: "vikt_memphis_11", type: "choice", location: "memphis", difficulty: 3,
         question: "Millal ja kuidas sai Teebast Egiptuse pealinn?",
         options: ["Umbes 3100 eKr, kui Egiptus ühendati", "Umbes 2040 eKr, kui valitsus tugevnes ja algas Keskmine riik", "Umbes 1350 eKr, kui Tutanhamon tuli võimule"],
         correct: 1,
         hint: "Umbes 2040 eKr valitsus tugevnes ja pealinn viidi üle Teebasse",
-        explanation: "Umbes 2040 eKr valitsus tugevnes ja pealinn viidi üle Teebasse. See sai Keskmise riigi alguseks, mille vältel egiptlased allutasid ka Nuubia."},
+        explanation: "Umbes 2040 eKr valitsus tugevnes ja pealinn viidi üle Teebasse. See sai Keskmise riigi alguseks, mille vältel egiptlased allutasid ka Nuubia."
+      },
       {
         id: "vikt_memphis_12", type: "choice", location: "memphis", difficulty: 1,
         question: "Millal saavutas Egiptus oma suurima ulatuse?",
         options: ["Vana riigi ajal, umbes 2500 eKr", "Uue riigi perioodil vaarao Tuthmosis III valitsemise ajal (u 1490–1436 eKr)", "Ptolemaiose dünastia ajal, umbes 200 eKr"],
         correct: 1,
         hint: "Egiptus omandas Uue riigi perioodil vaarao Tuthmosis III valitsemise ajal (u 1490–1436 eKr) oma s...",
-        explanation: "Egiptus omandas Uue riigi perioodil vaarao Tuthmosis III valitsemise ajal (u 1490–1436 eKr) oma suurima ulatuse."},
+        explanation: "Egiptus omandas Uue riigi perioodil vaarao Tuthmosis III valitsemise ajal (u 1490–1436 eKr) oma suurima ulatuse."
+      },
       {
         id: "vikt_memphis_13", type: "choice", location: "memphis", difficulty: 2,
         question: "Millal ja kuidas hävis Vana-Egiptuse kultuur lõplikult?",
         options: ["1000 eKr, kui merrahvad ründasid", "525 eKr purustasid pärslased vaarao sõjaväe ja lõplikult hävis kultuur Aleksander Suure vallutusega", "30 pKr, kui Rooma keiser hävitas kõik templid"],
         correct: 1,
         hint: "525 eKr purustati vaarao sõjavägi Pärsia kuninga poolt",
-        explanation: "525 eKr purustati vaarao sõjavägi Pärsia kuninga poolt. Vana-Egiptuse kultuur hävis lõplikult, kui Makedoonia Aleksander Suur riigi vallutas. Pärast teda valitsesid makedoonia päritolu vaaraod maad ajani, mil Egiptus 30 eKr langes Rooma keisririigi saagiks."},
+        explanation: "525 eKr purustati vaarao sõjavägi Pärsia kuninga poolt. Vana-Egiptuse kultuur hävis lõplikult, kui Makedoonia Aleksander Suur riigi vallutas. Pärast teda valitsesid makedoonia päritolu vaaraod maad ajani, mil Egiptus 30 eKr langes Rooma keisririigi saagiks."
+      },
       {
         id: "vikt_abu_simbel_14", type: "choice", location: "abu_simbel", difficulty: 3,
         question: "Kes oli vaarao?",
         options: ["Egiptuse ülempreester, kes juhtis religioosseid rituaale", "Egiptuse kuningas, keda peeti elavaks jumalaks ja Horuse kehastuseks maa peal", "Egiptuse sõjaväe ülemjuhataja"],
         correct: 1,
         hint: "Vaarao oli Egiptuse kuningas, keda peeti elavaks jumalaks ja Horuse kehastuseks maa peal",
-        explanation: "Vaarao oli Egiptuse kuningas, keda peeti elavaks jumalaks ja Horuse kehastuseks maa peal."},
+        explanation: "Vaarao oli Egiptuse kuningas, keda peeti elavaks jumalaks ja Horuse kehastuseks maa peal."
+      },
       {
         id: "vikt_abu_simbel_15", type: "choice", location: "abu_simbel", difficulty: 1,
         question: "Millised olid vaarao võimusümbolid?",
         options: ["Kuld kroon, hõbedane kepp ja purpurne mantel", "Topeltkroon, vaaraomüts (nemes), kärus ja piits, võltshabe", "Lõvipea mask, elevandiluu sau ja tiigrinahk"],
         correct: 1,
         hint: "Topeltkroon (Ülem- ja Alam-Egiptuse ühendamise sümbol), vaaraomüts (nemes), kärus ja piits, võlts...",
-        explanation: "Topeltkroon (Ülem- ja Alam-Egiptuse ühendamise sümbol), vaaraomüts (nemes), kärus ja piits, võltshabe."},
+        explanation: "Topeltkroon (Ülem- ja Alam-Egiptuse ühendamise sümbol), vaaraomüts (nemes), kärus ja piits, võltshabe."
+      },
       {
         id: "vikt_abu_simbel_16", type: "choice", location: "abu_simbel", difficulty: 2,
         question: "Kes oli Tutanhamon ja miks ta kuulus on?",
         options: ["Egiptuse kõige võimsam vaarao, kes valitses 60 aastat", "Noorelt surnud vaarao, kelle puutumata haud avastati 1922. aastal", "Vaarao, kes ehitas Giza suure püramiidi"],
         correct: 1,
         hint: "Tutanhamon oli noorelt surnud vaarao (u 1332–1323 eKr), kelle puutumata haud avastati 1922",
-        explanation: "Tutanhamon oli noorelt surnud vaarao (u 1332–1323 eKr), kelle puutumata haud avastati 1922. aastal – see andis hindamatut teavet Egiptuse kultuuri kohta."},
+        explanation: "Tutanhamon oli noorelt surnud vaarao (u 1332–1323 eKr), kelle puutumata haud avastati 1922. aastal – see andis hindamatut teavet Egiptuse kultuuri kohta."
+      },
       {
         id: "vikt_abu_simbel_17", type: "choice", location: "abu_simbel", difficulty: 3,
         question: "Kes oli Hatšepsut?",
         options: ["Kleopatra ema", "Üks väheseid naisvaaraosid, kes lasi end kujutada mehelikult", "Kuulus Egiptuse preestrinanna"],
         correct: 1,
         hint: "Hatšepsut oli üks väheseid naisvaaraosid, kes valitses umbes 1479–1458 eKr ja lasi end kujutada m...",
-        explanation: "Hatšepsut oli üks väheseid naisvaaraosid, kes valitses umbes 1479–1458 eKr ja lasi end kujutada mehelikult, võltshabe ja vaarao rõivastusega."},
+        explanation: "Hatšepsut oli üks väheseid naisvaaraosid, kes valitses umbes 1479–1458 eKr ja lasi end kujutada mehelikult, võltshabe ja vaarao rõivastusega."
+      },
       {
         id: "vikt_abu_simbel_18", type: "choice", location: "abu_simbel", difficulty: 1,
         question: "Kes oli Ramses II ja miks teda 'suureks' nimetatakse?",
         options: ["Ta oli esimene vaarao, kes ühendas Egiptuse", "Ta oli Uue riigi vaarao, üks pikima valitsemisajaga kuningaid, tuntud suurejooneliste ehitiste poolest", "Ta vallutas Rooma ja laiendas Egiptuse piire Euroopasse"],
         correct: 1,
         hint: "Ramses II oli Uue riigi vaarao (u 1279–1213 eKr), üks pikima valitsemisajaga kuningaid, tuntud su...",
-        explanation: "Ramses II oli Uue riigi vaarao (u 1279–1213 eKr), üks pikima valitsemisajaga kuningaid, tuntud suurejooneliste ehitiste (Abu Simbeli templid) ja Kadeshi lahingu poolest."},
+        explanation: "Ramses II oli Uue riigi vaarao (u 1279–1213 eKr), üks pikima valitsemisajaga kuningaid, tuntud suurejooneliste ehitiste (Abu Simbeli templid) ja Kadeshi lahingu poolest."
+      },
       {
         id: "vikt_abu_simbel_19", type: "choice", location: "abu_simbel", difficulty: 2,
         question: "Kes oli Kleopatra VII?",
         options: ["Esimene naisvaarao Egiptuse ajaloos", "Viimane iseseisva Egiptuse valitseja, makedoonia-kreeka päritolu", "Kuulus Egiptuse preestrinanna, kes ehitas Luxori templi"],
         correct: 1,
         hint: "Kleopatra VII oli viimane iseseisva Egiptuse valitseja (69–30 eKr), makedoonia-kreeka päritolu Pt...",
-        explanation: "Kleopatra VII oli viimane iseseisva Egiptuse valitseja (69–30 eKr), makedoonia-kreeka päritolu Ptolemaiose dünastiast. Tuntud suhete poolest Julius Caesari ja Marcus Antoniusega."},
+        explanation: "Kleopatra VII oli viimane iseseisva Egiptuse valitseja (69–30 eKr), makedoonia-kreeka päritolu Ptolemaiose dünastiast. Tuntud suhete poolest Julius Caesari ja Marcus Antoniusega."
+      },
       {
         id: "vikt_abydos_20", type: "choice", location: "abydos", difficulty: 3,
         question: "Kes oli Amon-Ra?",
         options: ["Allilma jumal, kes valitses surnute üle", "Päikesejumal ning maailma looja ja valitseja", "Niiluse jõe jumal"],
         correct: 1,
         hint: "Amon-Ra oli päikesejumal ning maailma looja ja valitseja",
-        explanation: "Amon-Ra oli päikesejumal ning maailma looja ja valitseja. Ta hoidis korda ning kinkis inimestele valgust ja soojust. Päeval reisis Amon-Ra oma laevaga üle taeva. Öösel viibis ta surnute maailmas, kus ta võitles maoga, kelle nimi oli Apep."},
+        explanation: "Amon-Ra oli päikesejumal ning maailma looja ja valitseja. Ta hoidis korda ning kinkis inimestele valgust ja soojust. Päeval reisis Amon-Ra oma laevaga üle taeva. Öösel viibis ta surnute maailmas, kus ta võitles maoga, kelle nimi oli Apep."
+      },
       {
         id: "vikt_abydos_21", type: "choice", location: "abydos", difficulty: 1,
         question: "Kes oli Osiris?",
         options: ["Päikesejumal", "Surnute ja taassünni jumal, kes valitseb allilmas", "Sõja ja võitluse jumal"],
         correct: 1,
         hint: "Osiris valitseb allilmas",
-        explanation: "Osiris valitseb allilmas. Jumalat kujutatakse muumiana ja ta kannab oma seisuse märgina Egiptuse vaarao karjasekeppi ja kooti. Piltidel on Osirise nahk sageli roheline või must nagu Niiluse oru maa, mis on kõigepealt mudast must ja seejärel põllukultuuridest roheline."},
+        explanation: "Osiris valitseb allilmas. Jumalat kujutatakse muumiana ja ta kannab oma seisuse märgina Egiptuse vaarao karjasekeppi ja kooti. Piltidel on Osirise nahk sageli roheline või must nagu Niiluse oru maa, mis on kõigepealt mudast must ja seejärel põllukultuuridest roheline."
+      },
       {
         id: "vikt_abydos_22", type: "choice", location: "abydos", difficulty: 2,
         question: "Kes oli Isis?",
         options: ["Kuu jumalanna", "Osirise õde ja naine, emajumalanna, kes kaitseb ja toidab", "Kassidega seotud jumalanna"],
         correct: 1,
         hint: "Isis on Osirise õde kui ka naine",
-        explanation: "Isis on Osirise õde kui ka naine. Ta on tüüpiline emajumalanna ning ta kaitseb ja toidab. Isis oli eriti populaarne just naiste seas. Naised kutsusid jumal Isist sageli appi, kui nad olid haiged või hakkasid sünnitama."},
+        explanation: "Isis on Osirise õde kui ka naine. Ta on tüüpiline emajumalanna ning ta kaitseb ja toidab. Isis oli eriti populaarne just naiste seas. Naised kutsusid jumal Isist sageli appi, kui nad olid haiged või hakkasid sünnitama."
+      },
       {
         id: "vikt_abydos_23", type: "choice", location: "abydos", difficulty: 3,
         question: "Kes oli Hathor?",
         options: ["Sõja ja hävituse jumalanna", "Päikesejumala Amon-Ra tütar, armastuse, seksi ja viljakuse jumalanna", "Põllumajanduse jumalanna"],
         correct: 1,
         hint: "Hathor oli päikesejumala Amon-Ra tütar ning seksi, armastuse ja ilu jumalanna",
-        explanation: "Hathor oli päikesejumala Amon-Ra tütar ning seksi, armastuse ja ilu jumalanna. Hathorit kujutatakse naisena, kellel on peas lehmasarved või -kõrvad. Mõnikord on Hathorile antud ka lehma kere."},
+        explanation: "Hathor oli päikesejumala Amon-Ra tütar ning seksi, armastuse ja ilu jumalanna. Hathorit kujutatakse naisena, kellel on peas lehmasarved või -kõrvad. Mõnikord on Hathorile antud ka lehma kere."
+      },
       {
         id: "vikt_abydos_24", type: "choice", location: "abydos", difficulty: 1,
         question: "Kes oli Anubis?",
         options: ["Päikesejumal", "Toonela jumal, kes kaalus surnu südant", "Vee ja üleujutuste jumal"],
         correct: 1,
         hint: "Egiptuses oli Anubis toonela jumal",
-        explanation: "Egiptuses oli Anubis toonela jumal. Tema kaalus surnu südant vaagnal ja otsustas tema saatuse. Anubist tunneb ära musta šaakalipea järgi."},
+        explanation: "Egiptuses oli Anubis toonela jumal. Tema kaalus surnu südant vaagnal ja otsustas tema saatuse. Anubist tunneb ära musta šaakalipea järgi."
+      },
       {
         id: "vikt_abydos_25", type: "choice", location: "abydos", difficulty: 2,
         question: "Kes oli Bastet ja kuidas teda kujutati?",
         options: ["Krokodilliga seotud jumalanna, kujutati krokodillipeaga", "Kassijumal, keda kujutati kassina või kassi peaga naisena", "Maoga seotud jumalanna, kujutati koobrana"],
         correct: 1,
         hint: "Bastet oli kassijumal, keda egiptlased kujutasid kassina või kassi peaga naisena",
-        explanation: "Bastet oli kassijumal, keda egiptlased kujutasid kassina või kassi peaga naisena. Ta oli Amon-Ra tütar ja kaitses kodu, emasid, lapsi ning muidugi kasse. Tema oli kodu, naiste ja laste jumal ning teda kummardati rikkaliku joogi, tantsu ja muusikaga."},
+        explanation: "Bastet oli kassijumal, keda egiptlased kujutasid kassina või kassi peaga naisena. Ta oli Amon-Ra tütar ja kaitses kodu, emasid, lapsi ning muidugi kasse. Tema oli kodu, naiste ja laste jumal ning teda kummardati rikkaliku joogi, tantsu ja muusikaga."
+      },
       {
         id: "vikt_abydos_26", type: "choice", location: "abydos", difficulty: 3,
         question: "Kes oli Bes ja milline ta välja nägi?",
         options: ["Pikk ja sale jumal oreooliga pea ümber", "Kärbuskasvu, paks ja kõverate jalgadega jumal lõvi pea ja pika sabaga", "Kõrge ja võimas jumal kotka peaga"],
         correct: 1,
         hint: "Bes oli jõehobujumalanna Hathori vastand – ta oli kärbuskasvuga, paks ja kõverate jalgadega jumal...",
-        explanation: "Bes oli jõehobujumalanna Hathori vastand – ta oli kärbuskasvuga, paks ja kõverate jalgadega jumal, kellel oli lõvi pea ja pikk saba. Egiptlased palusid temalt naiste ja laste kaitsmist. Besi välimus arvatavasti heidutas kurje jõude eemale – ta laulis kõvasti ja mängis pilli."},
+        explanation: "Bes oli jõehobujumalanna Hathori vastand – ta oli kärbuskasvuga, paks ja kõverate jalgadega jumal, kellel oli lõvi pea ja pikk saba. Egiptlased palusid temalt naiste ja laste kaitsmist. Besi välimus arvatavasti heidutas kurje jõude eemale – ta laulis kõvasti ja mängis pilli."
+      },
       {
         id: "vikt_abydos_27", type: "choice", location: "abydos", difficulty: 1,
         question: "Kes oli Taweret ja mille eest ta hoolitses?",
         options: ["Sõdurite kaitsejumalanna", "Jõehobujumalanna, kes aitas sünnitust", "Mere ja laevade jumalanna"],
         correct: 1,
         hint: "Taweret oli jõehobujumalanna, kes aitas sünnitust",
-        explanation: "Taweret oli jõehobujumalanna, kes aitas sünnitust. Egiptlased uskusid, et ta on ka ise ema ja seetõttu suudab neid aidata. Kujutistel seisab ta kahel jalal, rasedana, ümara kõhu ja suurte, raskete rindadega. Teda kujutati poolnaise ja pooljõehobuna ning lõvijalgadega."},
+        explanation: "Taweret oli jõehobujumalanna, kes aitas sünnitust. Egiptlased uskusid, et ta on ka ise ema ja seetõttu suudab neid aidata. Kujutistel seisab ta kahel jalal, rasedana, ümara kõhu ja suurte, raskete rindadega. Teda kujutati poolnaise ja pooljõehobuna ning lõvijalgadega."
+      },
       {
         id: "vikt_abydos_28", type: "choice", location: "abydos", difficulty: 2,
         question: "Kes oli Khepri ja mida ta sümboliseeris?",
         options: ["Skorpionijumal, kes kaitses mürkide eest", "Mardikajumal, kes sümboliseeris päikesetõusu ja taassündi", "Lõvijumal, kes kaitses kuningaid"],
         correct: 1,
         hint: "Khepri oli mardikajumal, kelle nimi tähendas 'seda, kes on sündinud'",
-        explanation: "Khepri oli mardikajumal, kelle nimi tähendas 'seda, kes on sündinud'. Egiptlased uskusid, et päikesejumal tõusis kaootilisest ürgmerest just mardikana. Mardika sõnnikupalli veeretamine meenutas egiptlastele Päikese teekonda taevas. Kheprit kasutati sageli pitsatite ja amulettide, sealhulgas sõrmuste kujunduses."},
+        explanation: "Khepri oli mardikajumal, kelle nimi tähendas 'seda, kes on sündinud'. Egiptlased uskusid, et päikesejumal tõusis kaootilisest ürgmerest just mardikana. Mardika sõnnikupalli veeretamine meenutas egiptlastele Päikese teekonda taevas. Kheprit kasutati sageli pitsatite ja amulettide, sealhulgas sõrmuste kujunduses."
+      },
       {
         id: "vikt_abydos_29", type: "choice", location: "abydos", difficulty: 3,
         question: "Kes oli Sehmet ja milline oli tema iseloom?",
@@ -1853,315 +2013,360 @@
         options: ["Osiris vallutas maailma ja sai kõigi jumalate kuningaks", "Osirise tappis ta vend Seth, kuid Isis äratas ta ellu ja Osirisest sai allilma valitseja", "Osiris lõi maailma ja inimesed"],
         correct: 1,
         hint: "Osirise tappis ta vend Seth, kuid Isis kogus Osirise keha kokku ja äratas ta ellu",
-        explanation: "Osirise tappis ta vend Seth, kuid Isis kogus Osirise keha kokku ja äratas ta ellu. Osirisest sai allilma valitseja, tema poeg Horus kaotas Sethi ja sai vaaraoks."},
+        explanation: "Osirise tappis ta vend Seth, kuid Isis kogus Osirise keha kokku ja äratas ta ellu. Osirisest sai allilma valitseja, tema poeg Horus kaotas Sethi ja sai vaaraoks."
+      },
       {
         id: "vikt_abydos_31", type: "choice", location: "abydos", difficulty: 2,
         question: "Mis oli 'kaalumise tseremoonia' surmajärgses elus?",
         options: ["Surnu vara kaaluti, et määrata tema rikkus", "Surnu südant kaaluti Maati sule vastu – kui süda oli raskem, sõi koletis selle ära", "Surnu keha kaaluti, et määrata tema väärtus"],
         correct: 1,
         hint: "Surnud inimese süda kaaluti Maati (tõe jumalanna) sule vastu",
-        explanation: "Surnud inimese süda kaaluti Maati (tõe jumalanna) sule vastu. Kui süda oli sulest raskem, sõi koletis Ammit selle ära; kui kergem, pääses hing edasi paradiisi."},
+        explanation: "Surnud inimese süda kaaluti Maati (tõe jumalanna) sule vastu. Kui süda oli sulest raskem, sõi koletis Ammit selle ära; kui kergem, pääses hing edasi paradiisi."
+      },
       {
         id: "vikt_abydos_32", type: "choice", location: "abydos", difficulty: 3,
         question: "Mida tähendas 'ka' ja 'ba'?",
         options: ["'Ka' oli keha ja 'ba' oli veri", "'Ka' oli elujõud/hingeenergia, 'ba' oli isiksus/hing", "'Ka' oli mõistus ja 'ba' oli emotsioon"],
         correct: 1,
         hint: "'Ka' oli inimese elujõud/hingeenergia, 'ba' oli isiksus/hing, mis sai pärast surma liikuda elavat...",
-        explanation: "'Ka' oli inimese elujõud/hingeenergia, 'ba' oli isiksus/hing, mis sai pärast surma liikuda elavate maailma ja hauakambri vahel."},
+        explanation: "'Ka' oli inimese elujõud/hingeenergia, 'ba' oli isiksus/hing, mis sai pärast surma liikuda elavate maailma ja hauakambri vahel."
+      },
       {
         id: "vikt_abydos_33", type: "choice", location: "abydos", difficulty: 1,
         question: "Mis oli Horose silma sümbol ja kuidas see tekkis?",
         options: ["Horus lõi silma päikesest, et valgustada maailma", "Võitluses võimu pärast torkas Seth Horosel silma peast, kuid see sai tagasi ja sellest sai ettevaatlikkuse sümbol", "Horose silm oli kingitus tema emalt Isiselt"],
         correct: 1,
         hint: "Võitluses võimu pärast torkas Seth Horosel silma peast",
-        explanation: "Võitluses võimu pärast torkas Seth Horosel silma peast. Võluvõel sai Horos silma tagasi ja sellest sai ettevaatlikkuse ning valvsuse sümbol."},
+        explanation: "Võitluses võimu pärast torkas Seth Horosel silma peast. Võluvõel sai Horos silma tagasi ja sellest sai ettevaatlikkuse ning valvsuse sümbol."
+      },
       {
         id: "vikt_karnak_34", type: "choice", location: "karnak", difficulty: 2,
         question: "Mitu korda päevas said jumalad Karnaki templis toitu?",
         options: ["Üks kord päevas", "Kolm korda päevas", "Viis korda päevas"],
         correct: 1,
         hint: "Kolm korda päevas – hommikul, keskpäeval ja õhtul",
-        explanation: "Kolm korda päevas – hommikul, keskpäeval ja õhtul. Enne keskpäeva asusid preestrid pühas järves ning andsid Amon-Ra'le süüa ja juua. Kui päike oli seniidis, serveeris ülempreester jumalale toitu, sealhulgas leiba ja liha, näiteks praetud tuvi või hane."},
+        explanation: "Kolm korda päevas – hommikul, keskpäeval ja õhtul. Enne keskpäeva asusid preestrid pühas järves ning andsid Amon-Ra'le süüa ja juua. Kui päike oli seniidis, serveeris ülempreester jumalale toitu, sealhulgas leiba ja liha, näiteks praetud tuvi või hane."
+      },
       {
         id: "vikt_karnak_35", type: "choice", location: "karnak", difficulty: 3,
         question: "Milliseid puhtusreegleid pidid Egiptuse preestrid järgima?",
         options: ["Nad pidid pesema käsi enne iga rituaali", "Nad pesid end külma veega neli korda päevas, tegid ümberlõikuse ja raseerisid kogu keha", "Nad pidid kandma ainult valget riietust"],
         correct: 1,
         hint: "Kreeka ajaloolase Herodotose järgi pesid preestrid end külma veega kaks korda päevas ja kaks kord...",
-        explanation: "Kreeka ajaloolase Herodotose järgi pesid preestrid end külma veega kaks korda päevas ja kaks korda öösel. Nad tegid endale ka ümberlõikuse puhtuse huvides. Täide ja muude parasiitide vältimiseks raseerisid nad kogu keha täielikult vähemalt ülepäeviti. Vähimgi mustus ei tohtinud määrida."},
+        explanation: "Kreeka ajaloolase Herodotose järgi pesid preestrid end külma veega kaks korda päevas ja kaks korda öösel. Nad tegid endale ka ümberlõikuse puhtuse huvides. Täide ja muude parasiitide vältimiseks raseerisid nad kogu keha täielikult vähemalt ülepäeviti. Vähimgi mustus ei tohtinud määrida."
+      },
       {
         id: "vikt_karnak_36", type: "choice", location: "karnak", difficulty: 1,
         question: "Mida tegid preestrid siis, kui nad ei palvetanud?",
         options: ["Nad puhkasid ja mediteerisid", "Nad tegutsesid ametnikena ning hoolitsesid templi kõrvaltegevuste eest", "Nad õpetasid lapsi lugema"],
         correct: 1,
         hint: "Sel ajal tegutsesid nad ametnikena ning hoolitsesid templi kõrvaltegevuste eest – pagariäris, vil...",
-        explanation: "Sel ajal tegutsesid nad ametnikena ning hoolitsesid templi kõrvaltegevuste eest – pagariäris, viljalaos ja kirjutusruumis."},
+        explanation: "Sel ajal tegutsesid nad ametnikena ning hoolitsesid templi kõrvaltegevuste eest – pagariäris, viljalaos ja kirjutusruumis."
+      },
       {
         id: "vikt_karnak_37", type: "choice", location: "karnak", difficulty: 2,
         question: "Kirjelda Amon-Ra templi hommikust rituaali algust.",
         options: ["Preester luges kõigepealt pühasid tekste", "Preester pesi end pühas järves, avas savipitseri ja sisenes templi pühamasse ossa", "Preester tantsis ja laulis jumalakuju ees"],
         correct: 1,
         hint: "Karnaki templi ülempreester ärkas enne koitu, pesi end pühas järves ning asus jumalakuju juurde",
-        explanation: "Karnaki templi ülempreester ärkas enne koitu, pesi end pühas järves ning asus jumalakuju juurde. Ta avas ettevaatlikult hapra savipitseri ja sisenes templi pühamasse ossa. Tõrvikute valguses süütas ta õlilambid, avas kirstu, kus oli Amon-Ra kuju, ja kummardus maapinda puudutades."},
+        explanation: "Karnaki templi ülempreester ärkas enne koitu, pesi end pühas järves ning asus jumalakuju juurde. Ta avas ettevaatlikult hapra savipitseri ja sisenes templi pühamasse ossa. Tõrvikute valguses süütas ta õlilambid, avas kirstu, kus oli Amon-Ra kuju, ja kummardus maapinda puudutades."
+      },
       {
         id: "vikt_karnak_38", type: "choice", location: "karnak", difficulty: 3,
         question: "Mis oli vaik ja milleks seda kasutati ülistusrituaalis?",
         options: ["Vaik oli toit, mida jumalatele pakuti", "Vaik oli oluline osa rituaalis – seda põletati ja lõhnastati templites", "Vaik oli ravim, mida preestrid kasutasid"],
         correct: 1,
         hint: "Vaik oli oluline osa rituaalis, mis hõlmas kuju pesemist ja lõhnava viiruki põletamist",
-        explanation: "Vaik oli oluline osa rituaalis, mis hõlmas kuju pesemist ja lõhnava viiruki põletamist. Jumalaid kummardades põletasid egiptlased mürri, mis on teatud liiki vaik. Seda imporditi näiteks Egiptusest lõunas asuvalt Puntimaalt."},
+        explanation: "Vaik oli oluline osa rituaalis, mis hõlmas kuju pesemist ja lõhnava viiruki põletamist. Jumalaid kummardades põletasid egiptlased mürri, mis on teatud liiki vaik. Seda imporditi näiteks Egiptusest lõunas asuvalt Puntimaalt."
+      },
       {
         id: "vikt_karnak_39", type: "choice", location: "karnak", difficulty: 1,
         question: "Millal algas egiptlastele uus aasta?",
         options: ["Jaanuaris", "Juunikuus, kui tähistati üleujutuse algust", "Septembris, pärast saagikoristust"],
         correct: 1,
         hint: "Egiptlastele algas aasta juunikuus, kui tähistati uue aasta algust",
-        explanation: "Egiptlastele algas aasta juunikuus, kui tähistati uue aasta algust. Niilus tõusis siis üle kallaste, tuues kaasa viljaka muda. Järgnesid lugematud pidustused tantsu, luuletuste ja rohke joomisega."},
+        explanation: "Egiptlastele algas aasta juunikuus, kui tähistati uue aasta algust. Niilus tõusis siis üle kallaste, tuues kaasa viljaka muda. Järgnesid lugematud pidustused tantsu, luuletuste ja rohke joomisega."
+      },
       {
         id: "vikt_karnak_40", type: "choice", location: "karnak", difficulty: 2,
         question: "Mida tähistati Wepet-renpet'i ajal?",
         options: ["Vaarao sünnipäeva", "Osirise surma ja taassündi kui metafoori Niiluse võimele luua uut elu", "Sõjalist võitu"],
         correct: 1,
         hint: "Wepet-renpet tähistas Osirise surma ja taassündi kui metafoori Niiluse võimele luua uut elu",
-        explanation: "Wepet-renpet tähistas Osirise surma ja taassündi kui metafoori Niiluse võimele luua uut elu. Seda tähistati suvel, kui Niilus ujutas piirkonna üle ning sinna juurde loeti luuletusi."},
+        explanation: "Wepet-renpet tähistas Osirise surma ja taassündi kui metafoori Niiluse võimele luua uut elu. Seda tähistati suvel, kui Niilus ujutas piirkonna üle ning sinna juurde loeti luuletusi."
+      },
       {
         id: "vikt_karnak_41", type: "choice", location: "karnak", difficulty: 3,
         question: "Mida tehti Koiaki pühal?",
         options: ["Tantsiti ja lauldi terve öö", "Tähistati Niiluse üleujutuse lõppu, kui vesi hakkas taanduma ja jättis viljaka mulla", "Ohverdati loomi jumalatele"],
         correct: 1,
         hint: "Koiaki tähistati Niiluse üleujutuse neljandal ja viimasel kuul, just siis, kui vesi hakkas taandu...",
-        explanation: "Koiaki tähistati Niiluse üleujutuse neljandal ja viimasel kuul, just siis, kui vesi hakkas taanduma ja jättis maha viljaka mulla. Samal ajal külvasid egiptlased ka põllukultuure."},
+        explanation: "Koiaki tähistati Niiluse üleujutuse neljandal ja viimasel kuul, just siis, kui vesi hakkas taanduma ja jättis maha viljaka mulla. Samal ajal külvasid egiptlased ka põllukultuure."
+      },
       {
         id: "vikt_karnak_42", type: "choice", location: "karnak", difficulty: 1,
         question: "Kirjelda Opet'i pidustust.",
         options: ["Üks päev, mil vaarao jagas rahvale toitu", "20-päevane pidustus, mille ajal kanti Amon-Ra kuju Teebast Luxorisse", "Nädal, mil kõik tööd peatati"],
         correct: 1,
         hint: "Opet oli 20-päevane pidustus, mille ajal tõid preestrid Amon-Ra kuju Teebast Luxorisse",
-        explanation: "Opet oli 20-päevane pidustus, mille ajal tõid preestrid Amon-Ra kuju Teebast Luxorisse. Templi pühimas osas kohtus vaarao jumalaga, kes andestas talle varasemad patud ja ühtlasi andis Egiptuse valitsemiseks uue võimu. Pärast seda lubati inimestel kujule läheneda ja saada preestrite vahendusel jumalalt nõuandeid."},
+        explanation: "Opet oli 20-päevane pidustus, mille ajal tõid preestrid Amon-Ra kuju Teebast Luxorisse. Templi pühimas osas kohtus vaarao jumalaga, kes andestas talle varasemad patud ja ühtlasi andis Egiptuse valitsemiseks uue võimu. Pärast seda lubati inimestel kujule läheneda ja saada preestrite vahendusel jumalalt nõuandeid."
+      },
       {
         id: "vikt_karnak_43", type: "choice", location: "karnak", difficulty: 2,
         question: "Mitu lisapäeva oli Egiptuse kalendris ja miks?",
         options: ["10 lisapäeva, et tähistada jumalaid", "5 lisapäeva, et kalendris oleks 365 päeva", "7 lisapäeva, üks iga peamise jumala jaoks"],
         correct: 1,
         hint: "Igal aastal oli viis lisapäeva (epagomenae), mille Egiptuse astronoomid olid lisanud traditsiooni...",
-        explanation: "Igal aastal oli viis lisapäeva (epagomenae), mille Egiptuse astronoomid olid lisanud traditsioonilisse kalendrisse. Kalendris oli 360 päeva, seega oli päikeseaastas kokku 365 päeva."},
+        explanation: "Igal aastal oli viis lisapäeva (epagomenae), mille Egiptuse astronoomid olid lisanud traditsioonilisse kalendrisse. Kalendris oli 360 päeva, seega oli päikeseaastas kokku 365 päeva."
+      },
       {
         id: "vikt_karnak_44", type: "choice", location: "karnak", difficulty: 3,
         question: "Kuidas tähistati Hathori joomapidu?",
         options: ["Joodi vett ja palvetati vaikselt", "Joodi tohututes kogustes õlut ega lõpetatud enne, kui oldi purupurjus", "Paastuti ja mediteeriti"],
         correct: 1,
         hint: "Uue aasta 20",
-        explanation: "Uue aasta 20. päeval ülistasid egiptlased rõõmu, emaduse, muusika ja armastuse jumalannat Hathorit. Pidustustel joodi ära tohututes kogustes õlut ega lõpetatud enne, kui oldi purupurjus. Herodotose teatel osales pidustustel koguni 700 000 inimest."},
+        explanation: "Uue aasta 20. päeval ülistasid egiptlased rõõmu, emaduse, muusika ja armastuse jumalannat Hathorit. Pidustustel joodi ära tohututes kogustes õlut ega lõpetatud enne, kui oldi purupurjus. Herodotose teatel osales pidustustel koguni 700 000 inimest."
+      },
       {
         id: "vikt_delta_45", type: "choice", location: "delta", difficulty: 1,
         question: "Kuidas nimetas vanakreeka rännumees Herodotos Egiptust?",
         options: ["'Kuldne maa'", "'Niiluse anniks'", "'Päikese riik'"],
         correct: 1,
         hint: "Herodotos nimetas Egiptust 'Niiluse anniks'",
-        explanation: "Herodotos nimetas Egiptust 'Niiluse anniks'. Keegi teine ei ole Vana-Egiptust paremini kirjeldanud."},
+        explanation: "Herodotos nimetas Egiptust 'Niiluse anniks'. Keegi teine ei ole Vana-Egiptust paremini kirjeldanud."
+      },
       {
         id: "vikt_delta_46", type: "choice", location: "delta", difficulty: 2,
         question: "Millised olid Vana-Egiptuse kolm aastaaega?",
         options: ["Kevad, suvi ja sügis", "Üleujutuse aeg, tärkamise aeg ja viljakoristuse aeg", "Külm aeg, kuum aeg ja vihmane aeg"],
         correct: 1,
         hint: "Jõgi jaotas põllumeeste aasta kolmeks aastaajaks: 'üleujutuse aeg' (juulist oktoobrini), kui ei t...",
-        explanation: "Jõgi jaotas põllumeeste aasta kolmeks aastaajaks: 'üleujutuse aeg' (juulist oktoobrini), kui ei tehtud põllutöid; 'tärkamise aeg' (novembrist veebruarini), kui künti ja külvati; ning 'viljakoristuse aeg' (märtsist juunini)."},
+        explanation: "Jõgi jaotas põllumeeste aasta kolmeks aastaajaks: 'üleujutuse aeg' (juulist oktoobrini), kui ei tehtud põllutöid; 'tärkamise aeg' (novembrist veebruarini), kui künti ja külvati; ning 'viljakoristuse aeg' (märtsist juunini)."
+      },
       {
         id: "vikt_delta_47", type: "choice", location: "delta", difficulty: 3,
         question: "Mis juhtus, kui Niiluse üleujutus oli liiga väike?",
         options: ["Inimesed kolisid teise piirkonda", "Võis tulla nälghäda, sest ei jätkunud külvipinda", "Ehitati rohkem kanaleid"],
         correct: 1,
         hint: "Kui üleujutus juhtus olema väikese ulatusega ja ei jätkunud külvipinda, võis tulla nälghäda",
-        explanation: "Kui üleujutus juhtus olema väikese ulatusega ja ei jätkunud külvipinda, võis tulla nälghäda."},
+        explanation: "Kui üleujutus juhtus olema väikese ulatusega ja ei jätkunud külvipinda, võis tulla nälghäda."
+      },
       {
         id: "vikt_delta_48", type: "choice", location: "delta", difficulty: 1,
         question: "Kuidas sõitsid laevad Niilusel lõunasse ja põhja?",
         options: ["Mõlemas suunas kasutati aerusid", "Põhja poole kanti allavoolu, lõunasse kasutati purjesid, sest tuul puhus põhjast lõunasse", "Mõlemas suunas kasutati purjesid"],
         correct: 1,
         hint: "Põhja poole sõitmiseks lasid egiptlased end laevadel kanda allavoolu mere suunas",
-        explanation: "Põhja poole sõitmiseks lasid egiptlased end laevadel kanda allavoolu mere suunas. Tuul puhus põhjast lõunasse, nii et kui nad tahtsid lõuna poole minna, kasutasid nad vastuvoolu liikumiseks purjesid. Laevu juhiti ahtris asuva suure aeruga."},
+        explanation: "Põhja poole sõitmiseks lasid egiptlased end laevadel kanda allavoolu mere suunas. Tuul puhus põhjast lõunasse, nii et kui nad tahtsid lõuna poole minna, kasutasid nad vastuvoolu liikumiseks purjesid. Laevu juhiti ahtris asuva suure aeruga."
+      },
       {
         id: "vikt_delta_49", type: "choice", location: "delta", difficulty: 2,
         question: "Milliseid põllukultuure kasvatati Vanas Egiptuses?",
         options: ["Riisi, maisi ja kartulit", "Otra, nisu, juur- ja puuvilju ning lina", "Kohvi, teed ja suhkruroogu"],
         correct: 1,
         hint: "Viljapõldude paremaks niisutamiseks kaevati kraave ja kanaleid",
-        explanation: "Viljapõldude paremaks niisutamiseks kaevati kraave ja kanaleid. Talupojad kasvatasid otra, nisu, juur- ja puuvilju. Oluline põlluvili oli lina, millest omakorda valmistati rõivaid."},
+        explanation: "Viljapõldude paremaks niisutamiseks kaevati kraave ja kanaleid. Talupojad kasvatasid otra, nisu, juur- ja puuvilju. Oluline põlluvili oli lina, millest omakorda valmistati rõivaid."
+      },
       {
         id: "vikt_delta_50", type: "choice", location: "delta", difficulty: 3,
         question: "Kuidas jagunes töö meeste ja naiste vahel viljakoristusel?",
         options: ["Mehed ja naised tegid sama tööd", "Mehed lõikasid vilja sirpidega, naised tuulasid vilja", "Naised lõikasid vilja, mehed vedasid selle aita"],
         correct: 1,
         hint: "Viljalõikajateks olid mehed, nad lõikasid vilja sirpidega",
-        explanation: "Viljalõikajateks olid mehed, nad lõikasid vilja sirpidega. Naistel ei lubatud töötada lõiketerade tööriistadega. Naiste ülesandeks oli vilja tuulamine, selleks loobiti viljakõrsi õhku, tuul puhus prahi ja ebemed välja ning rasked viljaterad langesid maha."},
+        explanation: "Viljalõikajateks olid mehed, nad lõikasid vilja sirpidega. Naistel ei lubatud töötada lõiketerade tööriistadega. Naiste ülesandeks oli vilja tuulamine, selleks loobiti viljakõrsi õhku, tuul puhus prahi ja ebemed välja ning rasked viljaterad langesid maha."
+      },
       {
         id: "vikt_delta_51", type: "choice", location: "delta", difficulty: 1,
         question: "Kuidas tähistati Vanas Egiptuses põldude piire?",
         options: ["Puust aiaga", "Suurte kividega, mille kohta talupojad pidid ametnikele vanduma", "Värvitud postidega"],
         correct: 1,
         hint: "Vanas Egiptuses tähistati põldude piirid suurte kividega",
-        explanation: "Vanas Egiptuses tähistati põldude piirid suurte kividega. Igal aastal tuli talupojal ametnikele pühalikult vanduda, et nad ei ole piire muutnud."},
+        explanation: "Vanas Egiptuses tähistati põldude piirid suurte kividega. Igal aastal tuli talupojal ametnikele pühalikult vanduda, et nad ei ole piire muutnud."
+      },
       {
         id: "vikt_delta_52", type: "choice", location: "delta", difficulty: 2,
         question: "Mis on šaduff ja milleks seda kasutati?",
         options: ["Vilja jahvatamise vahend", "Vee tõstmise seadeldis niisutussüsteemides", "Kündmise tööriist"],
         correct: 1,
         hint: "Šaduff oli vee tõstmise seadeldis, mida kasutati niisutussüsteemides põldude kastmiseks",
-        explanation: "Šaduff oli vee tõstmise seadeldis, mida kasutati niisutussüsteemides põldude kastmiseks."},
+        explanation: "Šaduff oli vee tõstmise seadeldis, mida kasutati niisutussüsteemides põldude kastmiseks."
+      },
       {
         id: "vikt_delta_53", type: "choice", location: "delta", difficulty: 3,
         question: "Kuidas valmistati Vanas Egiptuses veini?",
         options: ["Marjad kuumutati ja filtreeriti", "Marjad sõtkuti jalgadega, mahl kallati kannudesse ja suleti korkidega", "Marjad pressiti masina abil"],
         correct: 1,
         hint: "Rikkamates majapidamistes valmistati veini",
-        explanation: "Rikkamates majapidamistes valmistati veini. Vanas Egiptuses kasvasid nii punased kui valged viinamarjad. Kõigepealt korjati küpsed marjakobarad kokku, seejärel sõtkuti jalgadega mahl välja, kallati kannudesse ja suleti korkidega. Kannudele lisati isanduse nimi ja aeg – seda tehti maksude pärast."},
+        explanation: "Rikkamates majapidamistes valmistati veini. Vanas Egiptuses kasvasid nii punased kui valged viinamarjad. Kõigepealt korjati küpsed marjakobarad kokku, seejärel sõtkuti jalgadega mahl välja, kallati kannudesse ja suleti korkidega. Kannudele lisati isanduse nimi ja aeg – seda tehti maksude pärast."
+      },
       {
         id: "vikt_memphis_54", type: "choice", location: "memphis", difficulty: 1,
         question: "Millest ja kuidas ehitati Vana-Egiptuse maju?",
         options: ["Kivist ja marmorist", "Päikese käes kuivatatud tellistest, väikeste akendega nelinurksed ruumid", "Puidust ja roost"],
         correct: 1,
         hint: "Majad ehitati päikese käes kuivatatud tellistest, neis asusid nelinurksed ruumid väikeste akendega",
-        explanation: "Majad ehitati päikese käes kuivatatud tellistest, neis asusid nelinurksed ruumid väikeste akendega. Majade katustel valmistati toitu."},
+        explanation: "Majad ehitati päikese käes kuivatatud tellistest, neis asusid nelinurksed ruumid väikeste akendega. Majade katustel valmistati toitu."
+      },
       {
         id: "vikt_memphis_55", type: "choice", location: "memphis", difficulty: 2,
         question: "Mis vanuselt abiellusid muistsed egiptlased?",
         options: ["Mehed 20-aastaselt, naised 18-aastaselt", "Tüdrukud 12-aastaselt, poisid 14-aastaselt", "Mõlemad 16-aastaselt"],
         correct: 1,
         hint: "Muistsed egiptlased abiellusid varakult, tüdrukutest said pruudid 12-aastaselt ja poisid võtsid n...",
-        explanation: "Muistsed egiptlased abiellusid varakult, tüdrukutest said pruudid 12-aastaselt ja poisid võtsid naise 14-aastaselt."},
+        explanation: "Muistsed egiptlased abiellusid varakult, tüdrukutest said pruudid 12-aastaselt ja poisid võtsid naise 14-aastaselt."
+      },
       {
         id: "vikt_memphis_56", type: "choice", location: "memphis", difficulty: 3,
         question: "Kuidas suhtusid egiptlased lemmikloomadesse?",
         options: ["Nad ei pidanud lemmikloomi", "Kui kass suri, raseeris kogu perekond leina märgiks oma kulmud", "Lemmikloomad elasid eraldi hoonetes"],
         correct: 1,
         hint: "Majapidamisse kuulusid ka lemmikloomad",
-        explanation: "Majapidamisse kuulusid ka lemmikloomad. Kui kass suri, siis raseeris kogu perekond leina märgiks oma kulmud."},
+        explanation: "Majapidamisse kuulusid ka lemmikloomad. Kui kass suri, siis raseeris kogu perekond leina märgiks oma kulmud."
+      },
       {
         id: "vikt_memphis_57", type: "choice", location: "memphis", difficulty: 1,
         question: "Mida sõid vaesed ja mida rikkad egiptlased?",
         options: ["Kõik sõid sama toitu", "Vaesed sõid leiba, kala, juurvilju ja õlut; rikkad ka liha, puuvilju ja veini", "Vaesed sõid ainult leiba, rikkad ainult liha"],
         correct: 1,
         hint: "Toitu oli külluses",
-        explanation: "Toitu oli külluses. Vaesed inimesed sõid leiba, kala, juurvilju ja jõid õlut. Rikkad sõid küpsetatud loomaliha, haneliha, granaatõunu ja viigimarju ning jõid veini. Pärast jahiretke söödi jänese- või gaselliliha. Delikatessiks peeti jaanalinnumune."},
+        explanation: "Toitu oli külluses. Vaesed inimesed sõid leiba, kala, juurvilju ja jõid õlut. Rikkad sõid küpsetatud loomaliha, haneliha, granaatõunu ja viigimarju ning jõid veini. Pärast jahiretke söödi jänese- või gaselliliha. Delikatessiks peeti jaanalinnumune."
+      },
       {
         id: "vikt_memphis_58", type: "choice", location: "memphis", difficulty: 2,
         question: "Mitu sorti õlut mainivad kirjalikud allikad?",
         options: ["3 sorti", "17 sorti", "50 sorti"],
         correct: 1,
         hint: "Kirjalikud allikad mainivad 17 sorti õlut ja mitut sorti leiba ning kooke",
-        explanation: "Kirjalikud allikad mainivad 17 sorti õlut ja mitut sorti leiba ning kooke."},
+        explanation: "Kirjalikud allikad mainivad 17 sorti õlut ja mitut sorti leiba ning kooke."
+      },
       {
         id: "vikt_memphis_59", type: "choice", location: "memphis", difficulty: 3,
         question: "Kuidas oli korraldatud pidusöökide lauakord?",
         options: ["Istuti kõrgetel toolidel suurte laudade taga", "Istuti madalate laudade ümber ja söödi sõrmedega", "Seisti ja söödi seistes"],
         correct: 1,
         hint: "Külalised istusid madalate laudade ümber",
-        explanation: "Külalised istusid madalate laudade ümber. Söödi sõrmedega, mida hiljem loputati vees."},
+        explanation: "Külalised istusid madalate laudade ümber. Söödi sõrmedega, mida hiljem loputati vees."
+      },
       {
         id: "vikt_memphis_60", type: "choice", location: "memphis", difficulty: 1,
         question: "Millisest materjalist valmistati Vanas Egiptuses riideid?",
         options: ["Villast ja siidist", "Linasest riidest", "Puuvillast ja nahast"],
         correct: 1,
         hint: "Muistses Egiptuses kandsid inimesed valgest linasest riidest rõivaid",
-        explanation: "Muistses Egiptuses kandsid inimesed valgest linasest riidest rõivaid. Kudujad kasutasid noori linataimi eriti õhukese ja elegantse kanga kudumiseks."},
+        explanation: "Muistses Egiptuses kandsid inimesed valgest linasest riidest rõivaid. Kudujad kasutasid noori linataimi eriti õhukese ja elegantse kanga kudumiseks."
+      },
       {
         id: "vikt_memphis_61", type: "choice", location: "memphis", difficulty: 2,
         question: "Kuidas riietusid lapsed Vanas Egiptuses?",
         options: ["Nad kandsid miniaturiseeritud täiskasvanute riideid", "Nad jooksid ja mängisid sageli riieteta", "Nad kandsid alati mütsi"],
         correct: 1,
         hint: "Lapsed jooksid ja mängisid riieteta",
-        explanation: "Lapsed jooksid ja mängisid riieteta. Nii mehed kui naised, nii rikkad kui vaesed armastasid kanda ehteid ning kasutasid kosmeetikat."},
+        explanation: "Lapsed jooksid ja mängisid riieteta. Nii mehed kui naised, nii rikkad kui vaesed armastasid kanda ehteid ning kasutasid kosmeetikat."
+      },
       {
         id: "vikt_memphis_62", type: "choice", location: "memphis", difficulty: 3,
         question: "Miks kandsid egiptlased parukkaid?",
         options: ["Religioossetel põhjustel", "Paitsesid päikesepiste eest ja kanti tseremooniatel", "Varjasid kiilaspäisust"],
         correct: 1,
         hint: "Juustest tehti parukkaid, mida kanti tseremoniatel või mõne tähtsa sündmuse puhul",
-        explanation: "Juustest tehti parukkaid, mida kanti tseremoniatel või mõne tähtsa sündmuse puhul. Parukad kaitsesid päikesepiste eest. Hilisemal ajal kandsid isegi talunaised põllul töötades parukkaid."},
+        explanation: "Juustest tehti parukkaid, mida kanti tseremoniatel või mõne tähtsa sündmuse puhul. Parukad kaitsesid päikesepiste eest. Hilisemal ajal kandsid isegi talunaised põllul töötades parukkaid."
+      },
       {
         id: "vikt_memphis_63", type: "choice", location: "memphis", difficulty: 1,
         question: "Milliseid peegleid kasutasid egiptlased?",
         options: ["Klaasist peegleid", "Poleeritud pronks- ja vaskpeegleid", "Hõbedast peegleid"],
         correct: 1,
         hint: "Väga hinnatud varanduseks peeti poleeritud pronks- ja vaskpeegleid",
-        explanation: "Väga hinnatud varanduseks peeti poleeritud pronks- ja vaskpeegleid. Nende ümar vorm ja sära vihjasid päikese eluandvale jõule. Vaesemad said oma peegelpilti vaadata veest."},
+        explanation: "Väga hinnatud varanduseks peeti poleeritud pronks- ja vaskpeegleid. Nende ümar vorm ja sära vihjasid päikese eluandvale jõule. Vaesemad said oma peegelpilti vaadata veest."
+      },
       {
         id: "vikt_teeba_64", type: "choice", location: "teeba", difficulty: 2,
         question: "Milleks kasutati hieroglüüfe ja milleks hieraatilist kirja?",
         options: ["Mõlemaid kasutati samadel eesmärkidel", "Hieroglüüfe templite ja haudade jaoks, hieraatilist kirja maksude ja arvete jaoks", "Hieroglüüfe igapäevaseks kirjutamiseks, hieraatilist kirja templite jaoks"],
         correct: 1,
         hint: "Vanad egiptlased kasutasid piltkirja – hieroglüüfe – templite ja hauakambrite seintele kirjutamiseks",
-        explanation: "Vanad egiptlased kasutasid piltkirja – hieroglüüfe – templite ja hauakambrite seintele kirjutamiseks. Hieraatilist kirja kasutati maksude ja arvete üleskirjutamiseks. See oli lihtsam ja kiirem kirjutamisviis."},
+        explanation: "Vanad egiptlased kasutasid piltkirja – hieroglüüfe – templite ja hauakambrite seintele kirjutamiseks. Hieraatilist kirja kasutati maksude ja arvete üleskirjutamiseks. See oli lihtsam ja kiirem kirjutamisviis."
+      },
       {
         id: "vikt_teeba_65", type: "choice", location: "teeba", difficulty: 3,
         question: "Kui kaua kestis kirjutajaõpilase õpe?",
         options: ["2 aastat", "10 aastat", "20 aastat"],
         correct: 1,
         hint: "Kulus kümme aastat, et selgeks saada sadu hieroglüüfe",
-        explanation: "Kulus kümme aastat, et selgeks saada sadu hieroglüüfe. Lisaks õpiti astronoomiat, matemaatikat, astroloogiat, tarbekunsti, mitmeid mänge ja spordialasid."},
+        explanation: "Kulus kümme aastat, et selgeks saada sadu hieroglüüfe. Lisaks õpiti astronoomiat, matemaatikat, astroloogiat, tarbekunsti, mitmeid mänge ja spordialasid."
+      },
       {
         id: "vikt_teeba_66", type: "choice", location: "teeba", difficulty: 1,
         question: "Milline oli koolidistsipliin Vanas Egiptuses?",
         options: ["Leebe ja sõbralik", "Karm – õpetajad uskusid, et poisid kuulevad ainult siis, kui saavad peksa", "Puudus täielikult"],
         correct: 1,
         hint: "Õpetajad olid karmid ja veendunud, et 'poiste kõrvad asuvad seljal ja et nad kuulevad ainult siis...",
-        explanation: "Õpetajad olid karmid ja veendunud, et 'poiste kõrvad asuvad seljal ja et nad kuulevad ainult siis, kui saavad peksa'."},
+        explanation: "Õpetajad olid karmid ja veendunud, et 'poiste kõrvad asuvad seljal ja et nad kuulevad ainult siis, kui saavad peksa'."
+      },
       {
         id: "vikt_teeba_67", type: "choice", location: "teeba", difficulty: 2,
         question: "Kas tüdrukud käisid koolis?",
         options: ["Jah, koos poistega", "Ei, neile õpetasid emad kodus majapidamistöid, muusikat ja tantsimist", "Jah, eraldi tüdrukute koolis"],
         correct: 1,
         hint: "Tüdrukud koolis ei käinud",
-        explanation: "Tüdrukud koolis ei käinud. Nendele õpetasid emad majapidamistöid, muusikat ja tantsimist."},
+        explanation: "Tüdrukud koolis ei käinud. Nendele õpetasid emad majapidamistöid, muusikat ja tantsimist."
+      },
       {
         id: "vikt_teeba_68", type: "choice", location: "teeba", difficulty: 3,
         question: "Kirjelda Rosetta kivi ja selle tähtsust.",
         options: ["See oli kuningate nimekiri", "Kivitahvel kolmes kirjas, mis võimaldas hieroglüüfe dešifreerida", "Religioosne tekst, mis kirjeldas jumalate maailma"],
         correct: 1,
         hint: "Rosetta kivi raidkirjad on võtmeks püramiidide tekstide ja teiste Vana-Egiptuse kirjutiste lugemisel",
-        explanation: "Rosetta kivi raidkirjad on võtmeks püramiidide tekstide ja teiste Vana-Egiptuse kirjutiste lugemisel. Ülemises osas on hieroglüüfid. Keskmine osa on demootses kirjas, see oli hieraatilise kirja hilisem vorm. Alumine osa on vanakreeka keeles. Kivi avastati 1799 ja 1822 dešifreeris prantsuse teadlane Jean-François Champollion mõned hieroglüüfid."},
+        explanation: "Rosetta kivi raidkirjad on võtmeks püramiidide tekstide ja teiste Vana-Egiptuse kirjutiste lugemisel. Ülemises osas on hieroglüüfid. Keskmine osa on demootses kirjas, see oli hieraatilise kirja hilisem vorm. Alumine osa on vanakreeka keeles. Kivi avastati 1799 ja 1822 dešifreeris prantsuse teadlane Jean-François Champollion mõned hieroglüüfid."
+      },
       {
         id: "vikt_teeba_69", type: "choice", location: "teeba", difficulty: 1,
         question: "Millal võtsid egiptlased ristiusu vastu?",
         options: ["30 eKr", "324 pKr, samaaegselt Rooma impeeriumiga", "500 pKr"],
         correct: 1,
         hint: "Egiptlased võtsid ristiusu vastu samaaegselt Rooma impeeriumiga 324",
-        explanation: "Egiptlased võtsid ristiusu vastu samaaegselt Rooma impeeriumiga 324. aastal. Roomlased keelustasid egiptuse kirja kasutamise, pidades seda paganlikuks."},
+        explanation: "Egiptlased võtsid ristiusu vastu samaaegselt Rooma impeeriumiga 324. aastal. Roomlased keelustasid egiptuse kirja kasutamise, pidades seda paganlikuks."
+      },
       {
         id: "vikt_teeba_70", type: "choice", location: "teeba", difficulty: 2,
         question: "Milliseid ravimeetodeid kasutasid Vana-Egiptuse arstid?",
         options: ["Ainult ravimtaimi", "Lahastamist luumurdudele, haavade puhastamist õli ja meega, operatsioone", "Ainult maagiat"],
         correct: 1,
         hint: "Muistses Egiptuses panid arstid luumurdudele puust lahased, mis seoti kinni taimekiududega",
-        explanation: "Muistses Egiptuses panid arstid luumurdudele puust lahased, mis seoti kinni taimekiududega; puhastasid haavu õli ja meega. Nad kasutasid opereerimisel nuge, tange ja metall- või puusonde. Nad oskasid ravida mitmeid haigusi."},
+        explanation: "Muistses Egiptuses panid arstid luumurdudele puust lahased, mis seoti kinni taimekiududega; puhastasid haavu õli ja meega. Nad kasutasid opereerimisel nuge, tange ja metall- või puusonde. Nad oskasid ravida mitmeid haigusi."
+      },
       {
         id: "vikt_teeba_71", type: "choice", location: "teeba", difficulty: 3,
         question: "Mida arvati südamest ja ajust?",
         options: ["Mõlemat peeti võrdselt tähtsaks", "Südant peeti kõige tähtsamaks, mis kontrollib kõike; aju tähtsust ei teatud", "Aju peeti kõige tähtsamaks"],
         correct: 1,
         hint: "Arstid teadsid, et süda 'räägib' pulsi kaudu ja nad olid veendunud, et süda kontrollib kõike keha...",
-        explanation: "Arstid teadsid, et süda 'räägib' pulsi kaudu ja nad olid veendunud, et süda kontrollib kõike kehas toimuvat, ka mõtteid ja tundeid. Nad ei teadnud, kui tähtis on aju."},
+        explanation: "Arstid teadsid, et süda 'räägib' pulsi kaudu ja nad olid veendunud, et süda kontrollib kõike kehas toimuvat, ka mõtteid ja tundeid. Nad ei teadnud, kui tähtis on aju."
+      },
       {
         id: "vikt_teeba_72", type: "choice", location: "teeba", difficulty: 1,
         question: "Kuidas raviti haigeid lapsi maagiliste meetoditega?",
         options: ["Loeti palveid", "Ema sõi ära hiire, pani hiire luud kotikesse ja riputas lapsele kaela", "Pandi laps templisse magama"],
         correct: 1,
         hint: "Mõnikord sõi ema ära hiire, et ravida haiget last",
-        explanation: "Mõnikord sõi ema ära hiire, et ravida haiget last. Hiire luud pani ta kotikesse, sidus seitse sõlme peale ja riputas lapsele kaela."},
+        explanation: "Mõnikord sõi ema ära hiire, et ravida haiget last. Hiire luud pani ta kotikesse, sidus seitse sõlme peale ja riputas lapsele kaela."
+      },
       {
         id: "vikt_teeba_73", type: "choice", location: "teeba", difficulty: 2,
         question: "Milleks kasutati amulette?",
         options: ["Ainult kaunistuseks", "Uskuti, et need hoiavad ära õnnetusi, neid kanti elusalt ja pandi hauda kaasa", "Ainult matustel"],
         correct: 1,
         hint: "Egiptuses uskusid inimesed, et õnneamuletid hoiavad ära õnnetusi",
-        explanation: "Egiptuses uskusid inimesed, et õnneamuletid hoiavad ära õnnetusi. Neid kanti ehetena ja pandi surres hauda kaasa, et kaitsta inimest ka hauataguses elus."},
+        explanation: "Egiptuses uskusid inimesed, et õnneamuletid hoiavad ära õnnetusi. Neid kanti ehetena ja pandi surres hauda kaasa, et kaitsta inimest ka hauataguses elus."
+      },
       {
         id: "vikt_teeba_74", type: "choice", location: "teeba", difficulty: 3,
         question: "Kuidas tasuti käsitöölistele töö eest?",
         options: ["Kuldmüntidega", "Riietes, leibas, köögiviljas ja õlles, sest raha ei kasutatud", "Vahetuskaubana teiste käsitööliste toodetega"],
         correct: 1,
         hint: "Kuna muistses Egiptuses ei kasutatud raha, said käsitöölised palka riietes, leibas, köögiviljas j...",
-        explanation: "Kuna muistses Egiptuses ei kasutatud raha, said käsitöölised palka riietes, leibas, köögiviljas ja õlles. Kõike, mida käsitöölised tegid, võeti ühise saavutusena ja kedagi esile ei tõstetud."},
+        explanation: "Kuna muistses Egiptuses ei kasutatud raha, said käsitöölised palka riietes, leibas, köögiviljas ja õlles. Kõike, mida käsitöölised tegid, võeti ühise saavutusena ja kedagi esile ei tõstetud."
+      },
       {
         id: "vikt_teeba_75", type: "choice", location: "teeba", difficulty: 1,
         question: "Milline oli esimene teadaolev streik ajaloos?",
@@ -2176,161 +2381,184 @@
         options: ["Savi ja liiva", "Puitu, elevandiluud ja poolväärikive (türkiise, lasuriite)", "Kivi ja metalli"],
         correct: 1,
         hint: "Mõningaid materjale, näiteks puitu, elevandiluud, poolväärikive – türkiise, lasuriite – tuli tuua...",
-        explanation: "Mõningaid materjale, näiteks puitu, elevandiluud, poolväärikive – türkiise, lasuriite – tuli tuua sisse väljastpoolt Egiptust."},
+        explanation: "Mõningaid materjale, näiteks puitu, elevandiluud, poolväärikive – türkiise, lasuriite – tuli tuua sisse väljastpoolt Egiptust."
+      },
       {
         id: "vikt_teeba_77", type: "choice", location: "teeba", difficulty: 3,
         question: "Millised olid töötingimused hauakambrites kunstnike jaoks?",
         options: ["Mugavad ja hästi valgustatud", "Rasked – tööta tuli rasvalambi valgel ja peaaegu õhuta ruumides", "Töötati ainult päevasel ajal"],
         correct: 1,
         hint: "Eriti rasked tingimused tööks olid hauakambrite seinte kaunistamisel, kui töötama pidi rasvalambi...",
-        explanation: "Eriti rasked tingimused tööks olid hauakambrite seinte kaunistamisel, kui töötama pidi rasvalambi valgel ja peaaegu õhuta ruumides."},
+        explanation: "Eriti rasked tingimused tööks olid hauakambrite seinte kaunistamisel, kui töötama pidi rasvalambi valgel ja peaaegu õhuta ruumides."
+      },
       {
         id: "vikt_teeba_78", type: "choice", location: "teeba", difficulty: 1,
         question: "Kuidas kujutati inimfiguure seinamaalingutel?",
         options: ["Täiesti realistlikult", "Silmad ja õlad otse, kõik muu küljelt vaates, vasak jalg alati eespool", "Alati profiilis"],
         correct: 1,
         hint: "Kunstnikud joonistasid inimeste silmad ja õlad otse",
-        explanation: "Kunstnikud joonistasid inimeste silmad ja õlad otse. Kõik muu aga küljeltvaates. Vasak jalg oli alati paremast eespool."},
+        explanation: "Kunstnikud joonistasid inimeste silmad ja õlad otse. Kõik muu aga küljeltvaates. Vasak jalg oli alati paremast eespool."
+      },
       {
         id: "vikt_teeba_79", type: "choice", location: "teeba", difficulty: 2,
         question: "Kust saadi maalidele värve?",
         options: ["Tehislikest värvainetest", "Looduslikest ainetest – kivimitest ja mineraalidest", "Taimedest"],
         correct: 1,
         hint: "Värve saadi looduslikest ainetest – kivimitest ja mineraalidest",
-        explanation: "Värve saadi looduslikest ainetest – kivimitest ja mineraalidest. Näiteks rohelist saadi malahiidipulbrist, punast rauaroostest; värvisse segati munavalget ja vaiku."},
+        explanation: "Värve saadi looduslikest ainetest – kivimitest ja mineraalidest. Näiteks rohelist saadi malahiidipulbrist, punast rauaroostest; värvisse segati munavalget ja vaiku."
+      },
       {
         id: "vikt_teeba_80", type: "choice", location: "teeba", difficulty: 3,
         question: "Kuidas muutus kunstistiil vaarao Ehnatoni ajal?",
         options: ["Muutus rangemaks ja formaalsemaks", "Muutus elutruumaks ja loomulikumaks", "Jäi täpselt samaks"],
         correct: 1,
         hint: "Vaarao Ehnatoni 17 valitsusaasta jooksul muutus kunstistiil elutruumaks ja loomulikumaks",
-        explanation: "Vaarao Ehnatoni 17 valitsusaasta jooksul muutus kunstistiil elutruumaks ja loomulikumaks. Ta rajas linna Ahet-Atoni (Amarnas), mille pühendas päikesejumal Atonile."},
+        explanation: "Vaarao Ehnatoni 17 valitsusaasta jooksul muutus kunstistiil elutruumaks ja loomulikumaks. Ta rajas linna Ahet-Atoni (Amarnas), mille pühendas päikesejumal Atonile."
+      },
       {
         id: "vikt_teeba_81", type: "choice", location: "teeba", difficulty: 1,
         question: "Milliseid muusikainstrumente kasutati Vanas Egiptuses?",
         options: ["Ainult trumme", "Flööte, klarnette, oboesid, lautosid, harfe, tamburiine, simbleid ja trumme", "Ainult keelpille"],
         correct: 1,
         hint: "Vana-Egiptuse muusikud mängisid flöötidel, klarnetitel, oboedel, lautoedel, harfidel, tamburiinid...",
-        explanation: "Vana-Egiptuse muusikud mängisid flöötidel, klarnetitel, oboedel, lautoedel, harfidel, tamburiinidel, simblitel ja trummidel."},
+        explanation: "Vana-Egiptuse muusikud mängisid flöötidel, klarnetitel, oboedel, lautoedel, harfidel, tamburiinidel, simblitel ja trummidel."
+      },
       {
         id: "vikt_teeba_82", type: "choice", location: "teeba", difficulty: 2,
         question: "Kuidas toimusid tantsud Vanas Egiptuses?",
         options: ["Mehed ja naised tantsisid paarina", "Naised ja mehed ei tantsinud kunagi koos, tantsud olid keerulised nagu võimlemine", "Tantsiti ainult aeglaselt"],
         correct: 1,
         hint: "Vanas Egiptuses ei tantsinud naised ja mehed kunagi koos",
-        explanation: "Vanas Egiptuses ei tantsinud naised ja mehed kunagi koos. Tantsud olid keerulised, meenutades võimlemist. Tantsijad tegid kukerpalle ja hüppeid ja lasid silda."},
+        explanation: "Vanas Egiptuses ei tantsinud naised ja mehed kunagi koos. Tantsud olid keerulised, meenutades võimlemist. Tantsijad tegid kukerpalle ja hüppeid ja lasid silda."
+      },
       {
         id: "vikt_teeba_83", type: "choice", location: "teeba", difficulty: 3,
         question: "Mis oli Opeti püha ja kui kaua see Ramses III ajal kestis?",
         options: ["3 päeva", "27 päeva", "100 päeva"],
         correct: 1,
         hint: "Opeti püha peeti igal aastal Niiluse üleujutuse ajal",
-        explanation: "Opeti püha peeti igal aastal Niiluse üleujutuse ajal. Ramses III valitsusajal (1194 eKr) kestis see 27 päeva. Päikesejumal Amon-Re kuju kanti protsessioonis Karnaki templist Luxori templisse."},
+        explanation: "Opeti püha peeti igal aastal Niiluse üleujutuse ajal. Ramses III valitsusajal (1194 eKr) kestis see 27 päeva. Päikesejumal Amon-Re kuju kanti protsessioonis Karnaki templist Luxori templisse."
+      },
       {
         id: "vikt_giza_84", type: "choice", location: "giza", difficulty: 1,
         question: "Milleks kasutati papüürust?",
         options: ["Ainult kirjutamiseks", "Kirjutusmaterjali, jõepaatide, karpide, kastide, mattide, sandaalide ja mööbli valmistamiseks", "Ainult paatide ehitamiseks"],
         correct: 1,
         hint: "Vanad egiptlased kasutasid papüürust kirjutusmaterjali valmistamiseks, samuti tehti sellest jõepa...",
-        explanation: "Vanad egiptlased kasutasid papüürust kirjutusmaterjali valmistamiseks, samuti tehti sellest jõepaate, punutud karpe, kaste, matte, sõelu, sandaale ja ka mööblit."},
+        explanation: "Vanad egiptlased kasutasid papüürust kirjutusmaterjali valmistamiseks, samuti tehti sellest jõepaate, punutud karpe, kaste, matte, sõelu, sandaale ja ka mööblit."
+      },
       {
         id: "vikt_giza_85", type: "choice", location: "giza", difficulty: 2,
         question: "Kuidas valmistati papüürusest paberit?",
         options: ["Lehti kuivatati ja pressiti", "Varre ribad laoti pealekuti ja pressides liimis taimemahl nad kokku", "Varte kiud kooti kangaks"],
         correct: 1,
         hint: "Paberit valmistati papüüruse varre ribadest, mis laoti pealekuti ja pressides liimis taimemahl na...",
-        explanation: "Paberit valmistati papüüruse varre ribadest, mis laoti pealekuti ja pressides liimis taimemahl nad kokku."},
+        explanation: "Paberit valmistati papüüruse varre ribadest, mis laoti pealekuti ja pressides liimis taimemahl nad kokku."
+      },
       {
         id: "vikt_giza_86", type: "choice", location: "giza", difficulty: 3,
         question: "Milleks ehitati püramiide?",
         options: ["Templiteks, kus palvetada", "Vaaraode hauakambriteks, et säilitada keha ja tagada igavene elu", "Vaatlustornideks astronoomia jaoks"],
         correct: 1,
         hint: "Egiptlased uskusid hauatagsesse ellu, milles elamiseks oli vaja keha säilitada puutumatuna",
-        explanation: "Egiptlased uskusid hauatagsesse ellu, milles elamiseks oli vaja keha säilitada puutumatuna. Sellepärast lasid vaaraod ja rikkad ülikud ehitada hiiglaslikke püramiide, mis mahutasid pärast surma nende põrmu ja varanduse."},
+        explanation: "Egiptlased uskusid hauatagsesse ellu, milles elamiseks oli vaja keha säilitada puutumatuna. Sellepärast lasid vaaraod ja rikkad ülikud ehitada hiiglaslikke püramiide, mis mahutasid pärast surma nende põrmu ja varanduse."
+      },
       {
         id: "vikt_giza_87", type: "choice", location: "giza", difficulty: 1,
         question: "Miks maeti hilisemaid kuningaid Uue riigi ajal kaljuhaudadesse?",
         options: ["Kaljud olid pühad", "Püramiidid langesid sageli hauaröövelite saagiks", "Kaljuhauad olid odavamad"],
         correct: 1,
         hint: "Sellele vaatamata langesid püramiidid sageli hauaröövelite saagiks",
-        explanation: "Sellele vaatamata langesid püramiidid sageli hauaröövelite saagiks. Seepärast maeti hilisemaid kuningaid Uue riigi ajal salajastesse kaljuhaudadesse. Niisuguste hulka kuulus ka Tutanhamoni oma."},
+        explanation: "Sellele vaatamata langesid püramiidid sageli hauaröövelite saagiks. Seepärast maeti hilisemaid kuningaid Uue riigi ajal salajastesse kaljuhaudadesse. Niisuguste hulka kuulus ka Tutanhamoni oma."
+      },
       {
         id: "vikt_giza_88", type: "choice", location: "giza", difficulty: 2,
         question: "Millega kaeti püramiidid algselt?",
         options: ["Kullaga", "Lubjakiviglasuuriga", "Värvitud krohviga"],
         correct: 1,
         hint: "Püramiidid ehitati kivist ning olid algselt kaetud valge lubjakiviglasuuriga",
-        explanation: "Püramiidid ehitati kivist ning olid algselt kaetud valge lubjakiviglasuuriga."},
+        explanation: "Püramiidid ehitati kivist ning olid algselt kaetud valge lubjakiviglasuuriga."
+      },
       {
         id: "vikt_giza_89", type: "choice", location: "giza", difficulty: 3,
         question: "Miks egiptlased muumiaid tegid?",
         options: ["Et säilitada inimese välimust mälestuseks", "Et keha säilitada hinge ellujäämiseks pärast surma", "Et vältida haiguste levikut"],
         correct: 1,
         hint: "Egiptlased uskusid, et keha säilitamine on vajalik hinge (ba ja ka) ellujäämiseks pärast surma",
-        explanation: "Egiptlased uskusid, et keha säilitamine on vajalik hinge (ba ja ka) ellujäämiseks pärast surma. Ilma kehata ei saanud inimene igavest elu nautida."},
+        explanation: "Egiptlased uskusid, et keha säilitamine on vajalik hinge (ba ja ka) ellujäämiseks pärast surma. Ilma kehata ei saanud inimene igavest elu nautida."
+      },
       {
         id: "vikt_giza_90", type: "choice", location: "giza", difficulty: 1,
         question: "Miks jäeti süda kehasse mumifitseerimisel?",
         options: ["Südant oli raske eemaldada", "Egiptlased uskusid, et süda on mõistuse ja tunde keskus ning seda läheb vaja surmajärgsel kohtumõistmisel", "Süda oli liiga väike, et säilitada"],
         correct: 1,
         hint: "Egiptlased uskusid, et süda on mõistuse ja tunde keskus ning seda läheb vaja surmajärgsel kohtumõ...",
-        explanation: "Egiptlased uskusid, et süda on mõistuse ja tunde keskus ning seda läheb vaja surmajärgsel kohtumõistmisel."},
+        explanation: "Egiptlased uskusid, et süda on mõistuse ja tunde keskus ning seda läheb vaja surmajärgsel kohtumõistmisel."
+      },
       {
         id: "vikt_giza_91", type: "choice", location: "giza", difficulty: 2,
         question: "Mis olid kanoop-anumad?",
         options: ["Toidunõud, mis pandi hauda kaasa", "Neli anumat, kuhu pandi mumifitseerimise ajal eemaldatud organid", "Veeanumad rituaalideks"],
         correct: 1,
         hint: "Kanoop-anumad olid neli anumat, kuhu pandi mumifitseerimise ajal eemaldatud organid (maks, kopsud...",
-        explanation: "Kanoop-anumad olid neli anumat, kuhu pandi mumifitseerimise ajal eemaldatud organid (maks, kopsud, maol, sooled). Igal anumal oli erineva jumala peakujuline kaas."},
+        explanation: "Kanoop-anumad olid neli anumat, kuhu pandi mumifitseerimise ajal eemaldatud organid (maks, kopsud, maol, sooled). Igal anumal oli erineva jumala peakujuline kaas."
+      },
       {
         id: "vikt_giza_92", type: "choice", location: "giza", difficulty: 3,
         question: "Mida näitavad muumiate röntgenuuringud haiguste kohta?",
         options: ["Vanad egiptlased olid alati terved", "Nad haigestusid samasugustesse haigustesse kui tänapäeva inimesed", "Neil olid ainult troopilised haigused"],
         correct: 1,
         hint: "Muumiate röntgenuuringud on andnud teavet haigustest, mida vanad egiptlased põdesid",
-        explanation: "Muumiate röntgenuuringud on andnud teavet haigustest, mida vanad egiptlased põdesid. Nad haigestusid samasugustesse haigustesse kui tänapäeva inimesed, kuid neil ei olnud vaktsiine lastehalvatuse ja rõugete vastu."},
+        explanation: "Muumiate röntgenuuringud on andnud teavet haigustest, mida vanad egiptlased põdesid. Nad haigestusid samasugustesse haigustesse kui tänapäeva inimesed, kuid neil ei olnud vaktsiine lastehalvatuse ja rõugete vastu."
+      },
       {
         id: "vikt_giza_93", type: "choice", location: "giza", difficulty: 1,
         question: "Millal võtsid egiptlased kassi jumalusena omaks?",
         options: ["Umbes 500 eKr", "Umbes 2000 eKr", "Umbes 3500 eKr"],
         correct: 1,
         hint: "Arvukad kassipiltide ja -kujude arheoloogilised leiud näitavad, et egiptlased võtsid kassi jumalu...",
-        explanation: "Arvukad kassipiltide ja -kujude arheoloogilised leiud näitavad, et egiptlased võtsid kassi jumalusena omaks juba umbes 2000. aastal eKr."},
+        explanation: "Arvukad kassipiltide ja -kujude arheoloogilised leiud näitavad, et egiptlased võtsid kassi jumalusena omaks juba umbes 2000. aastal eKr."
+      },
       {
         id: "vikt_giza_94", type: "choice", location: "giza", difficulty: 2,
         question: "Miks oli kassi tapmine Vana-Egiptuses keelatud?",
         options: ["Kassid olid haruldased", "Seaduse järgi pidi kassi tapja maksma selle eest eluga", "Kassid olid kuninglikud lemmikloomad"],
         correct: 1,
         hint: "Kassid olid valitseja otsese kaitse all",
-        explanation: "Kassid olid valitseja otsese kaitse all. Nalja ei mõistetud, sest seaduse järgi pidi inimene, kes oli kassi tapnud, selle eest maksma eluga. Diodoros kirjutab, kuidas raevunud rahvajõuk tappis 59 eKr Rooma diplomaadi, kes oli vankriga alla ajanud kassi."},
+        explanation: "Kassid olid valitseja otsese kaitse all. Nalja ei mõistetud, sest seaduse järgi pidi inimene, kes oli kassi tapnud, selle eest maksma eluga. Diodoros kirjutab, kuidas raevunud rahvajõuk tappis 59 eKr Rooma diplomaadi, kes oli vankriga alla ajanud kassi."
+      },
       {
         id: "vikt_giza_95", type: "choice", location: "giza", difficulty: 3,
         question: "Kuidas kasutasid egiptlased kasse praktiliselt?",
         options: ["Valvuritena", "Hiirte püüdmiseks viljavarustes", "Sõjas relvatna"],
         correct: 1,
         hint: "Kassidest oli suur kasu – nad püüdsid osavasti hiiri ja kaitsesid niimoodi viljavarusid",
-        explanation: "Kassidest oli suur kasu – nad püüdsid osavasti hiiri ja kaitsesid niimoodi viljavarusid. Põlluharijad panid kassidele välja näiteks leiba ja kalapäid, nii et kassidel oli alati piisavalt toitu."},
+        explanation: "Kassidest oli suur kasu – nad püüdsid osavasti hiiri ja kaitsesid niimoodi viljavarusid. Põlluharijad panid kassidele välja näiteks leiba ja kalapäid, nii et kassidel oli alati piisavalt toitu."
+      },
       {
         id: "vikt_giza_96", type: "choice", location: "giza", difficulty: 1,
         question: "Kirjelda Bubastise kassijumala templit.",
         options: ["Väike puust ehitis", "Punasest graniidist tempel linna keskel künkal, sisehoovis puude ja kassijumalakujuga", "Maa-alune pühapaik"],
         correct: 1,
         hint: "Kassijumala auks püstitati Bubastise linnas üks tempel, mis oli ehitatud punasest graniidist ja s...",
-        explanation: "Kassijumala auks püstitati Bubastise linnas üks tempel, mis oli ehitatud punasest graniidist ja seisis linna keskel künkal, nii et see oli igas suunas nähtav. Templi sisehoovis kasvasid puud, mille keskel ilutses kassijumalakuju."},
+        explanation: "Kassijumala auks püstitati Bubastise linnas üks tempel, mis oli ehitatud punasest graniidist ja seisis linna keskel künkal, nii et see oli igas suunas nähtav. Templi sisehoovis kasvasid puud, mille keskel ilutses kassijumalakuju."
+      },
       {
         id: "vikt_giza_97", type: "choice", location: "giza", difficulty: 2,
         question: "Kes olid hüksosed?",
         options: ["Egiptuse preestrite klass", "Võõras rahvas Lähis-Idast, kes vallutasid Alam-Egiptuse", "Egiptuse sõjaväelased"],
         correct: 1,
         hint: "Hüksosed olid võõras rahvas (arvatavasti Lähis-Idast), kes vallutasid Alam-Egiptuse umbes 1650 eK...",
-        explanation: "Hüksosed olid võõras rahvas (arvatavasti Lähis-Idast), kes vallutasid Alam-Egiptuse umbes 1650 eKr ja valitsesid kuni nende väljaajamiseni umbes 1550 eKr, mis tähistas Uue riigi algust."},
+        explanation: "Hüksosed olid võõras rahvas (arvatavasti Lähis-Idast), kes vallutasid Alam-Egiptuse umbes 1650 eKr ja valitsesid kuni nende väljaajamiseni umbes 1550 eKr, mis tähistas Uue riigi algust."
+      },
       {
         id: "vikt_giza_98", type: "choice", location: "giza", difficulty: 3,
         question: "Millal suleti Egiptuse templid ja kes seda käskis?",
         options: ["30 eKr, keiser Augustus", "384 pKr, ristitud Rooma keiser Theodosius", "100 pKr, keiser Traianus"],
         correct: 1,
         hint: "Aastal 384 pKr käskis ristitud Rooma keiser Theodosius (valitses aastail 379–395 pKr) kõik Egiptu...",
-        explanation: "Aastal 384 pKr käskis ristitud Rooma keiser Theodosius (valitses aastail 379–395 pKr) kõik Egiptuse templid sulgeda ning keelas 'paganliku' usu."},
+        explanation: "Aastal 384 pKr käskis ristitud Rooma keiser Theodosius (valitses aastail 379–395 pKr) kõik Egiptuse templid sulgeda ning keelas 'paganliku' usu."
+      },
     ];
 
     // ========== AARDED ==========
@@ -2647,7 +2875,7 @@
         setHotspotClick(null);
         setUserSortOrder([]); // Reset sorting
         setHiddenOptions(new Set()); // Reset 50/50
-        
+
         // Shuffle indices for options
         if (next && next.options) {
           const ops = Array.isArray(next.options) ? next.options : (next.options.left || []);
